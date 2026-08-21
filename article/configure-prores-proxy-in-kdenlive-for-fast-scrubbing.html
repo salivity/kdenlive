@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configure ProRes Proxy in Kdenlive for Fast Scrubbing - kdenlive</title>
+    <meta name="description" content="Editing high-resolution video footage often leads to timeline lag, dropped frames, and sluggish scrubbing. Configuring Kdenlive to generate low-resolution Apple ProRes Proxy clips replaces demanding original camera files with an intra-frame, edit-friendl">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/configure-prores-proxy-in-kdenlive-for-fast-scrubbing">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Configure ProRes Proxy in Kdenlive for Fast Scrubbing - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/configure-prores-proxy-in-kdenlive-for-fast-scrubbing" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Editing high-resolution video footage often leads to timeline lag, dropped frames, and sluggish scrubbing. Configuring Kdenlive to generate low-resolution Apple ProRes Proxy clips replaces demanding original camera files with an intra-frame, edit-friendl" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="configure-prores-proxy-in-kdenlive-for-fast-scrubbing">Configure
+ProRes Proxy in Kdenlive for Fast Scrubbing</h1>
+<p>Editing high-resolution video footage often leads to timeline lag,
+dropped frames, and sluggish scrubbing. Configuring Kdenlive to generate
+low-resolution Apple ProRes Proxy clips replaces demanding original
+camera files with an intra-frame, edit-friendly format during the
+editing process. This guide details how to create a custom ProRes Proxy
+encoding profile, set scaling parameters, and apply the configuration to
+your project for fluid timeline performance.</p>
+<h3 id="step-1-open-proxy-clip-settings">Step 1: Open Proxy Clip
+Settings</h3>
+<ol type="1">
+<li>Launch Kdenlive.</li>
+<li>Go to the top menu and select <strong>Settings</strong> &gt;
+<strong>Configure Kdenlive</strong>.</li>
+<li>In the left sidebar, click on <strong>Proxy Clips</strong>.</li>
+</ol>
+<h3 id="step-2-enable-proxy-clips">Step 2: Enable Proxy Clips</h3>
+<ol type="1">
+<li>Check the box labeled <strong>Enable Proxy Clips</strong>.</li>
+<li>Optional: Set a resolution threshold (e.g., <strong>Generate for
+videos larger than 1000 pixels</strong>) to ensure proxies are
+automatically triggered for 1080p, 4K, or higher-resolution media.</li>
+<li>Check <strong>Enable external proxy clips</strong> if you plan to
+use pre-rendered proxies from external software.</li>
+</ol>
+<h3 id="step-3-create-a-low-resolution-prores-proxy-profile">Step 3:
+Create a Low-Resolution ProRes Proxy Profile</h3>
+<p>Kdenlive uses FFmpeg presets to generate proxy media. To add a
+dedicated low-resolution ProRes Proxy preset:</p>
+<ol type="1">
+<li>In the <strong>Proxy Clips</strong> settings window, locate the
+<strong>Encoding profile</strong> section.</li>
+<li>Click the <strong>Manage Video Profiles</strong> (wrench/edit) icon
+next to the profile dropdown.</li>
+<li>Click the <strong>Add new profile</strong> (plus) button.</li>
+<li>Set the <strong>Profile Name</strong> to:
+<code>ProRes Proxy 720p</code></li>
+<li>Set the <strong>File Extension</strong> to: <code>mov</code></li>
+<li>In the <strong>Parameters</strong> field, paste the following FFmpeg
+command:</li>
+</ol>
+<pre class="text"><code>-c:v prores_ks -profile:v 0 -vf scale=-2:720 -pix_fmt yuv422p -c:a pcm_s16le</code></pre>
+<ul>
+<li><strong><code>-profile:v 0</code></strong>: Selects the ProRes Proxy
+variant (the most lightweight ProRes flavor).</li>
+<li><strong><code>-vf scale=-2:720</code></strong>: Downscales the
+height to 720p while preserving the aspect ratio and ensuring dimensions
+are divisible by 2.</li>
+<li><strong><code>-c:a pcm_s16le</code></strong>: Transcodes audio to
+uncompressed PCM for zero-latency audio decoding.</li>
+</ul>
+<ol start="7" type="1">
+<li>Click <strong>Save</strong> to store the new profile.</li>
+</ol>
+<h3 id="step-4-apply-the-prores-profile-to-your-project">Step 4: Apply
+the ProRes Profile to Your Project</h3>
+<ol type="1">
+<li>In the <strong>Proxy Clips</strong> configuration menu, change the
+<strong>Encoding profile</strong> dropdown to your newly created
+<strong>ProRes Proxy 720p</strong>.</li>
+<li>Click <strong>Apply</strong>, then click <strong>OK</strong>.</li>
+<li>To set this for an existing project, go to <strong>Project</strong>
+&gt; <strong>Project Settings</strong> &gt; <strong>Proxy</strong> tab,
+ensure <strong>Enable Proxy Clips</strong> is checked, and select the
+<strong>ProRes Proxy 720p</strong> profile.</li>
+</ol>
+<h3 id="step-5-generate-and-scrub-proxies">Step 5: Generate and Scrub
+Proxies</h3>
+<ol type="1">
+<li>Import your media into the <strong>Project Bin</strong>.</li>
+<li>If automatic generation is enabled, Kdenlive will immediately
+transcode the files in the background.</li>
+<li>To manually create a proxy for an existing clip, right-click the
+clip in the <strong>Project Bin</strong> and select <strong>Proxy
+Clip</strong>.</li>
+<li>Once processing finishes, a small yellow <strong>P</strong> icon
+appears on the clip thumbnail.</li>
+</ol>
+<p>Drag the clip to your timeline. Scrubbing across the playhead will
+now decode the lightweight ProRes frames with minimal CPU overhead,
+providing smooth playback and precise timeline navigation. When
+rendering the final project, Kdenlive will automatically bypass the
+proxy files and use the full-resolution original media.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

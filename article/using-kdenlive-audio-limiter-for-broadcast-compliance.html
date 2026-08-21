@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Kdenlive Audio Limiter for Broadcast Compliance - kdenlive</title>
+    <meta name="description" content="Achieving broadcast-standard audio requires strict control over peak volume levels to avoid distortion and comply with regulatory delivery specifications. This guide explains how to locate, apply, and configure the Audio Limiter effect in Kdenlive across">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/using-kdenlive-audio-limiter-for-broadcast-compliance">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Using Kdenlive Audio Limiter for Broadcast Compliance - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/using-kdenlive-audio-limiter-for-broadcast-compliance" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Achieving broadcast-standard audio requires strict control over peak volume levels to avoid distortion and comply with regulatory delivery specifications. This guide explains how to locate, apply, and configure the Audio Limiter effect in Kdenlive across" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="using-kdenlive-audio-limiter-for-broadcast-compliance">Using
+Kdenlive Audio Limiter for Broadcast Compliance</h1>
+<p>Achieving broadcast-standard audio requires strict control over peak
+volume levels to avoid distortion and comply with regulatory delivery
+specifications. This guide explains how to locate, apply, and configure
+the Audio Limiter effect in Kdenlive across your master track to prevent
+digital clipping, meet industry peak limits (such as EBU R128 or ATSC
+A/85 standards), and ensure consistent, professional sound output.</p>
+<h2 id="broadcast-compliance-audio-basics">Broadcast Compliance Audio
+Basics</h2>
+<p>Broadcast regulations typically require true peak levels to remain
+below a specific ceiling to prevent distortion during transmission and
+playback across various consumer devices:</p>
+<ul>
+<li><strong>EBU R128 (Europe/International):</strong> Maximum True Peak
+of <strong>-1.0 dBFS</strong> (or -1.0 dBTP).</li>
+<li><strong>ATSC A/85 (North America):</strong> Maximum True Peak of
+<strong>-2.0 dBFS</strong> (or -2.0 dBTP).</li>
+</ul>
+<p>An audio limiter automatically caps any signal that attempts to
+exceed your defined threshold without altering the dynamics of audio
+that sits safely below it.</p>
+<h2 id="applying-the-limiter-to-the-master-audio-track">Applying the
+Limiter to the Master Audio Track</h2>
+<p>For broadcast compliance, limiters should be applied to the entire
+mix rather than individual clips to catch unexpected peaks from
+overlapping audio layers.</p>
+<ol type="1">
+<li>Open your project in Kdenlive.</li>
+<li>In the Timeline, locate the <strong>Master</strong> track header at
+the bottom left of the tracks area.</li>
+<li>Open the <strong>Effects</strong> panel (go to
+<code>Menu &gt; Settings &gt; Audio Layout</code> or
+<code>View &gt; Effects</code> if it is not visible).</li>
+<li>In the Effects search bar, type <code>Limiter</code>.</li>
+<li>Locate the <strong>Fast Lookahead Limiter</strong> (or standard
+<strong>Limiter</strong>) under the Audio Correction effects
+category.</li>
+<li>Drag and drop the effect directly onto the <strong>Master</strong>
+track header.</li>
+</ol>
+<h2 id="configuring-limiter-parameters-for-broadcast">Configuring
+Limiter Parameters for Broadcast</h2>
+<p>Select the Master track to view the effect controls in the
+<strong>Effect/Composition Stack</strong> panel, then configure the
+following settings:</p>
+<ul>
+<li><strong>Limit (dB):</strong> Set this to your required broadcast
+ceiling (e.g., <code>-1.0 dB</code> for EBU R128 or <code>-2.0 dB</code>
+for ATSC A/85). This ensures no part of the audio mix exceeds this
+threshold.</li>
+<li><strong>Input Gain (dB):</strong> Adjust this only if the overall
+mix is too quiet before limiting. Increase it carefully so the limiter
+gently controls peaks without crushing the dynamic range.</li>
+<li><strong>Release Time (s):</strong> Set between <code>0.05 s</code>
+(50 ms) and <code>0.1 s</code> (100 ms). A fast release time prevents
+audible "pumping" artifacts while maintaining transparent limiting on
+sudden loud sounds.</li>
+</ul>
+<h2 id="monitoring-and-verification">Monitoring and Verification</h2>
+<ol type="1">
+<li>Open the <strong>Audio Mixer</strong> via
+<code>View &gt; Audio Mixer</code>.</li>
+<li>Play through the loudest sections of your timeline (e.g.,
+explosions, intense music, sudden dialogue spikes).</li>
+<li>Observe the Master channel meters. The peaks should strictly stay at
+or below the defined limit value.</li>
+<li>Export a test render and verify the rendered file's true peak levels
+in an audio analysis tool to confirm full compliance before final
+delivery.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

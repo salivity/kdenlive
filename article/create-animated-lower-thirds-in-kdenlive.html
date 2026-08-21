@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Animated Lower Thirds in Kdenlive - kdenlive</title>
+    <meta name="description" content="Creating professional lower-third graphics does not require complex external motion graphics software. This guide provides a step-by-step walkthrough on how to design, format, and animate a lower-third graphic directly inside Kdenlive's built-in Title Ed">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/create-animated-lower-thirds-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Create Animated Lower Thirds in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/create-animated-lower-thirds-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Creating professional lower-third graphics does not require complex external motion graphics software. This guide provides a step-by-step walkthrough on how to design, format, and animate a lower-third graphic directly inside Kdenlive's built-in Title Ed" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="create-animated-lower-thirds-in-kdenlive">Create Animated Lower
+Thirds in Kdenlive</h1>
+<p>Creating professional lower-third graphics does not require complex
+external motion graphics software. This guide provides a step-by-step
+walkthrough on how to design, format, and animate a lower-third graphic
+directly inside Kdenlive's built-in Title Editor using its native
+viewport animation features.</p>
+<h2 id="step-1-open-the-title-editor">Step 1: Open the Title Editor</h2>
+<p>To begin, open your Kdenlive project. Right-click an empty space in
+the <strong>Project Bin</strong> and select <strong>Add Title
+Clip</strong> from the context menu. This opens the Kdenlive Title
+Editor window.</p>
+<h2 id="step-2-design-the-graphic-elements">Step 2: Design the Graphic
+Elements</h2>
+<p>Before animating, you need to design the static look of your lower
+third.</p>
+<ul>
+<li><strong>Create the Background:</strong> Click the <strong>Add
+Rectangle</strong> tool (or press <code>Alt + R</code>). Draw a
+horizontal bar in the lower-left quadrant of the screen. In the
+properties panel on the right, choose a solid color and lower the
+opacity (e.g., to 80%) to make it semi-transparent.</li>
+<li><strong>Add Primary Text:</strong> Click the <strong>Add
+Text</strong> tool (or press <code>Alt + T</code>). Click inside your
+background rectangle and type the name of the speaker. Format the font
+size, color, and weight (e.g., Bold, White, Size 45) to make it stand
+out.</li>
+<li><strong>Add Secondary Text:</strong> Click the text tool again to
+add a second line for the speaker's title or description. Format this
+text to be smaller and lighter (e.g., Regular, Light Gray, Size 30) and
+position it directly beneath the name.</li>
+</ul>
+<h2 id="step-3-enable-the-animation-settings">Step 3: Enable the
+Animation Settings</h2>
+<p>In the top-right corner of the Title Editor window, click on the
+<strong>Animation</strong> tab. Check the box labeled <strong>Edit Start
+viewport</strong> and <strong>Edit End viewport</strong>. Enabling this
+option creates two distinct frame boundaries—"Start" and "End"—which
+Kdenlive uses to calculate the movement of your graphic over time.</p>
+<h2 id="step-4-configure-the-slide-in-animation">Step 4: Configure the
+Slide-In Animation</h2>
+<p>To make the lower-third graphic slide smoothly onto the screen from
+the left:</p>
+<ol type="1">
+<li>Click the <strong>Show Start Frame</strong> button.</li>
+<li>Select all of your designed elements (the background rectangle and
+both text blocks) by dragging a selection box over them.</li>
+<li>Move the selected elements horizontally to the left until they are
+completely outside the yellow viewport border (off-screen).</li>
+<li>Click the <strong>Show End Frame</strong> button.</li>
+<li>Ensure the elements are positioned exactly where you want them to
+rest on screen during the video. Kdenlive will automatically generate
+the motion frames to slide the graphic from the start position to the
+end position.</li>
+</ol>
+<h2 id="step-5-adjust-duration-and-save">Step 5: Adjust Duration and
+Save</h2>
+<p>In the top-left area of the Title Editor, locate the
+<strong>Duration</strong> field. Set this to your desired length (e.g.,
+<code>00:00:05:00</code> for 5 seconds). The shorter the duration, the
+faster the slide-in animation will occur. Once satisfied, click the
+<strong>Create Title</strong> button at the bottom right.</p>
+<h2 id="step-6-add-to-timeline-and-animate-out">Step 6: Add to Timeline
+and Animate Out</h2>
+<p>Drag your newly created title clip from the Project Bin onto a video
+track above your main footage.</p>
+<p>To make the graphic slide out or fade away at the end:</p>
+<ol type="1">
+<li>Select the title clip on the timeline.</li>
+<li>Hover your mouse over the top-right edge of the clip until the fade
+indicator appears, then drag it inward to create a smooth fade-out
+transition.</li>
+<li>Alternatively, apply the <strong>Transform</strong> effect to the
+clip to keyframe a manual slide-out motion at the end of the timeline
+block.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

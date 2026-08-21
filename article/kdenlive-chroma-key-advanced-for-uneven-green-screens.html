@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kdenlive Chroma Key Advanced for Uneven Green Screens - kdenlive</title>
+    <meta name="description" content="Keying out a poorly lit or uneven green screen can be challenging with basic chroma key tools, which often leave behind shadows or harsh edges. This guide provides a direct, step-by-step walkthrough on how to utilize Kdenlive's "Chroma Key: Advanced" eff">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/kdenlive-chroma-key-advanced-for-uneven-green-screens">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kdenlive Chroma Key Advanced for Uneven Green Screens - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/kdenlive-chroma-key-advanced-for-uneven-green-screens" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Keying out a poorly lit or uneven green screen can be challenging with basic chroma key tools, which often leave behind shadows or harsh edges. This guide provides a direct, step-by-step walkthrough on how to utilize Kdenlive's "Chroma Key: Advanced" eff" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="kdenlive-chroma-key-advanced-for-uneven-green-screens">Kdenlive
+Chroma Key Advanced for Uneven Green Screens</h1>
+<p>Keying out a poorly lit or uneven green screen can be challenging
+with basic chroma key tools, which often leave behind shadows or harsh
+edges. This guide provides a direct, step-by-step walkthrough on how to
+utilize Kdenlive's "Chroma Key: Advanced" effect to successfully remove
+uneven green backgrounds, adjust tolerance levels, and clean up shadows
+for a seamless composite.</p>
+<h3 id="step-1-apply-the-advanced-chroma-key-effect">Step 1: Apply the
+Advanced Chroma Key Effect</h3>
+<ol type="1">
+<li>Open your project in Kdenlive and place your green screen footage on
+the timeline on a track above your background footage.</li>
+<li>Go to the <strong>Effects</strong> tab (usually on the left side of
+the screen).</li>
+<li>Search for <strong>Chroma Key: Advanced</strong>.</li>
+<li>Drag and drop the effect directly onto your green screen video
+clip.</li>
+</ol>
+<h3 id="step-2-select-the-primary-key-color">Step 2: Select the Primary
+Key Color</h3>
+<ol type="1">
+<li>Select your video clip on the timeline to open the
+<strong>Effect/Composition Stack</strong> panel.</li>
+<li>Inside the "Chroma Key: Advanced" properties, find the
+<strong>Color</strong> parameter.</li>
+<li>Click the eyedropper tool and click on your video preview.</li>
+<li>Select a green area that represents the average shade of your
+background—ideally a mid-tone that sits between the brightest highlights
+and the darkest shadows.</li>
+</ol>
+<h3 id="step-3-choose-the-right-color-space">Step 3: Choose the Right
+Color Space</h3>
+<p>Uneven lighting creates shifts in hue, saturation, and brightness.
+The advanced keyer allows you to target these specific channels.</p>
+<ul>
+<li>Change the <strong>Color Space</strong> setting from
+<strong>Default/RGB</strong> to <strong>HSV</strong> (Hue, Saturation,
+Value) or <strong>YUV</strong>.</li>
+<li><strong>HSV</strong> is highly recommended for uneven green screens
+because it allows you to isolate the green color (Hue) regardless of how
+bright (Value) or intense (Saturation) the shadows make it look.</li>
+</ul>
+<h3 id="step-4-adjust-the-tolerances-to-remove-shadows">Step 4: Adjust
+the Tolerances to Remove Shadows</h3>
+<p>To tackle the uneven areas, you must widen the range of green shades
+the effect removes:</p>
+<ol type="1">
+<li>Locate the <strong>Tolerance</strong> sliders (specifically Hue,
+Saturation, and Value tolerances if using HSV).</li>
+<li>Slowly increase the <strong>Hue Tolerance</strong> until most of the
+green disappears.</li>
+<li>Adjust the <strong>Value (Brightness) Tolerance</strong> upward.
+This is the crucial step for uneven screens, as it forces the effect to
+key out the dark green shadow areas as well as the brightly lit
+areas.</li>
+<li>Adjust the <strong>Saturation Tolerance</strong> to capture areas
+where the green is washed out or too intense.</li>
+</ol>
+<h3 id="step-5-clean-up-the-matte">Step 5: Clean Up the Matte</h3>
+<p>Even after adjusting tolerances, some noise or "garbage" may
+remain.</p>
+<ol type="1">
+<li>Change the <strong>Output</strong> parameter in the effect settings
+from <strong>Source</strong> to <strong>Alpha</strong>. This turns your
+video into a black-and-white mask (matte), where white is your subject
+and black is the keyed-out background.</li>
+<li>Look for gray patches in the black background (which represent
+unkeyed green screen) or black patches inside your subject.</li>
+<li>Adjust the <strong>Black Clip</strong> slider upward to turn those
+gray shadow remnants completely black.</li>
+<li>Adjust the <strong>White Clip</strong> slider downward to ensure
+your subject remains completely solid white.</li>
+<li>Switch the <strong>Output</strong> back to <strong>Source</strong>
+once the matte is clean.</li>
+</ol>
+<h3 id="step-6-refine-the-edges-and-spill">Step 6: Refine the Edges and
+Spill</h3>
+<p>Uneven screens often cause green light to bounce onto the subject
+(spill) and create jagged edges.</p>
+<ul>
+<li><strong>Shrink/Grow:</strong> Use the <strong>Slope</strong> or
+<strong>Shrink</strong> settings to contract the key by a pixel or two,
+cutting away any residual green borders.</li>
+<li><strong>Feathering:</strong> Increase the <strong>Feather</strong>
+slider slightly to soften the edges of your subject so they blend
+naturally with the new background.</li>
+<li><strong>Spill Suppression:</strong> Enable the <strong>Spill
+Suppression</strong> checkbox. This neutralizes any remaining green
+light reflecting on your subject’s hair or shoulders by tinting those
+pixels with a complementary color.</li>
+</ul></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

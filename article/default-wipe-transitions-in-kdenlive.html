@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default Wipe Transitions in Kdenlive - kdenlive</title>
+    <meta name="description" content="This article provides an overview of the default wipe compositions built into the Kdenlive video editor. It explains how these transition effects function, lists the standard wipe patterns available immediately upon installation, and outlines how to appl">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/default-wipe-transitions-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Default Wipe Transitions in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/default-wipe-transitions-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This article provides an overview of the default wipe compositions built into the Kdenlive video editor. It explains how these transition effects function, lists the standard wipe patterns available immediately upon installation, and outlines how to appl" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="default-wipe-transitions-in-kdenlive">Default Wipe Transitions
+in Kdenlive</h1>
+<p>This article provides an overview of the default wipe compositions
+built into the Kdenlive video editor. It explains how these transition
+effects function, lists the standard wipe patterns available immediately
+upon installation, and outlines how to apply and customize them in your
+video projects.</p>
+<h2 id="understanding-kdenlives-wipe-composition">Understanding
+Kdenlive's Wipe Composition</h2>
+<p>In Kdenlive, a "Wipe" is a transition composition that uses grayscale
+image maps—specifically Portable Graymap (PGM) files—to transition from
+one video track to another. The transition progresses based on the
+luminance values of the grayscale image, moving from black (0% opacity)
+to white (100% opacity). This allows for highly customizable and smooth
+visual transitions between overlapping clips.</p>
+<h2 id="default-built-in-wipe-patterns">Default Built-in Wipe
+Patterns</h2>
+<p>Kdenlive comes pre-packaged with a variety of standard PGM wipe
+patterns. These are categorized by their visual movement and geometric
+shapes:</p>
+<h3 id="1-linear-and-directional-wipes">1. Linear and Directional
+Wipes</h3>
+<p>These are the most common transitions, moving across the screen in a
+straight line:</p>
+<ul>
+<li><strong>Horizontal Wipe:</strong> Slides the transition from left to
+right or right to left.</li>
+<li><strong>Vertical Wipe:</strong> Slides the transition from top to
+bottom or bottom to top.</li>
+<li><strong>Diagonal Wipe:</strong> Moves across the screen from one
+corner to the opposite corner (e.g., top-left to bottom-right).</li>
+</ul>
+<h3 id="2-geometric-shape-wipes">2. Geometric Shape Wipes</h3>
+<p>These transitions expand or contract using defined geometric
+shapes:</p>
+<ul>
+<li><strong>Circle / Radial:</strong> A circular wipe that expands from
+the center outward (or contracts inward).</li>
+<li><strong>Square / Box:</strong> An expanding or contracting square
+shape.</li>
+<li><strong>Diamond:</strong> A diamond-shaped transition expanding from
+the center.</li>
+</ul>
+<h3 id="3-complex-and-artistic-wipes">3. Complex and Artistic Wipes</h3>
+<p>Kdenlive also includes more complex grayscale patterns for stylized
+transitions:</p>
+<ul>
+<li><strong>Clock:</strong> A radial sweep resembling the hands of a
+clock moving around a central point.</li>
+<li><strong>Double Sweep:</strong> Similar to the clock wipe, but with
+two sweeping arms moving in opposite directions.</li>
+<li><strong>Spiral:</strong> A spiral pattern that unfurls to reveal the
+next clip.</li>
+<li><strong>Burst:</strong> A starburst-style pattern expanding
+outward.</li>
+<li><strong>Matrix / Dissolve Patterns:</strong> Various checkered or
+pixelated noise patterns that create a textured dissolve effect.</li>
+</ul>
+<h2 id="how-to-access-and-customize-default-wipes">How to Access and
+Customize Default Wipes</h2>
+<p>To use these built-in wipes in Kdenlive, follow these steps:</p>
+<ol type="1">
+<li><strong>Overlap Clips:</strong> Place two video clips on adjacent
+tracks in the timeline, ensuring they overlap for the duration of the
+desired transition.</li>
+<li><strong>Add Wipe:</strong> Click the bottom corner of the upper
+clip, or right-click the overlap area and select <strong>Add Composition
+&gt; Wipe</strong>.</li>
+<li><strong>Choose the Pattern:</strong> In the
+<strong>Properties</strong> tab of the Wipe composition, locate the
+<strong>Image file</strong> dropdown menu. This menu contains the
+complete list of built-in PGM wipe assets.</li>
+<li><strong>Adjust Settings:</strong>
+<ul>
+<li><strong>Softness:</strong> Adjust the slider to feather the edges of
+the wipe for a smoother transition.</li>
+<li><strong>Invert:</strong> Check this box to reverse the direction of
+the grayscale transition.</li>
+<li><strong>Revert:</strong> Flips the start and end points of the
+transition.</li>
+</ul></li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

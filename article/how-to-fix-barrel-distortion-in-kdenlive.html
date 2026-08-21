@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Fix Barrel Distortion in Kdenlive - kdenlive</title>
+    <meta name="description" content="Ultrawide lenses and action cameras often introduce curved lines along the edges of your frame, commonly known as barrel or fisheye distortion. This guide provides a straightforward, step-by-step method for removing barrel distortion from your footage in">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/how-to-fix-barrel-distortion-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Fix Barrel Distortion in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/how-to-fix-barrel-distortion-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Ultrawide lenses and action cameras often introduce curved lines along the edges of your frame, commonly known as barrel or fisheye distortion. This guide provides a straightforward, step-by-step method for removing barrel distortion from your footage in" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-fix-barrel-distortion-in-kdenlive">How to Fix Barrel
+Distortion in Kdenlive</h1>
+<p>Ultrawide lenses and action cameras often introduce curved lines
+along the edges of your frame, commonly known as barrel or fisheye
+distortion. This guide provides a straightforward, step-by-step method
+for removing barrel distortion from your footage inside Kdenlive using
+built-in video correction effects.</p>
+<h2 id="method-1-using-the-lens-correction-effect">Method 1: Using the
+Lens Correction Effect</h2>
+<p>The <strong>Lens Correction</strong> effect is the standard tool in
+Kdenlive for manually flattening curved wide-angle footage.</p>
+<ol type="1">
+<li><strong>Add Your Clip to the Timeline:</strong> Import your
+wide-angle footage into your Kdenlive project and drag it onto an active
+video track.</li>
+<li><strong>Open the Effects Panel:</strong> Go to the
+<strong>Effects</strong> tab (typically located alongside the Project
+Bin or accessible via <code>View &gt; Effects</code>).</li>
+<li><strong>Locate the Effect:</strong> Search for <strong>Lens
+Correction</strong> in the search bar (found under the <em>Transform,
+Distort and Perspective</em> category).</li>
+<li><strong>Apply the Effect:</strong> Drag and drop the <strong>Lens
+Correction</strong> effect directly onto the video clip in your
+timeline.</li>
+<li><strong>Adjust the Settings in Effect Stack:</strong>
+<ul>
+<li><strong>Center X / Center Y:</strong> Keep these at <code>500</code>
+(or <code>0.5</code> depending on your version) to keep the distortion
+centered, unless your lens is off-axis.</li>
+<li><strong>Correction:</strong> Adjust this slider to reverse the
+barrel distortion. For barrel distortion, adjust the slider to bend the
+edges outward until straight lines (such as horizons, walls, or
+doorframes) appear flat.</li>
+<li><strong>Correction (Edges):</strong> Fine-tune the extreme outer
+borders of the frame.</li>
+</ul></li>
+<li><strong>Compensate for Empty Edges:</strong> Correcting distortion
+often causes black curved borders to appear around the edges. To fix
+this, adjust the <strong>Zoom</strong> parameter inside the Lens
+Correction effect, or add a separate <strong>Transform</strong> effect
+to scale the footage up slightly until the borders are hidden.</li>
+</ol>
+<h2 id="method-2-using-the-defish-effect">Method 2: Using the Defish
+Effect</h2>
+<p>If you are working with extreme fisheye footage from action cameras
+like GoPros:</p>
+<ol type="1">
+<li>Search for <strong>Defish</strong> in the <strong>Effects</strong>
+panel.</li>
+<li>Apply the effect to your timeline clip.</li>
+<li>Select the appropriate projection type (such as
+<strong>Linear</strong> or <strong>Equidistant</strong>) that matches
+your camera's lens profile.</li>
+<li>Tweak the <strong>Amount</strong> / <strong>Field of View
+(FOV)</strong> slider until the fisheye curvature is neutralized.</li>
+</ol>
+<h2 id="quick-tips-for-best-results">Quick Tips for Best Results</h2>
+<ul>
+<li><strong>Use a Reference Line:</strong> Look for vertical or
+horizontal objects in the background (like buildings or horizon lines)
+as a visual reference while adjusting the sliders.</li>
+<li><strong>Save as Custom Effect:</strong> Once you find the exact
+values that correct your specific lens, click the <strong>Save
+Effect</strong> icon in the Effect Stack panel to create a preset for
+future footage shot on the same camera.</li>
+</ul></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

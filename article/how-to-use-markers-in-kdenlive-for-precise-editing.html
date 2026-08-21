@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use Markers in Kdenlive for Precise Editing - kdenlive</title>
+    <meta name="description" content="Using timeline markers in Kdenlive is an essential technique for precise video editing, allowing you to flag specific moments, align audio with video, and organize your project. This guide provides a straightforward, step-by-step walkthrough on how to ad">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/how-to-use-markers-in-kdenlive-for-precise-editing">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Use Markers in Kdenlive for Precise Editing - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/how-to-use-markers-in-kdenlive-for-precise-editing" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Using timeline markers in Kdenlive is an essential technique for precise video editing, allowing you to flag specific moments, align audio with video, and organize your project. This guide provides a straightforward, step-by-step walkthrough on how to ad" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-use-markers-in-kdenlive-for-precise-editing">How to Use
+Markers in Kdenlive for Precise Editing</h1>
+<p>Using timeline markers in Kdenlive is an essential technique for
+precise video editing, allowing you to flag specific moments, align
+audio with video, and organize your project. This guide provides a
+straightforward, step-by-step walkthrough on how to add, edit, and
+navigate both timeline guides and clip markers in Kdenlive to streamline
+your editing workflow.</p>
+<h2
+id="understanding-the-difference-guides-vs-clip-markers">Understanding
+the Difference: Guides vs. Clip Markers</h2>
+<p>Kdenlive uses two types of markers for precision editing:</p>
+<ul>
+<li><strong>Guides (Timeline Markers):</strong> These exist globally on
+the timeline ruler at the top of your workspace. They do not move when
+you move individual clips.</li>
+<li><strong>Clip Markers:</strong> These are attached directly to a
+specific video or audio clip. If you move the clip, the marker moves
+with it.</li>
+</ul>
+<hr />
+<h2 id="how-to-add-timeline-guides">How to Add Timeline Guides</h2>
+<p>Timeline guides are best for marking general sections of your video,
+such as intros, transitions, or music beats.</p>
+<ol type="1">
+<li><strong>Position the Playhead:</strong> Drag the playhead (the
+vertical red line) to the exact frame where you want to place the
+guide.</li>
+<li><strong>Add the Guide:</strong>
+<ul>
+<li>Press the keyboard shortcut <strong>G</strong> (default for adding a
+guide).</li>
+<li>Alternatively, right-click on the timeline ruler (the timecode bar
+at the top of the timeline) and select <strong>Add Guide</strong>.</li>
+</ul></li>
+<li><strong>Label the Guide:</strong> Double-click the newly created
+guide flag on the ruler, type a descriptive name, choose a color, and
+click <strong>OK</strong>.</li>
+</ol>
+<hr />
+<h2 id="how-to-add-clip-markers">How to Add Clip Markers</h2>
+<p>Clip markers are ideal for marking specific actions within a clip,
+such as a hand gesture, a spoken word, or a camera flash.</p>
+<ol type="1">
+<li><strong>Select the Clip:</strong> Click on the clip in your timeline
+or double-click it in the Project Bin to open it in the Clip
+Monitor.</li>
+<li><strong>Position the Playhead:</strong> Move the playhead to the
+exact moment within the clip.</li>
+<li><strong>Add the Marker:</strong>
+<ul>
+<li>Press the keyboard shortcut <strong>M</strong>.</li>
+<li>Alternatively, right-click the clip in the timeline, hover over
+<strong>Markers</strong>, and select <strong>Add Marker</strong>.</li>
+</ul></li>
+<li><strong>Name the Marker:</strong> In the pop-up window, enter a
+name, description, and assign a color to categorize the marker.</li>
+</ol>
+<hr />
+<h2 id="editing-and-managing-markers">Editing and Managing Markers</h2>
+<p>Once added, you can easily modify or delete your markers to keep your
+timeline clean.</p>
+<ul>
+<li><strong>Move a Guide:</strong> Click and drag the guide flag along
+the timeline ruler.</li>
+<li><strong>Edit a Guide or Marker:</strong> Double-click the
+marker/guide to change its name, color, or precise timecode.</li>
+<li><strong>Delete a Guide:</strong> Right-click the guide on the ruler
+and select <strong>Delete Guide</strong>, or select <strong>Delete All
+Guides</strong> to clear the timeline.</li>
+<li><strong>Delete a Clip Marker:</strong> Right-click the clip, go to
+<strong>Markers</strong>, and select <strong>Delete
+Marker</strong>.</li>
+</ul>
+<hr />
+<h2 id="navigating-and-snapping-to-markers">Navigating and Snapping to
+Markers</h2>
+<p>To get the most out of your markers, use them for navigation and
+snapping.</p>
+<ul>
+<li><strong>Snapping:</strong> Ensure the "Snap" tool is enabled (the
+magnet icon above the timeline, or press <strong>Home</strong>). When
+dragging clips, they will magnetically snap to your guides and markers
+for perfect alignment.</li>
+<li><strong>Quick Jump (Guides):</strong> Use <strong>Ctrl + Right
+Arrow</strong> to jump to the next guide, and <strong>Ctrl + Left
+Arrow</strong> to jump to the previous guide.</li>
+<li><strong>Quick Jump (Clip Markers):</strong> Select the clip and
+press <strong>Alt + Right Arrow</strong> or <strong>Alt + Left
+Arrow</strong> to hop between its internal markers.</li>
+</ul></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

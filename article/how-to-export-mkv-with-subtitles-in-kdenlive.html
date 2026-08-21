@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Export MKV with Subtitles in Kdenlive - kdenlive</title>
+    <meta name="description" content="This guide explains how to export a completed video project into a Matroska (MKV) container with switchable, soft subtitles using Kdenlive. Soft subtitles are embedded as a separate data stream within the MKV file, allowing viewers to toggle them on or o">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/how-to-export-mkv-with-subtitles-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Export MKV with Subtitles in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/how-to-export-mkv-with-subtitles-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This guide explains how to export a completed video project into a Matroska (MKV) container with switchable, soft subtitles using Kdenlive. Soft subtitles are embedded as a separate data stream within the MKV file, allowing viewers to toggle them on or o" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-export-mkv-with-subtitles-in-kdenlive">How to Export MKV
+with Subtitles in Kdenlive</h1>
+<p>This guide explains how to export a completed video project into a
+Matroska (MKV) container with switchable, soft subtitles using Kdenlive.
+Soft subtitles are embedded as a separate data stream within the MKV
+file, allowing viewers to toggle them on or off or switch between
+languages in compatible media players. Follow the step-by-step
+instructions below to configure your subtitle tracks and render settings
+properly.</p>
+<h3 id="step-1-create-or-import-subtitles">Step 1: Create or Import
+Subtitles</h3>
+<ol type="1">
+<li>Open your completed timeline project in Kdenlive.</li>
+<li>If you have not created subtitles yet, open the Subtitle Tool by
+navigating to <strong>Project &gt; Subtitles &gt; Add Subtitle
+Track</strong> (or press <strong>Shift + S</strong>).</li>
+<li>Type and time your subtitles along the timeline, or import an
+existing <code>.srt</code> file via <strong>Project &gt; Subtitles &gt;
+Import Subtitle File</strong>.</li>
+</ol>
+<h3 id="step-2-open-the-render-dialog">Step 2: Open the Render
+Dialog</h3>
+<ol type="1">
+<li>Click the <strong>Render</strong> button in the main toolbar, or
+select <strong>Project &gt; Render</strong> from the top menu (shortcut:
+<strong>Ctrl + Return</strong>).</li>
+<li>The Render window will open displaying output format presets and
+encoding parameters.</li>
+</ol>
+<h3 id="step-3-select-the-mkv-container-preset">Step 3: Select the MKV
+Container Preset</h3>
+<ol type="1">
+<li>In the preset tree on the left, navigate to <strong>Generic</strong>
+or <strong>MP4 / Matroska</strong>.</li>
+<li>Select <strong>Matroska (MKV)</strong> or <strong>H.264 / AAC
+(MKV)</strong>. Matroska natively supports embedded soft subtitles
+alongside video and audio tracks.</li>
+</ol>
+<h3 id="step-4-configure-subtitle-export-settings">Step 4: Configure
+Subtitle Export Settings</h3>
+<ol type="1">
+<li>Look at the lower section of the Render dialog window.</li>
+<li>Locate the <strong>Subtitles</strong> section or click <strong>More
+Options</strong> to expand advanced rendering parameters.</li>
+<li>Ensure that <strong>Burn in subtitles</strong> is
+<strong>unchecked</strong>. Leaving this unchecked ensures the text is
+not permanently hard-coded onto the video frames.</li>
+<li>Check the box labeled <strong>Export subtitles</strong> or
+<strong>Embed subtitles</strong>. This tells the encoder to multiplex
+the subtitle track into the MKV container as an independent subtitle
+stream.</li>
+</ol>
+<h3 id="step-5-render-and-verify-the-file">Step 5: Render and Verify the
+File</h3>
+<ol type="1">
+<li>Choose your desired output path and file name under <strong>Output
+file</strong>.</li>
+<li>Click <strong>Render to File</strong>.</li>
+<li>Once rendering finishes, open the resulting <code>.mkv</code> file
+in a media player (such as VLC or MPV).</li>
+<li>Access the player's subtitle menu to verify that the subtitle track
+appears and can be switched on, switched off, or synchronized as
+intended.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

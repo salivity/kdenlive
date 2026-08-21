@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Isolate Offline Media in Kdenlive - kdenlive</title>
+    <meta name="description" content="Managing large video projects often results in misplaced, renamed, or deleted source files that become offline assets. This guide explains how to configure and use the Kdenlive Project Bin tools to instantly locate, filter, and isolate missing clips so y">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/how-to-isolate-offline-media-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Isolate Offline Media in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/how-to-isolate-offline-media-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Managing large video projects often results in misplaced, renamed, or deleted source files that become offline assets. This guide explains how to configure and use the Kdenlive Project Bin tools to instantly locate, filter, and isolate missing clips so y" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-isolate-offline-media-in-kdenlive">How to Isolate Offline
+Media in Kdenlive</h1>
+<p>Managing large video projects often results in misplaced, renamed, or
+deleted source files that become offline assets. This guide explains how
+to configure and use the Kdenlive Project Bin tools to instantly locate,
+filter, and isolate missing clips so you can relink or remove them
+without disrupting your editing workflow.</p>
+<h3 id="filter-missing-clips-in-the-project-bin">Filter Missing Clips in
+the Project Bin</h3>
+<p>The fastest way to isolate offline assets in Kdenlive is through the
+Project Bin's built-in filter bar:</p>
+<ol type="1">
+<li>Locate the search and filter bar at the top of the <strong>Project
+Bin</strong> panel.</li>
+<li>Click the <strong>Filter</strong> icon (funnel icon) next to the
+search input.</li>
+<li>Select <strong>Missing Clips</strong> (or <strong>Invalid
+Clips</strong>) from the drop-down filter menu.</li>
+<li>The Project Bin will instantly hide all working media and display
+only the clips whose source files cannot be located on your drive.</li>
+</ol>
+<h3 id="switch-to-tree-view-for-status-indicators">Switch to Tree View
+for Status Indicators</h3>
+<p>Tree View provides clear visual cues for offline media across
+different folders:</p>
+<ol type="1">
+<li>Click the <strong>Options</strong> menu (three horizontal lines or
+gear icon) in the top-right corner of the Project Bin.</li>
+<li>Under <strong>View Mode</strong>, select <strong>Tree
+View</strong>.</li>
+<li>Offline clips will display a red warning icon or a broken link
+symbol next to their file names, making them immediately recognizable
+within their respective folder structures.</li>
+</ol>
+<h3 id="use-the-clip-problems-dialog">Use the Clip Problems Dialog</h3>
+<p>For a dedicated management window that lists only missing or altered
+files:</p>
+<ol type="1">
+<li>Go to the top menu bar and select <strong>Project</strong>.</li>
+<li>Click <strong>Clip Problems</strong> (or <strong>Check Missing
+Clips</strong> in older versions).</li>
+<li>A dedicated window will open, isolating every missing file path in
+your project.</li>
+<li>From this window, you can view the original file paths and use the
+<strong>Search</strong> or <strong>Relink</strong> buttons to point
+Kdenlive to the new location of the media.</li>
+</ol>
+<h3 id="relinking-isolated-media">Relinking Isolated Media</h3>
+<p>Once your offline clips are isolated in the Project Bin:</p>
+<ol type="1">
+<li>Right-click the missing clip.</li>
+<li>Select <strong>Reload Clip</strong> if the file was restored to its
+original directory.</li>
+<li>Select <strong>Clip Properties</strong> or <strong>Change
+URL</strong> to browse your local storage and assign the new file path.
+All timeline instances of that clip will update automatically.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

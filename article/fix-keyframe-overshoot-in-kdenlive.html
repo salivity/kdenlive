@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix Keyframe Overshoot in Kdenlive - kdenlive</title>
+    <meta name="description" content="When animating graphics in Kdenlive, default motion curves can cause elements to swing past their intended targets, creating an unnatural drifting effect known as spatial overshoot. This article explains why this issue happens and provides the exact step">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/fix-keyframe-overshoot-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Fix Keyframe Overshoot in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/fix-keyframe-overshoot-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="When animating graphics in Kdenlive, default motion curves can cause elements to swing past their intended targets, creating an unnatural drifting effect known as spatial overshoot. This article explains why this issue happens and provides the exact step" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="fix-keyframe-overshoot-in-kdenlive">Fix Keyframe Overshoot in
+Kdenlive</h1>
+<p>When animating graphics in Kdenlive, default motion curves can cause
+elements to swing past their intended targets, creating an unnatural
+drifting effect known as spatial overshoot. This article explains why
+this issue happens and provides the exact steps to modify keyframe
+interpolation and adjust spatial motion paths in the Transform effect to
+ensure clean, precise graphic animations.</p>
+<h3 id="why-overshoot-occurs">Why Overshoot Occurs</h3>
+<p>Spatial overshoot happens when Kdenlive uses smooth (spline or cubic)
+interpolation on positional keyframes. While smooth interpolation
+creates gradual acceleration and deceleration, it also curves the
+spatial path between points. When two keyframes are close in space or
+time, the calculated curve can push the graphic beyond the keyframe
+coordinate before pulling it back.</p>
+<h3 id="method-1-change-keyframe-interpolation-to-linear">Method 1:
+Change Keyframe Interpolation to Linear</h3>
+<p>The quickest way to prevent overshoot is to switch the keyframe
+interpolation mode from smooth to linear, which forces the graphic to
+travel in a straight line between coordinates.</p>
+<ol type="1">
+<li>Select the clip on the timeline containing your graphic.</li>
+<li>In the <strong>Properties / Effect Stack</strong> panel, locate the
+<strong>Transform</strong> effect.</li>
+<li>Select the keyframe where the overshoot begins or ends.</li>
+<li>Locate the <strong>Keyframe Type</strong> (interpolation) dropdown
+in the keyframe timeline.</li>
+<li>Change the type from <strong>Smooth</strong> (or Cubic/B-Spline) to
+<strong>Linear</strong>.</li>
+<li>Repeat this change for adjacent keyframes along that movement
+path.</li>
+</ol>
+<h3 id="method-2-adjust-spatial-handles-in-the-project-monitor">Method
+2: Adjust Spatial Handles in the Project Monitor</h3>
+<p>If you want smooth acceleration (temporal ease) without spatial
+drift, adjust the motion path directly in the monitor overlay.</p>
+<ol type="1">
+<li>Ensure the <strong>Transform</strong> effect is selected so the
+motion path line is visible in the <strong>Project
+Monitor</strong>.</li>
+<li>Click on the keyframe node directly on the monitor screen.</li>
+<li>Look for the directional control handles (tangent lines) extending
+from the keyframe point.</li>
+<li>Shorten the handles or align them parallel to the intended direction
+of travel. Reducing the handle length flattens the curve, eliminating
+the overshoot while retaining smooth speed transitions.</li>
+</ol>
+<h3 id="method-3-separate-positional-axes-with-hold-keyframes">Method 3:
+Separate Positional Axes with Hold Keyframes</h3>
+<p>For graphics that need to move along one axis and then stop abruptly
+before moving along another:</p>
+<ol type="1">
+<li>Place your initial and final keyframes in the
+<strong>Transform</strong> effect.</li>
+<li>If an element needs to pause completely at a specific coordinate
+without any residual drift, set the resting keyframe's type to
+<strong>Discrete</strong> (Hold).</li>
+<li>A discrete keyframe locks the position in place until the next
+active transition keyframe is reached.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

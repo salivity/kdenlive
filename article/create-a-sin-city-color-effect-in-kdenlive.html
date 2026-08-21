@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Sin City Color Effect in Kdenlive - kdenlive</title>
+    <meta name="description" content="This article provides a step-by-step guide on how to isolate a single vibrant color while turning the rest of your video black and white using the "Color Hold" effect in Kdenlive. This popular technique mimics the iconic, high-contrast visual style of th">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/create-a-sin-city-color-effect-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Create a Sin City Color Effect in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/create-a-sin-city-color-effect-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This article provides a step-by-step guide on how to isolate a single vibrant color while turning the rest of your video black and white using the "Color Hold" effect in Kdenlive. This popular technique mimics the iconic, high-contrast visual style of th" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="create-a-sin-city-color-effect-in-kdenlive">Create a Sin City
+Color Effect in Kdenlive</h1>
+<p>This article provides a step-by-step guide on how to isolate a single
+vibrant color while turning the rest of your video black and white using
+the "Color Hold" effect in Kdenlive. This popular technique mimics the
+iconic, high-contrast visual style of the film <em>Sin City</em>,
+allowing you to draw immediate viewer attention to specific subjects
+like a red dress, bright yellow umbrella, or glowing neon sign.</p>
+<h3 id="step-1-prepare-your-footage">Step 1: Prepare Your Footage</h3>
+<p>Import your video clip into Kdenlive and drag it onto the timeline.
+For the best results, choose footage that features a highly saturated,
+distinct color against a relatively neutral background. If the color you
+want to keep is too similar to other elements in the frame, the effect
+may bleed into unwanted areas.</p>
+<h3 id="step-2-apply-the-color-hold-effect">Step 2: Apply the Color Hold
+Effect</h3>
+<ol type="1">
+<li>Navigate to the <strong>Effects</strong> tab (usually located in the
+bottom-left or top-left panel of your workspace).</li>
+<li>In the search bar, type <strong>Color Hold</strong>.</li>
+<li>Drag and drop the "Color Hold" effect directly onto your video clip
+in the timeline.</li>
+</ol>
+<h3 id="step-3-select-the-target-color">Step 3: Select the Target
+Color</h3>
+<p>Once the effect is applied, look at the <strong>Properties</strong>
+panel (usually on the right side of the screen) to adjust the effect
+settings:</p>
+<ol type="1">
+<li>Locate the <strong>Color</strong> parameter, which features a color
+preview box and an eyedropper icon.</li>
+<li>Click the <strong>eyedropper tool</strong>.</li>
+<li>Move your cursor to the Project Monitor (the video preview window)
+and click directly on the color you want to isolate (for example, the
+red lips or a blue tie).</li>
+</ol>
+<p>The rest of the video should immediately turn grayscale, leaving only
+your chosen color in its original hue.</p>
+<h3 id="step-4-adjust-the-tolerances">Step 4: Adjust the Tolerances</h3>
+<p>Rarely will a single click capture the color perfectly. You will need
+to fine-tune the parameters in the Properties panel:</p>
+<ul>
+<li><strong>Color Distance (or Tolerance):</strong> Drag this slider to
+the right to include more shades of your chosen color, or to the left to
+restrict it. Adjust this until the entire subject is colored without
+letting the color bleed into the background.</li>
+<li><strong>Softness:</strong> Use this slider to smooth the transition
+edges between the isolated color and the black-and-white background,
+preventing harsh, pixelated borders.</li>
+</ul>
+<h3 id="step-5-enhance-the-contrast-optional">Step 5: Enhance the
+Contrast (Optional)</h3>
+<p>To truly capture the gritty, graphic-novel aesthetic of <em>Sin
+City</em>, the black-and-white portions of your video should have high
+contrast.</p>
+<ol type="1">
+<li>Search for the <strong>Lift/Gamma/Gain</strong> or
+<strong>Curves</strong> effect in the Effects tab.</li>
+<li>Drag it onto your clip <em>below</em> the Color Hold effect in the
+stack.</li>
+<li>Increase the shadows (Lift) and boost the highlights (Gain) to
+create deep blacks and bright whites, making your isolated color pop
+even more dramatically.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

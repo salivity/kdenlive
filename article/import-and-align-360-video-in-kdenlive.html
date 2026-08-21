@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import and Align 360 Video in Kdenlive - kdenlive</title>
+    <meta name="description" content="Editing 360-degree immersive video in Kdenlive involves importing standard equirectangular footage and utilizing specialized spherical video effects to adjust, align, and stabilize the field of view. This article provides a direct guide on how Kdenlive p">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/import-and-align-360-video-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Import and Align 360 Video in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/import-and-align-360-video-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Editing 360-degree immersive video in Kdenlive involves importing standard equirectangular footage and utilizing specialized spherical video effects to adjust, align, and stabilize the field of view. This article provides a direct guide on how Kdenlive p" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="import-and-align-360-video-in-kdenlive">Import and Align 360
+Video in Kdenlive</h1>
+<p>Editing 360-degree immersive video in Kdenlive involves importing
+standard equirectangular footage and utilizing specialized spherical
+video effects to adjust, align, and stabilize the field of view. This
+article provides a direct guide on how Kdenlive processes 360-degree
+media, how to import your files, and how to use built-in tools to align
+and orient your immersive footage for a seamless viewing experience.</p>
+<h3 id="importing-360-degree-footage">Importing 360-Degree Footage</h3>
+<p>Kdenlive treats 360-degree video files like standard video clips
+during the import process. Most modern 360-degree cameras shoot in an
+"equirectangular" format (a flat, 2:1 aspect ratio projection of the
+spherical space).</p>
+<ol type="1">
+<li><strong>Create a Project:</strong> Start a new project with a
+resolution that matches your source footage (typically 4K or 5K
+equirectangular formats, such as 3840x1920 or 5760x2880).</li>
+<li><strong>Add Clip to Project Bin:</strong> Drag and drop your
+stitched 360-degree video file (usually in MP4 or MOV format) into the
+Kdenlive Project Bin.</li>
+<li><strong>Add to Timeline:</strong> Drag the clip from the Project Bin
+onto your video track on the timeline.</li>
+</ol>
+<h3 id="aligning-the-footage-yaw-pitch-and-roll">Aligning the Footage
+(Yaw, Pitch, and Roll)</h3>
+<p>When shooting 360 video, the camera's default forward-facing
+direction might not match your desired starting viewpoint. Kdenlive uses
+the <strong>VR360</strong> suite of effects to correct alignment, level
+the horizon, and change the default center of the video.</p>
+<p>To align your footage:</p>
+<ol type="1">
+<li>Go to the <strong>Effects</strong> tab and search for <strong>VR360
+Equirectangular to Perspective</strong> or <strong>VR360 Equirectangular
+to Stereo</strong> (depending on your output goal).</li>
+<li>Apply the effect to your timeline clip.</li>
+<li>Use the effect parameters to adjust the sphere:
+<ul>
+<li><strong>Yaw:</strong> Rotates the camera view horizontally (left and
+right). Use this to choose what the viewer sees first.</li>
+<li><strong>Pitch:</strong> Tilts the view vertically (up and down) to
+fix camera tilting.</li>
+<li><strong>Roll:</strong> Rotates the camera circularly (clockwise or
+counter-clockwise) to level a crooked horizon.</li>
+</ul></li>
+</ol>
+<h3 id="reframing-360-video-for-flat-2d-delivery">Reframing 360 Video
+for Flat 2D Delivery</h3>
+<p>If your goal is to turn 360-degree footage into a standard flat
+(perspective) video, Kdenlive allows you to "reframe" the shot by
+animating virtual camera movements.</p>
+<ol type="1">
+<li>Apply the <strong>VR360 Equirectangular to Perspective</strong>
+effect. This transforms the warped equirectangular view into a standard
+flat view.</li>
+<li>Adjust the <strong>FoV (Field of View)</strong> parameter to zoom in
+or out, simulating different camera lenses.</li>
+<li>Enable <strong>Keyframes</strong> on the Yaw, Pitch, and Roll
+parameters.</li>
+<li>Move along the timeline and adjust the angles to track subjects, pan
+smoothly, or create dynamic camera movements within the 360-degree
+sphere.</li>
+</ol>
+<h3 id="exporting-360-degree-video">Exporting 360-Degree Video</h3>
+<p>To export the video so that platforms like YouTube or VLC recognize
+it as interactive 360-degree footage, you must preserve the
+equirectangular projection and inject spatial metadata.</p>
+<ol type="1">
+<li>Go to <strong>Render</strong> (Ctrl + Return).</li>
+<li>Choose a high-quality H.264 or HEVC profile that supports the high
+resolution of your source footage.</li>
+<li>Render the file.</li>
+<li><em>Note on Metadata:</em> Because Kdenlive does not always write
+360-degree spatial metadata directly into the exported file, you may
+need to run the rendered video through an external tool, such as the
+Google Spatial Media Metadata Injector, before uploading it online.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

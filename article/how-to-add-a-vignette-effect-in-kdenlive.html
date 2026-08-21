@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Add a Vignette Effect in Kdenlive - kdenlive</title>
+    <meta name="description" content="Adding a vignette effect is a simple way to draw focus to the center of your frame and achieve a polished, cinematic widescreen look in your video projects. This guide covers how to locate the Vignette effect in Kdenlive, apply it to individual clips or">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/how-to-add-a-vignette-effect-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Add a Vignette Effect in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/how-to-add-a-vignette-effect-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Adding a vignette effect is a simple way to draw focus to the center of your frame and achieve a polished, cinematic widescreen look in your video projects. This guide covers how to locate the Vignette effect in Kdenlive, apply it to individual clips or" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-add-a-vignette-effect-in-kdenlive">How to Add a Vignette
+Effect in Kdenlive</h1>
+<p>Adding a vignette effect is a simple way to draw focus to the center
+of your frame and achieve a polished, cinematic widescreen look in your
+video projects. This guide covers how to locate the Vignette effect in
+Kdenlive, apply it to individual clips or master tracks, fine-tune its
+parameters for a soft and natural falloff, and ensure it integrates
+properly with cinematic aspect ratios and export settings.</p>
+<h2 id="1-add-the-vignette-effect-to-your-footage">1. Add the Vignette
+Effect to Your Footage</h2>
+<p>You can apply the vignette effect directly to an individual clip or
+to an entire track to affect the whole timeline.</p>
+<ol type="1">
+<li>Select your target clip on the timeline, or select the track header
+if you want to apply the effect across all clips on that track.</li>
+<li>Open the <strong>Effects</strong> panel (go to <strong>View &gt;
+Effects</strong> if it is not visible).</li>
+<li>In the search bar at the top of the Effects panel, type
+<strong>Vignette</strong>.</li>
+<li>Double-click the <strong>Vignette</strong> effect or drag and drop
+it onto your selected clip or track.</li>
+</ol>
+<h2 id="2-configure-the-settings-for-a-subtle-look">2. Configure the
+Settings for a Subtle Look</h2>
+<p>To avoid an overpowering, amateur look, configure the parameters to
+create a soft, imperceptible darkening around the edges.</p>
+<ol type="1">
+<li>Open the <strong>Effect/Composition Stack</strong> panel to view the
+controls for the Vignette effect.</li>
+<li><strong>Radius:</strong> Increase the radius to push the vignette
+further toward the outer edges of the frame. A higher radius ensures the
+center subject remains unaffected.</li>
+<li><strong>Smoothness / Softness:</strong> Increase the softness value
+to blend the dark edges gradually into the lit areas. Harsh transitions
+will look like a cutout rather than natural lens falloff.</li>
+<li><strong>Opacity / Intensity:</strong> Lower the intensity or opacity
+so the corners are only subtly shaded. If the effect does not have an
+explicit opacity slider, adjust the <strong>Radius</strong> and
+<strong>Smoothness</strong> together to soften the overall
+contrast.</li>
+<li><strong>Center X and Center Y:</strong> Keep these centered at
+<code>50%</code> (or <code>0.5</code>) unless you want to offset the
+focus toward an off-center subject.</li>
+</ol>
+<h2 id="3-positioning-the-vignette-with-letterboxing-optional">3.
+Positioning the Vignette with Letterboxing (Optional)</h2>
+<p>If you are using top and bottom black bars (letterboxing) to create a
+cinematic widescreen look within a standard 16:9 canvas:</p>
+<ul>
+<li><strong>Apply the Vignette beneath the bars:</strong> Place your
+letterbox matte on a video track above your footage, and apply the
+Vignette effect directly to the footage track. This prevents the
+vignette from bleeding unnaturally over the solid black bars.</li>
+<li><strong>True 21:9 Projects:</strong> If your project profile is
+already set to a native ultrawide resolution (such as 2560x1080 or
+3840x1600), simply apply the Vignette normally; it will calculate its
+boundary based on the active canvas dimensions.</li>
+</ul>
+<h2 id="4-export-the-project">4. Export the Project</h2>
+<ol type="1">
+<li>Click the <strong>Render</strong> button in the main toolbar or
+press <strong>Ctrl + Enter</strong>.</li>
+<li>Select your desired export preset (such as <strong>Generic &gt;
+MP4-H264/AAC</strong>).</li>
+<li>Confirm that your resolution matches your intended cinematic output
+dimensions.</li>
+<li>Click <strong>Render to File</strong> to produce your final
+video.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

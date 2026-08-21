@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Create Web-Optimized AV1 Presets in Kdenlive - kdenlive</title>
+    <meta name="description" content="This guide provides a step-by-step walkthrough on setting up custom AV1 render presets in Kdenlive for high-efficiency web streaming. By leveraging modern AV1 encoders like SVT-AV1 alongside web-friendly container configurations, you can generate lightwe">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/how-to-create-web-optimized-av1-presets-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Create Web-Optimized AV1 Presets in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/how-to-create-web-optimized-av1-presets-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This guide provides a step-by-step walkthrough on setting up custom AV1 render presets in Kdenlive for high-efficiency web streaming. By leveraging modern AV1 encoders like SVT-AV1 alongside web-friendly container configurations, you can generate lightwe" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-create-web-optimized-av1-presets-in-kdenlive">How to
+Create Web-Optimized AV1 Presets in Kdenlive</h1>
+<p>This guide provides a step-by-step walkthrough on setting up custom
+AV1 render presets in Kdenlive for high-efficiency web streaming. By
+leveraging modern AV1 encoders like SVT-AV1 alongside web-friendly
+container configurations, you can generate lightweight,
+high-visual-fidelity videos optimized for fast browser playback and
+bandwidth efficiency.</p>
+<h3 id="step-1-open-the-render-window">Step 1: Open the Render
+Window</h3>
+<ol type="1">
+<li>Open your project in Kdenlive.</li>
+<li>Click the <strong>Render</strong> button in the main toolbar or
+press <code>Ctrl + Enter</code>.</li>
+<li>In the Render dialog, ensure the <strong>Render Project</strong> tab
+is selected.</li>
+</ol>
+<h3 id="step-2-create-a-new-custom-preset">Step 2: Create a New Custom
+Preset</h3>
+<ol type="1">
+<li>In the Presets section, look for the toolbar icons above or beside
+the preset list.</li>
+<li>Click the <strong>Create New Profile</strong> (plus icon) button to
+open the Profile Editor.</li>
+<li>Enter a descriptive name in the <strong>Profile Name</strong> field,
+such as <code>AV1 Web Optimized (MP4)</code>.</li>
+<li>Set the <strong>Group</strong> to <code>Custom</code> or
+<code>Web</code> to keep your workspace organized.</li>
+</ol>
+<h3 id="step-3-configure-encoder-parameters">Step 3: Configure Encoder
+Parameters</h3>
+<p>In the <strong>Parameters</strong> box, enter the specific FFmpeg and
+MLT arguments to control the AV1 encoding process.</p>
+<p>For an <strong>MP4 container</strong> with SVT-AV1 and Opus
+audio:</p>
+<pre class="text"><code>f=mp4
+vcodec=libsvtav1
+crf=28
+preset=6
+g=240
+movflags=+faststart
+pix_fmt=yuv420p
+acodec=libopus
+ab=128k
+ar=48000</code></pre>
+<p>For a <strong>WebM container</strong> alternative:</p>
+<pre class="text"><code>f=webm
+vcodec=libsvtav1
+crf=28
+preset=6
+g=240
+pix_fmt=yuv420p
+acodec=libopus
+ab=128k
+ar=48000</code></pre>
+<h3 id="step-4-key-settings-explained">Step 4: Key Settings
+Explained</h3>
+<ul>
+<li><strong><code>vcodec=libsvtav1</code></strong>: Uses the scalable
+SVT-AV1 encoder for balanced speed and compression. If hardware
+acceleration is supported by your GPU, you can swap this with
+<code>av1_nvenc</code> (NVIDIA) or <code>av1_amf</code> (AMD).</li>
+<li><strong><code>crf=28</code></strong>: Constant Rate Factor. Controls
+quality. Lower values (e.g., 24) yield higher quality at the cost of
+file size; higher values (e.g., 32) reduce file size.</li>
+<li><strong><code>preset=6</code></strong>: Balances encoding speed and
+compression efficiency in SVT-AV1. Values range from 0 (slowest/most
+efficient) to 12 (fastest). Presets 5 to 7 are ideal for web
+output.</li>
+<li><strong><code>g=240</code></strong>: Keyframe interval (GOP size).
+Setting this to roughly 2–10 seconds worth of frames (240 frames at
+24/30 fps) improves streaming seek times.</li>
+<li><strong><code>movflags=+faststart</code></strong>: Relocates the
+video index (moov atom) to the beginning of the MP4 file, allowing web
+browsers to start playback before the full file finishes
+downloading.</li>
+<li><strong><code>acodec=libopus</code> / <code>ab=128k</code></strong>:
+Encodes high-quality streaming audio at low bitrates.</li>
+</ul>
+<h3 id="step-5-save-and-render">Step 5: Save and Render</h3>
+<ol type="1">
+<li>Click <strong>OK</strong> to save the custom profile.</li>
+<li>Select your newly created preset from the list.</li>
+<li>Specify your output file path in the <strong>Output file</strong>
+field.</li>
+<li>Click <strong>Render to File</strong> to export your web-optimized
+AV1 video.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

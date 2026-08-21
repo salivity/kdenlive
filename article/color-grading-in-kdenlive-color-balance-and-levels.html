@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Grading in Kdenlive: Color Balance and Levels - kdenlive</title>
+    <meta name="description" content="Combining the "Color Balance" and "Levels" effects in Kdenlive provides a powerful, lightweight workflow for professional color grading. While "Levels" allows you to correct the contrast, brightness, and dynamic range of your footage, "Color Balance" giv">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/color-grading-in-kdenlive-color-balance-and-levels">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Color Grading in Kdenlive: Color Balance and Levels - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/color-grading-in-kdenlive-color-balance-and-levels" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Combining the "Color Balance" and "Levels" effects in Kdenlive provides a powerful, lightweight workflow for professional color grading. While "Levels" allows you to correct the contrast, brightness, and dynamic range of your footage, "Color Balance" giv" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="color-grading-in-kdenlive-color-balance-and-levels">Color
+Grading in Kdenlive: Color Balance and Levels</h1>
+<p>Combining the "Color Balance" and "Levels" effects in Kdenlive
+provides a powerful, lightweight workflow for professional color
+grading. While "Levels" allows you to correct the contrast, brightness,
+and dynamic range of your footage, "Color Balance" gives you precise
+control over the shadows, midtones, and highlights to establish a
+stylized creative look. This guide explains how to combine these two
+essential tools step-by-step to achieve a polished, cinematic grade for
+your video projects.</p>
+<h3 id="step-1-set-up-the-effects-stack-order">Step 1: Set Up the
+Effects Stack Order</h3>
+<p>To begin, search for "Levels" and "Color Balance" in Kdenlive’s
+Effects tab and drag both onto your video clip. The order of these
+effects in the properties panel is crucial. Always place
+<strong>Levels</strong> above <strong>Color Balance</strong>.</p>
+<p>Correcting the exposure, contrast, and white balance must happen
+before you apply creative color grading. Adjusting colors on an
+improperly exposed clip will lead to artifacting and unpredictable color
+shifts.</p>
+<h3 id="step-2-correct-contrast-and-exposure-with-levels">Step 2:
+Correct Contrast and Exposure with Levels</h3>
+<p>Open the Levels effect settings. For the best accuracy, open
+Kdenlive's <strong>Histogram</strong> scope (View &gt; Technical
+Monitors &gt; Histogram).</p>
+<ol type="1">
+<li><strong>Adjust the Black Point (Input Black):</strong> Drag the
+black slider under the histogram input to the right until the leftmost
+edge of your waveform just touches the bottom of the scale. This deepens
+your shadows without crushing the details.</li>
+<li><strong>Adjust the White Point (Input White):</strong> Drag the
+white slider to the left until the brightest parts of your image sit
+just below the clipping point at the top of the scale. This ensures your
+whites are clean and bright.</li>
+<li><strong>Adjust the Gamma (Midtones):</strong> Shift the middle gray
+slider to the left to brighten the midtones, or to the right to darken
+them. Use this to ensure your subject's face and key details are
+properly exposed.</li>
+</ol>
+<h3 id="step-3-grade-the-image-with-color-balance">Step 3: Grade the
+Image with Color Balance</h3>
+<p>With the technical correction complete, use the Color Balance effect
+to style the shot. This effect divides the image into Lift (shadows),
+Gamma (midtones), and Gain (highlights).</p>
+<ol type="1">
+<li><strong>Shadows (Lift):</strong> Use the shadow color wheel to
+inject color into the darkest parts of the frame. For a classic
+cinematic look, push the shadows slightly toward teal or blue.</li>
+<li><strong>Highlights (Gain):</strong> Adjust the highlights to set the
+tone for light sources and skies. Pushing the highlights toward warm
+orange, yellow, or gold can simulate natural sunlight or golden
+hour.</li>
+<li><strong>Midtones (Gamma):</strong> The midtones contain the majority
+of your image detail, including skin tones. Adjust this wheel carefully
+to balance the overall mood of the video while keeping skin tones
+looking natural.</li>
+</ol>
+<h3 id="step-4-monitor-and-reference">Step 4: Monitor and Reference</h3>
+<p>Throughout the grading process, use Kdenlive's
+<strong>Vectorscope</strong> and <strong>RGB Parade</strong> scopes. The
+RGB Parade will help you ensure your red, green, and blue channels are
+balanced, preventing unwanted color casts. The Vectorscope will help you
+monitor color saturation and ensure your skin tones align with the
+skin-tone indicator line.</p>
+<p>Finally, toggle the power buttons next to the Levels and Color
+Balance effects in the properties panel to quickly compare your graded
+footage with the original camera source, ensuring your adjustments have
+enhanced the shot.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

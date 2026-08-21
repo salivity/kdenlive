@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kdenlive Timecode Generator for Burn-In Counters - kdenlive</title>
+    <meta name="description" content="The Timecode generator in Kdenlive allows video editors to overlay a dynamic, frame-accurate numeric counter directly onto footage, creating what the post-production industry calls a "burn-in" timecode (BITC). This article explains the primary functions">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/kdenlive-timecode-generator-for-burn-in-counters">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kdenlive Timecode Generator for Burn-In Counters - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/kdenlive-timecode-generator-for-burn-in-counters" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="The Timecode generator in Kdenlive allows video editors to overlay a dynamic, frame-accurate numeric counter directly onto footage, creating what the post-production industry calls a "burn-in" timecode (BITC). This article explains the primary functions" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="kdenlive-timecode-generator-for-burn-in-counters">Kdenlive
+Timecode Generator for Burn-In Counters</h1>
+<p>The Timecode generator in Kdenlive allows video editors to overlay a
+dynamic, frame-accurate numeric counter directly onto footage, creating
+what the post-production industry calls a "burn-in" timecode (BITC).
+This article explains the primary functions of this tool, how it
+enhances the client and team review process, and the practical
+advantages of applying reference counters to draft sequences.</p>
+<h3 id="providing-frame-accurate-feedback">Providing Frame-Accurate
+Feedback</h3>
+<p>During the review and approval stages of video production, clear
+communication is essential. Without a visible counter, clients and
+collaborators often provide vague timestamps based on web player
+interfaces, which can vary depending on player buffering, frame rates,
+or user error. The Timecode generator burns the exact timeline or source
+time (hours, minutes, seconds, and frames) into the image, enabling
+reviewers to cite specific frames (e.g., <code>01:04:12:18</code>) when
+requesting edits, visual effects fixes, or audio adjustments.</p>
+<h3 id="timeline-vs-source-clip-tracking">Timeline vs. Source Clip
+Tracking</h3>
+<p>Kdenlive’s Timecode filter provides the flexibility to display
+different time references depending on the workflow requirements:</p>
+<ul>
+<li><strong>Sequence Timecode:</strong> Displays the master project
+timeline position, ensuring that all feedback corresponds to the global
+edit structure.</li>
+<li><strong>Source Timecode:</strong> References the original metadata
+of individual media clips, which is particularly useful for assistant
+editors, sound designers, and colorists who need to trace specific shots
+back to raw camera files.</li>
+</ul>
+<h3 id="customization-and-legibility">Customization and Legibility</h3>
+<p>To ensure the reference counter is readable against varying
+backgrounds without completely obscuring the visual content, the
+generator includes several formatting options:</p>
+<ul>
+<li><strong>Positioning and Scaling:</strong> Editors can place the
+counter in unobtrusive areas, such as the bottom-right corner or lower
+third of the screen.</li>
+<li><strong>Background Shading:</strong> A customizable background box
+with variable opacity can be added behind the numbers to maintain high
+contrast over bright or busy scenes.</li>
+<li><strong>Display Formats:</strong> The generator supports various
+standard frame rates (e.g., 24, 25, 29.97, 30, 60 fps) to match the
+project's delivery standards.</li>
+</ul>
+<h3 id="non-destructive-master-track-workflow">Non-Destructive Master
+Track Workflow</h3>
+<p>The most efficient way to utilize the Timecode generator for review
+exports in Kdenlive is by applying it directly to the Master video track
+or an adjustment clip. This approach displays the counter across the
+entire sequence automatically, avoiding the need to add the effect to
+individual cuts. Once the review cycle is complete and the final
+delivery is ready, the effect can be disabled or deleted from the Master
+track with a single click, leaving the clean, final edit untouched.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

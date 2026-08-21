@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Custom Aspect Ratios for Anamorphic in Kdenlive - kdenlive</title>
+    <meta name="description" content="Working with anamorphic footage in Kdenlive requires adjusting project settings, clip pixel aspect ratios, and monitor configurations to ensure footage previews accurately without distortion. This guide outlines the exact steps needed to desqueeze anamor">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/set-custom-aspect-ratios-for-anamorphic-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Set Custom Aspect Ratios for Anamorphic in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/set-custom-aspect-ratios-for-anamorphic-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Working with anamorphic footage in Kdenlive requires adjusting project settings, clip pixel aspect ratios, and monitor configurations to ensure footage previews accurately without distortion. This guide outlines the exact steps needed to desqueeze anamor" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="set-custom-aspect-ratios-for-anamorphic-in-kdenlive">Set Custom
+Aspect Ratios for Anamorphic in Kdenlive</h1>
+<p>Working with anamorphic footage in Kdenlive requires adjusting
+project settings, clip pixel aspect ratios, and monitor configurations
+to ensure footage previews accurately without distortion. This guide
+outlines the exact steps needed to desqueeze anamorphic video, configure
+custom project profiles, and adjust monitor display settings within
+Kdenlive.</p>
+<h3 id="step-1-create-or-select-an-anamorphic-project-profile">Step 1:
+Create or Select an Anamorphic Project Profile</h3>
+<ol type="1">
+<li>Open Kdenlive and navigate to <strong>Project</strong> &gt;
+<strong>Project Settings</strong>.</li>
+<li>Go to the <strong>Project Profile</strong> tab.</li>
+<li>If an existing profile does not match your footage's squeeze factor
+(e.g., 1.33x, 1.5x, 1.8x, or 2.0x), click the <strong>Manage Project
+Profiles</strong> button (the icon next to the profile dropdown).</li>
+<li>Click the <strong>Add New Profile</strong> button (+).</li>
+<li>Name the profile appropriately (e.g., <em>4K Anamorphic
+2x</em>).</li>
+<li>Set the <strong>Frame size</strong> to your target resolution (e.g.,
+<code>3840</code> x <code>2160</code>).</li>
+<li>Adjust the <strong>Pixel Aspect Ratio</strong>:
+<ul>
+<li>For standard square pixels, leave it at <code>1/1</code>.</li>
+<li>For non-square anamorphic timeline rendering, set the ratio matching
+your lens squeeze (e.g., <code>4/3</code> for 1.33x or <code>2/1</code>
+for 2.0x).</li>
+</ul></li>
+<li>Click <strong>Save</strong> and select this profile for your
+project.</li>
+</ol>
+<h3 id="step-2-configure-clip-pixel-aspect-ratio">Step 2: Configure Clip
+Pixel Aspect Ratio</h3>
+<p>If your source video files are flagged as standard 1:1 (square pixel)
+footage, Kdenlive will display them squeezed. You must set the
+individual clip properties:</p>
+<ol type="1">
+<li>Import your anamorphic clips into the <strong>Project
+Bin</strong>.</li>
+<li>Right-click on the clip and select <strong>Clip
+Properties</strong>.</li>
+<li>Under the <strong>Video</strong> tab, locate the <strong>Pixel
+Aspect Ratio</strong> setting.</li>
+<li>Uncheck <strong>Use clip aspect ratio</strong> if it is
+automatically detected incorrectly.</li>
+<li>Enter the custom aspect ratio or choose your lens squeeze multiplier
+from the dropdown list.</li>
+<li>Click <strong>Apply</strong>. The clip will now desqueeze
+automatically in the timeline and preview monitors.</li>
+</ol>
+<h3 id="step-3-configure-the-clip-and-project-monitors">Step 3:
+Configure the Clip and Project Monitors</h3>
+<p>To ensure your monitors display the full desqueezed image
+correctly:</p>
+<ol type="1">
+<li>Click the <strong>Options</strong> (gear) icon in the top right
+corner of the <strong>Project Monitor</strong> or <strong>Clip
+Monitor</strong>.</li>
+<li>Ensure <strong>Force Pixel Aspect Ratio</strong> is enabled so the
+monitor honors non-square pixel settings.</li>
+<li>If you are editing square-pixel footage inside an anamorphic framing
+workflow, click the <strong>Guides</strong> overlay option in the
+monitor settings to display custom aspect ratio guide lines (such as
+2.39:1).</li>
+</ol>
+<h3 id="step-4-exporting-anamorphic-media">Step 4: Exporting Anamorphic
+Media</h3>
+<ol type="1">
+<li>Open the <strong>Render</strong> window (<strong>Project</strong>
+&gt; <strong>Render</strong> or press <code>Ctrl + Return</code>).</li>
+<li>Select your desired output format (such as MP4 / H.264 or
+ProRes).</li>
+<li>If exporting at full desqueezed resolution (e.g., standard
+widescreen flat display), ensure the render profile resolution matches
+your desqueezed canvas size.</li>
+<li>If exporting with anamorphic flags, check <strong>More
+Options</strong> and verify that the output pixel aspect ratio matches
+your project profile.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

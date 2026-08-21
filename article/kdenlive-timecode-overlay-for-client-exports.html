@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kdenlive Timecode Overlay for Client Exports - kdenlive</title>
+    <meta name="description" content="Adding a timecode overlay to video exports allows clients to provide exact, frame-accurate feedback during the review process. In Kdenlive, this overlay can be applied non-destructively across your entire project using either the Master track or a dedica">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/kdenlive-timecode-overlay-for-client-exports">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kdenlive Timecode Overlay for Client Exports - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/kdenlive-timecode-overlay-for-client-exports" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Adding a timecode overlay to video exports allows clients to provide exact, frame-accurate feedback during the review process. In Kdenlive, this overlay can be applied non-destructively across your entire project using either the Master track or a dedica" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="kdenlive-timecode-overlay-for-client-exports">Kdenlive Timecode
+Overlay for Client Exports</h1>
+<p>Adding a timecode overlay to video exports allows clients to provide
+exact, frame-accurate feedback during the review process. In Kdenlive,
+this overlay can be applied non-destructively across your entire project
+using either the Master track or a dedicated adjustment layer. This
+guide covers the step-by-step workflow to insert, customize, and export
+a project with an active timecode generator overlay.</p>
+<h2 id="method-1-applying-timecode-to-the-master-track">Method 1:
+Applying Timecode to the Master Track</h2>
+<p>Applying the effect directly to the Master track ensures that every
+visual element across all video tracks will display the timecode without
+altering individual clips.</p>
+<ol type="1">
+<li>Open your completed project in Kdenlive.</li>
+<li>Locate the timeline header area on the left and click on the
+<strong>Master</strong> track header to select it.</li>
+<li>Open the <strong>Effects</strong> tab (typically located in the
+bottom-left or top-left dock).</li>
+<li>Search for the <strong>Dynamic Text</strong> or
+<strong>Timecode</strong> effect.</li>
+<li>Drag and drop the effect onto the <strong>Master</strong> track
+stack.</li>
+</ol>
+<h2 id="method-2-using-an-adjustment-clip">Method 2: Using an Adjustment
+Clip</h2>
+<p>If you prefer to toggle the overlay on and off easily, use an
+adjustment clip on a top video track.</p>
+<ol type="1">
+<li>Create a new video track above all existing tracks by right-clicking
+a track header and selecting <strong>Insert Track</strong>.</li>
+<li>Right-click in the <strong>Project Bin</strong> and choose
+<strong>Add Color Clip</strong> or <strong>Add Title Clip</strong>.</li>
+<li>Name the clip "Timecode Layer" and drag it onto the top video
+track.</li>
+<li>Extend the clip so it spans the entire length of your timeline
+edit.</li>
+<li>In the <strong>Effects</strong> panel, search for <strong>Dynamic
+Text</strong> or <strong>Timecode</strong> and apply it to this
+clip.</li>
+</ol>
+<h2 id="configuring-the-timecode-settings">Configuring the Timecode
+Settings</h2>
+<p>Once the effect is applied, adjust its parameters in the
+<strong>Effect/Composition Stack</strong> panel:</p>
+<ul>
+<li><strong>Text Format:</strong> If using Dynamic Text, set the text
+field to <code>#timecode#</code> to display project timecode, or
+<code>#frame#</code> for frame numbers.</li>
+<li><strong>Font and Size:</strong> Choose a clear, legible sans-serif
+font (such as Arial or Open Sans) at a medium size (around 30–50
+pt).</li>
+<li><strong>Position:</strong> Use the geometry settings to position the
+overlay in an unobtrusive location, such as the bottom-right or
+top-center of the frame.</li>
+<li><strong>Background Box:</strong> Enable a semi-transparent black
+background behind the text to ensure readability over bright
+footage.</li>
+<li><strong>Opacity:</strong> Set the background opacity between 50% and
+75% for optimal contrast without obstructing the footage.</li>
+</ul>
+<h2 id="exporting-the-review-file">Exporting the Review File</h2>
+<ol type="1">
+<li>Click the <strong>Render</strong> button in the top toolbar or press
+<code>Ctrl + Return</code>.</li>
+<li>Select an efficient delivery preset, such as <strong>MP4 - H.264 /
+AAC</strong>, to keep file sizes manageable for sharing.</li>
+<li>Under the <strong>Render Project</strong> dialog, ensure
+<strong>Full Project</strong> is selected under the <em>Guide /
+Zones</em> section.</li>
+<li>Set your output file destination and name the file with a review tag
+(e.g., <code>ProjectName_Review_v1.mp4</code>).</li>
+<li>Click <strong>Render to File</strong> to produce the timecoded
+review video.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configure AMD AMF Hardware Encoding in Kdenlive - kdenlive</title>
+    <meta name="description" content="Configuring AMD Advanced Media Framework (AMF) in Kdenlive allows you to leverage your AMD GPU's dedicated hardware encoder (VCE or VCN) to significantly accelerate video rendering and reduce CPU load. This guide explains the required prerequisites, how">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/configure-amd-amf-hardware-encoding-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Configure AMD AMF Hardware Encoding in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/configure-amd-amf-hardware-encoding-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Configuring AMD Advanced Media Framework (AMF) in Kdenlive allows you to leverage your AMD GPU's dedicated hardware encoder (VCE or VCN) to significantly accelerate video rendering and reduce CPU load. This guide explains the required prerequisites, how" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="configure-amd-amf-hardware-encoding-in-kdenlive">Configure AMD
+AMF Hardware Encoding in Kdenlive</h1>
+<p>Configuring AMD Advanced Media Framework (AMF) in Kdenlive allows you
+to leverage your AMD GPU's dedicated hardware encoder (VCE or VCN) to
+significantly accelerate video rendering and reduce CPU load. This guide
+explains the required prerequisites, how to set up custom render
+profiles using the <code>h264_amf</code> and <code>hevc_amf</code>
+codecs, and how to verify that hardware acceleration is operating
+correctly.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before configuring Kdenlive, ensure your system meets the following
+requirements:</p>
+<ol type="1">
+<li><strong>Compatible AMD GPU:</strong> A graphics card with a Video
+Coding Engine (VCE) or Video Core Next (VCN) chip.</li>
+<li><strong>AMD Drivers:</strong> The latest AMD Adrenalin drivers on
+Windows, or the AMDGPU driver stack with AMF components installed on
+Linux.</li>
+<li><strong>FFmpeg with AMF Support:</strong> Kdenlive relies on FFmpeg
+for encoding. Your FFmpeg build must be compiled with the
+<code>--enable-amf</code> flag (included by default in official Windows
+builds and many Linux distributions).</li>
+</ol>
+<p>To verify AMF support in your FFmpeg installation, run the following
+command in a terminal or command prompt:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ffmpeg</span> <span class="at">-encoders</span> <span class="kw">|</span> <span class="fu">grep</span> amf</span></code></pre></div>
+<p>Look for <code>h264_amf</code> and <code>hevc_amf</code> in the
+output list.</p>
+<h2 id="setting-up-amf-render-profiles-in-kdenlive">Setting Up AMF
+Render Profiles in Kdenlive</h2>
+<p>If your Kdenlive installation does not automatically list AMD
+hardware profiles, you can manually create custom AMF render
+presets.</p>
+<h3 id="step-1-open-the-render-configuration">Step 1: Open the Render
+Configuration</h3>
+<ol type="1">
+<li>Open your project in Kdenlive.</li>
+<li>Click the <strong>Render</strong> button in the main toolbar or
+press <strong>Ctrl + Return</strong>.</li>
+<li>In the Render dialog, click the <strong>Create New Profile</strong>
+button (represented by a plus icon or document icon next to the presets
+list).</li>
+</ol>
+<h3 id="step-2-create-an-h264-amf-profile">Step 2: Create an H.264 AMF
+Profile</h3>
+<ol type="1">
+<li>Set the <strong>Group</strong> to <code>Hardware Accelerated</code>
+or <code>Custom</code>.</li>
+<li>Name the profile (e.g., <code>MP4 - H.264 (AMD AMF)</code>).</li>
+<li>Set the <strong>Extension</strong> to <code>mp4</code>.</li>
+<li>In the <strong>Parameters</strong> box, enter the following FFmpeg
+string:</li>
+</ol>
+<pre class="text"><code>f=mp4 vcodec=h264_amf acodec=aac ab=192k vb=%bitrate+&#39;k&#39; quality=balanced</code></pre>
+<h3 id="step-3-create-an-hevc-h265-amf-profile">Step 3: Create an HEVC
+(H.265) AMF Profile</h3>
+<p>For higher efficiency and smaller file sizes, create an HEVC
+profile:</p>
+<ol type="1">
+<li>Click <strong>Create New Profile</strong>.</li>
+<li>Name the profile (e.g., <code>MP4 - HEVC (AMD AMF)</code>).</li>
+<li>Set the <strong>Extension</strong> to <code>mp4</code>.</li>
+<li>In the <strong>Parameters</strong> box, enter:</li>
+</ol>
+<pre class="text"><code>f=mp4 vcodec=hevc_amf acodec=aac ab=192k vb=%bitrate+&#39;k&#39; quality=balanced</code></pre>
+<ol start="5" type="1">
+<li>Click <strong>Save</strong> to apply the profile.</li>
+</ol>
+<h2 id="tuning-amf-encoder-parameters">Tuning AMF Encoder
+Parameters</h2>
+<p>You can customize the encoding performance and visual quality by
+modifying the profile parameters:</p>
+<ul>
+<li><strong>Rate Control (<code>rc</code>):</strong> Specify rate
+control modes such as <code>rc=cbr</code> (Constant Bitrate) or
+<code>rc=vbr_latency</code> / <code>rc=vbr_peak</code> (Variable
+Bitrate).</li>
+<li><strong>Quality Preset (<code>quality</code>):</strong> Options
+include <code>speed</code>, <code>balanced</code>, and
+<code>quality</code>. Use <code>quality=quality</code> for the best
+visual output or <code>quality=speed</code> for the fastest rendering
+times.</li>
+<li><strong>Keyframe Interval (<code>g</code>):</strong> Set standard
+GOP size (e.g., <code>g=60</code> for a 60-frame GOP size).</li>
+</ul>
+<h2 id="rendering-and-verification">Rendering and Verification</h2>
+<ol type="1">
+<li>Select your newly created AMF profile in the <strong>Render</strong>
+window.</li>
+<li>Choose your output destination and target bitrate.</li>
+<li>Click <strong>Render to File</strong>.</li>
+<li>Open the Windows Task Manager (Performance tab &gt; GPU &gt; Video
+Encode) or use <code>radeontop</code> on Linux to verify that the GPU's
+dedicated video encoder is being utilized during the export
+process.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Speed Ramp in Kdenlive with Time Remapping - kdenlive</title>
+    <meta name="description" content="Speed ramping is a dynamic video editing technique that seamlessly transitions footage between fast motion, slow motion, and real-time playback. In Kdenlive, this effect is achieved using the built-in Time Remapping tool, which allows you to place keyfra">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/how-to-speed-ramp-in-kdenlive-with-time-remapping">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Speed Ramp in Kdenlive with Time Remapping - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/how-to-speed-ramp-in-kdenlive-with-time-remapping" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Speed ramping is a dynamic video editing technique that seamlessly transitions footage between fast motion, slow motion, and real-time playback. In Kdenlive, this effect is achieved using the built-in Time Remapping tool, which allows you to place keyfra" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-speed-ramp-in-kdenlive-with-time-remapping">How to Speed
+Ramp in Kdenlive with Time Remapping</h1>
+<p>Speed ramping is a dynamic video editing technique that seamlessly
+transitions footage between fast motion, slow motion, and real-time
+playback. In Kdenlive, this effect is achieved using the built-in Time
+Remapping tool, which allows you to place keyframes, adjust playback
+speed across specific segments, and smooth out acceleration using curve
+interpolation. This guide provides a straightforward, step-by-step
+method for applying and smoothing speed ramps in your Kdenlive
+projects.</p>
+<h3 id="step-1-add-the-clip-to-the-timeline">Step 1: Add the Clip to the
+Timeline</h3>
+<ol type="1">
+<li>Import your high-frame-rate footage (e.g., 60fps or 120fps for
+optimal slow-motion quality) into the Project Bin.</li>
+<li>Drag and drop the video clip onto a video track in the
+timeline.</li>
+</ol>
+<h3 id="step-2-enable-the-time-remapping-tool">Step 2: Enable the Time
+Remapping Tool</h3>
+<ol type="1">
+<li>Right-click the video clip in the timeline.</li>
+<li>Select <strong>Change Speed</strong> or navigate to <strong>Add
+Effect</strong> &gt; <strong>Motion</strong> &gt; <strong>Time
+Remapping</strong> (depending on your Kdenlive version, right-clicking
+the clip and choosing <strong>Time Remapping</strong> is the quickest
+shortcut).</li>
+<li>The Time Remapping interface will open in the clip properties or
+effect stack window.</li>
+</ol>
+<h3 id="step-3-set-keyframes-for-the-speed-change">Step 3: Set Keyframes
+for the Speed Change</h3>
+<ol type="1">
+<li>Move the playhead in the Time Remapping window to the point where
+you want the speed change to begin and click the <strong>Add
+Keyframe</strong> button.</li>
+<li>Move the playhead to the point where the speed ramp should end and
+add a second keyframe.</li>
+<li>For a complete ramp (e.g., normal speed to slow motion and back to
+normal), set additional keyframes defining the end of the slow-motion
+section and the return to normal speed.</li>
+</ol>
+<h3 id="step-4-adjust-speed-and-timing">Step 4: Adjust Speed and
+Timing</h3>
+<ol type="1">
+<li>In the Time Remapping graph, drag keyframe points horizontally or
+vertically to compress or stretch time.
+<ul>
+<li>Dragging keyframe points closer together horizontally speeds up the
+footage between them.</li>
+<li>Spreading keyframe points farther apart stretches time, creating
+slow motion.</li>
+</ul></li>
+<li>Alternatively, select a keyframe segment and enter a specific speed
+percentage (e.g., 200% for fast motion, 40% for slow motion).</li>
+</ol>
+<h3 id="step-5-smooth-the-speed-transitions-ramping">Step 5: Smooth the
+Speed Transitions (Ramping)</h3>
+<ol type="1">
+<li>By default, keyframe transitions may be linear, resulting in abrupt
+speed shifts.</li>
+<li>Select a keyframe on the timeline graph.</li>
+<li>Change the interpolation type from <strong>Linear</strong> to
+<strong>Smooth</strong> (or <strong>Bezier</strong>).</li>
+<li>Use the Bezier curve handles on each keyframe to create a smooth,
+curved line representing the change in velocity. A gradual S-curve
+ensures that the video accelerates and decelerates naturally without
+jarring stops.</li>
+</ol>
+<h3 id="step-6-handle-audio-playback">Step 6: Handle Audio Playback</h3>
+<ol type="1">
+<li>Extreme speed changes can distort audio tracks.</li>
+<li>Unlink or mute the original clip audio in the timeline if necessary,
+and use sound effects (such as whooshes, risers, or pitch-shifted
+ambient noise) underneath the ramped section to enhance the transition
+effect.</li>
+</ol>
+<h3 id="step-7-preview-and-render">Step 7: Preview and Render</h3>
+<ol type="1">
+<li>Set an In/Out zone around the modified clip on the timeline.</li>
+<li>Use <strong>Timeline Preview Rendering</strong> (Shift + R) to
+render a real-time preview of the speed ramp.</li>
+<li>Fine-tune the Bezier handles until the acceleration and deceleration
+feel completely natural.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

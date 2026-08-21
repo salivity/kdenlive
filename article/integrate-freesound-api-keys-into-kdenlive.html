@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrate Freesound API Keys into Kdenlive - kdenlive</title>
+    <meta name="description" content="Integrating a Freesound API key into Kdenlive allows video editors to search, preview, and import thousands of high-quality, royalty-free sound effects directly within the video editing interface. This guide provides a clear, step-by-step walkthrough on">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/integrate-freesound-api-keys-into-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Integrate Freesound API Keys into Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/integrate-freesound-api-keys-into-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Integrating a Freesound API key into Kdenlive allows video editors to search, preview, and import thousands of high-quality, royalty-free sound effects directly within the video editing interface. This guide provides a clear, step-by-step walkthrough on" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="integrate-freesound-api-keys-into-kdenlive">Integrate Freesound
+API Keys into Kdenlive</h1>
+<p>Integrating a Freesound API key into Kdenlive allows video editors to
+search, preview, and import thousands of high-quality, royalty-free
+sound effects directly within the video editing interface. This guide
+provides a clear, step-by-step walkthrough on how to obtain your API key
+from Freesound and configure it inside Kdenlive to streamline your audio
+workflow.</p>
+<h3 id="step-1-obtain-your-freesound-api-key">Step 1: Obtain Your
+Freesound API Key</h3>
+<p>To connect Kdenlive to Freesound's library, you must first generate
+an API key from the Freesound website.</p>
+<ol type="1">
+<li>Go to the official Freesound website and log into your account (or
+create a free account if you do not have one).</li>
+<li>Navigate to the Freesound API section by visiting
+<code>freesound.org/apiv2/apply</code> or clicking on the "Developers"
+link at the bottom of the homepage.</li>
+<li>Click on <strong>Apply for a new credentials</strong> or
+<strong>Create a new client</strong>.</li>
+<li>Fill out the brief application form. For the "Project Name," you can
+enter "Kdenlive Integration." For the "Description," write a simple
+sentence such as "Integrating Freesound search into Kdenlive for video
+editing."</li>
+<li>Submit the form. Your request is usually approved instantly, and
+your new credentials will be displayed.</li>
+<li>Copy the <strong>Client Key</strong> (also referred to as the API
+Key or Token).</li>
+</ol>
+<h3 id="step-2-configure-kdenlive-with-the-api-key">Step 2: Configure
+Kdenlive with the API Key</h3>
+<p>Once you have copied your key, you need to input it into Kdenlive to
+unlock the search functionality.</p>
+<ol type="1">
+<li>Open Kdenlive.</li>
+<li>Ensure the <strong>Online Resources</strong> widget is visible. If
+you do not see it, go to the top menu and select <strong>View</strong>
+&gt; <strong>Online Resources</strong> to enable the panel.</li>
+<li>In the Online Resources panel, click on the dropdown menu at the top
+and select <strong>Freesound</strong>.</li>
+<li>Click on the <strong>Configure</strong> button (represented by a
+gear icon) within the Online Resources panel.</li>
+<li>In the settings window that appears, paste your copied Freesound API
+key into the designated <strong>API Key</strong> or <strong>Client
+Key</strong> field.</li>
+<li>Click <strong>OK</strong> or <strong>Save</strong> to apply the
+changes.</li>
+</ol>
+<h3 id="step-3-search-and-download-sound-effects">Step 3: Search and
+Download Sound Effects</h3>
+<p>With the integration complete, you can now search and download audio
+files seamlessly.</p>
+<ol type="1">
+<li>Type your desired sound effect (e.g., "explosion," "ambient rain")
+into the search bar of the Online Resources panel.</li>
+<li>Press <strong>Enter</strong> to search. Kdenlive will display a list
+of matching results directly from Freesound.</li>
+<li>Double-click any sound to preview it, or click the
+<strong>Import</strong> button to download the file directly into your
+Kdenlive Project Bin.</li>
+<li>Drag and drop the downloaded audio clip from your Project Bin
+straight onto your timeline.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

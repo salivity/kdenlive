@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Extract and Import Image Sequences in Kdenlive - kdenlive</title>
+    <meta name="description" content="This article provides a straightforward, step-by-step guide on how to extract individual frames from a video as an image sequence and how to import a series of numbered images back into Kdenlive as a single video clip. This process is essential for time-">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/how-to-extract-and-import-image-sequences-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Extract and Import Image Sequences in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/how-to-extract-and-import-image-sequences-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This article provides a straightforward, step-by-step guide on how to extract individual frames from a video as an image sequence and how to import a series of numbered images back into Kdenlive as a single video clip. This process is essential for time-" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-extract-and-import-image-sequences-in-kdenlive">How to
+Extract and Import Image Sequences in Kdenlive</h1>
+<p>This article provides a straightforward, step-by-step guide on how to
+extract individual frames from a video as an image sequence and how to
+import a series of numbered images back into Kdenlive as a single video
+clip. This process is essential for time-lapse creation, stop-motion
+animation, frame-by-frame editing, and VFX workflows.</p>
+<h2 id="how-to-extract-an-image-sequence-from-a-video">How to Extract an
+Image Sequence from a Video</h2>
+<p>Extracting an image sequence converts a video file into a series of
+individual image files (such as PNG or JPEG) for every single frame of
+the video.</p>
+<ol type="1">
+<li><strong>Import and Prepare Your Video:</strong> Open Kdenlive,
+import your video clip into the Project Bin, and drag it onto the
+timeline.</li>
+<li><strong>Define the Render Zone (Optional):</strong> If you only want
+to extract a specific portion of the video, set the In and Out points on
+your timeline to define the render zone.</li>
+<li><strong>Open the Render Dialog:</strong> Click the
+<strong>Render</strong> button in the top toolbar, or press <strong>Ctrl
++ Enter</strong>.</li>
+<li><strong>Select the Image Sequence Format:</strong>
+<ul>
+<li>In the Render window, expand the <strong>Stills</strong> category in
+the presets list.</li>
+<li>Select your preferred format, such as <strong>PNG</strong>
+(lossless, supports transparency) or <strong>JPEG</strong> (smaller file
+size).</li>
+</ul></li>
+<li><strong>Set the Destination Folder:</strong> Click the folder icon
+next to "Output file." It is highly recommended to <strong>create a new,
+empty folder</strong> for your sequence, as this process will generate
+hundreds or thousands of individual image files.</li>
+<li><strong>Configure Render Settings:</strong>
+<ul>
+<li>If you selected a specific portion of the video in Step 2, ensure
+that <strong>Selected Zone</strong> is ticked under the "Render" option;
+otherwise, select <strong>Full Project</strong>.</li>
+</ul></li>
+<li><strong>Extract the Sequence:</strong> Click the <strong>Render to
+File</strong> button. Kdenlive will begin exporting every frame as a
+numbered image file in your designated folder.</li>
+</ol>
+<hr />
+<h2 id="how-to-import-an-image-sequence-into-kdenlive">How to Import an
+Image Sequence into Kdenlive</h2>
+<p>Importing an image sequence allows you to take a folder of
+sequentially numbered images and load them into Kdenlive as a single,
+cohesive video clip.</p>
+<ol type="1">
+<li><strong>Prepare Your Images:</strong> Ensure all the images you want
+to import are saved in the same folder and are sequentially numbered
+(e.g., <code>frame_0001.png</code>, <code>frame_0002.png</code>,
+<code>frame_0003.png</code>).</li>
+<li><strong>Open the Image Sequence Tool:</strong>
+<ul>
+<li>In the Project Bin, click the arrow next to the <strong>Add Clip or
+Folder</strong> button.</li>
+<li>Select <strong>Add Image Sequence</strong> from the dropdown
+menu.</li>
+</ul></li>
+<li><strong>Configure the Import Settings:</strong>
+<ul>
+<li><strong>Filename:</strong> Click the folder icon, navigate to your
+image folder, and select the <strong>first image</strong> in your
+sequence. Kdenlive will automatically detect the numbering pattern.</li>
+<li><strong>Frame Duration:</strong> Set how long each image should
+display on screen. For standard video playback, set this to
+<code>00:00:00:01</code> (one frame per image). For slower stop-motion
+animations, you can increase this duration.</li>
+<li><strong>Framerate:</strong> Set the project frame rate to match your
+sequence goals (e.g., 24fps, 30fps, or 60fps).</li>
+</ul></li>
+<li><strong>Import the Clip:</strong> Click <strong>OK</strong>.</li>
+<li><strong>Add to Timeline:</strong> The image sequence will now appear
+in your Project Bin as a single video clip. You can drag and drop it
+directly onto your timeline, cut it, or apply effects just like any
+standard video file.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

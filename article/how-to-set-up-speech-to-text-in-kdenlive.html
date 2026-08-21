@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Set Up Speech to Text in Kdenlive - kdenlive</title>
+    <meta name="description" content="This article provides a step-by-step walkthrough for configuring and using automated speech-to-text models to generate subtitles directly within Kdenlive. By integrating engines like OpenAI's Whisper or Vosk, you can automatically transcribe spoken dialo">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/how-to-set-up-speech-to-text-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Set Up Speech to Text in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/how-to-set-up-speech-to-text-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This article provides a step-by-step walkthrough for configuring and using automated speech-to-text models to generate subtitles directly within Kdenlive. By integrating engines like OpenAI's Whisper or Vosk, you can automatically transcribe spoken dialo" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-set-up-speech-to-text-in-kdenlive">How to Set Up Speech
+to Text in Kdenlive</h1>
+<p>This article provides a step-by-step walkthrough for configuring and
+using automated speech-to-text models to generate subtitles directly
+within Kdenlive. By integrating engines like OpenAI's Whisper or Vosk,
+you can automatically transcribe spoken dialogue in your video timeline
+into perfectly timed subtitle tracks, saving significant manual editing
+time.</p>
+<h3 id="step-1-access-the-speech-to-text-configuration">Step 1: Access
+the Speech-to-Text Configuration</h3>
+<ol type="1">
+<li>Open Kdenlive.</li>
+<li>In the top menu, navigate to <strong>Settings</strong> &gt;
+<strong>Configure Kdenlive</strong> (on macOS, <strong>Kdenlive</strong>
+&gt; <strong>Preferences</strong>).</li>
+<li>In the left sidebar of the settings window, select the
+<strong>Speech to Text</strong> tab.</li>
+</ol>
+<h3 id="step-2-choose-and-install-the-speech-recognition-engine">Step 2:
+Choose and Install the Speech Recognition Engine</h3>
+<p>Kdenlive primarily supports two engines: <strong>Whisper</strong>
+(recommended for modern systems and higher accuracy) and
+<strong>Vosk</strong> (lightweight and faster on older hardware).</p>
+<ol type="1">
+<li>Select <strong>Whisper</strong> as your speech recognition
+engine.</li>
+<li>Click the <strong>Check Configuration</strong> or
+<strong>Install</strong> button. Kdenlive will prompt you to set up a
+Python virtual environment and install the required dependencies (such
+as <code>torch</code> and <code>openai-whisper</code>)
+automatically.</li>
+<li>Wait for the terminal/installation process inside Kdenlive to finish
+downloading and configuring the Python packages.</li>
+</ol>
+<h3 id="step-3-download-a-language-model">Step 3: Download a Language
+Model</h3>
+<ol type="1">
+<li>Once the engine dependencies are installed, go to the model
+selection section within the same <strong>Speech to Text</strong>
+settings window.</li>
+<li>Choose a model size that matches your system capabilities:
+<ul>
+<li><strong>Tiny / Base:</strong> Fast and consumes minimal system
+resources; suitable for clear audio.</li>
+<li><strong>Small:</strong> Balanced performance and accuracy for
+general use.</li>
+<li><strong>Medium / Large:</strong> Highly accurate across multiple
+languages and accents, but requires significant CPU/GPU resources and
+RAM.</li>
+</ul></li>
+<li>Click <strong>Download</strong> next to your chosen model and wait
+for the file to finish downloading.</li>
+<li>Click <strong>Apply</strong> and then <strong>OK</strong> to close
+the configuration window.</li>
+</ol>
+<h3 id="step-4-generate-subtitles-on-the-timeline">Step 4: Generate
+Subtitles on the Timeline</h3>
+<ol type="1">
+<li>Ensure your audio or video clip with dialogue is placed on the
+timeline.</li>
+<li>In the top menu, go to <strong>Project</strong> &gt;
+<strong>Subtitles</strong> &gt; <strong>Speech Recognition</strong> (or
+open the <strong>Subtitles</strong> panel and click the <strong>Magic
+Wand / Speech Recognition</strong> icon).</li>
+<li>In the Speech Recognition dialog:
+<ul>
+<li>Select the target track or choose <strong>Selected clips
+only</strong> / <strong>Timeline Zone</strong>.</li>
+<li>Choose your installed model from the dropdown.</li>
+<li>Select the spoken language (or use auto-detect if using
+Whisper).</li>
+</ul></li>
+<li>Click <strong>Process</strong>. Kdenlive will analyze the audio and
+automatically place generated subtitle blocks onto a dedicated subtitle
+track above your video tracks.</li>
+</ol>
+<h3 id="step-5-review-and-edit-the-generated-subtitles">Step 5: Review
+and Edit the Generated Subtitles</h3>
+<ol type="1">
+<li>Open the <strong>Subtitles</strong> panel via <strong>View</strong>
+&gt; <strong>Subtitles</strong>.</li>
+<li>Click on any generated subtitle segment to edit text errors, fix
+punctuation, or adjust timecodes.</li>
+<li>Use the timeline handles on individual subtitle clips to fine-tune
+start and end timings.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

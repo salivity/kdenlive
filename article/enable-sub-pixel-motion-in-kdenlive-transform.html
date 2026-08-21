@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enable Sub-Pixel Motion in Kdenlive Transform - kdenlive</title>
+    <meta name="description" content="This guide explains how to configure the Transform effect in Kdenlive to achieve smooth, sub-pixel motion interpolation for animations, pans, and zooms. By adjusting keyframe interpolation types, image filtering algorithms, and export settings, you can e">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/enable-sub-pixel-motion-in-kdenlive-transform">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Enable Sub-Pixel Motion in Kdenlive Transform - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/enable-sub-pixel-motion-in-kdenlive-transform" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This guide explains how to configure the Transform effect in Kdenlive to achieve smooth, sub-pixel motion interpolation for animations, pans, and zooms. By adjusting keyframe interpolation types, image filtering algorithms, and export settings, you can e" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="enable-sub-pixel-motion-in-kdenlive-transform">Enable Sub-Pixel
+Motion in Kdenlive Transform</h1>
+<p>This guide explains how to configure the Transform effect in Kdenlive
+to achieve smooth, sub-pixel motion interpolation for animations, pans,
+and zooms. By adjusting keyframe interpolation types, image filtering
+algorithms, and export settings, you can eliminate pixel stepping and
+visual stuttering caused by integer-pixel rounding during slow or
+precise camera movements.</p>
+<h3 id="1-apply-the-transform-effect">1. Apply the Transform Effect</h3>
+<ol type="1">
+<li>Open your project and place your video or image clip onto the
+timeline.</li>
+<li>Open the <strong>Effects</strong> panel (usually located in the
+bottom-left or available via <strong>Menu &gt; Settings &gt; Layouts
+&gt; Default</strong>).</li>
+<li>Search for <strong>Transform</strong> under the <em>Transform,
+Distort and Perspective</em> category.</li>
+<li>Drag and drop the <strong>Transform</strong> effect onto your clip
+in the timeline.</li>
+</ol>
+<h3 id="2-configure-keyframe-motion-curves">2. Configure Keyframe Motion
+Curves</h3>
+<p>Sub-pixel motion depends heavily on how positions are calculated
+between keyframes. Standard linear keyframes can cause sudden starts and
+stops that accentuate pixel grid alignment artifacts.</p>
+<ol type="1">
+<li>Select the clip on the timeline and go to the
+<strong>Effect/Composition Stack</strong> panel.</li>
+<li>Create your start and end keyframes using the <strong>+</strong>
+(Add Keyframe) button.</li>
+<li>Define the movement (X, Y position or Size) at each keyframe.</li>
+<li>Right-click the keyframe points on the effect timeline and change
+the interpolation type:
+<ul>
+<li><strong>Smooth</strong> or <strong>Bicubic / Catmull-Rom</strong>:
+Generates continuous curves between points, computing fractional
+coordinate values (sub-pixel positions) instead of fixed pixel
+steps.</li>
+<li>Avoid <strong>Discrete</strong> or standard stepped keyframes, which
+snap directly between coordinates.</li>
+</ul></li>
+</ol>
+<h3 id="3-set-high-quality-resampling-for-fractional-alignment">3. Set
+High-Quality Resampling for Fractional Alignment</h3>
+<p>When an image rests between integer pixel coordinates, the edges must
+be anti-aliased to prevent jitter. Kdenlive uses MLT scaling filters to
+calculate sub-pixel color blending.</p>
+<ol type="1">
+<li>In the <strong>Transform</strong> effect panel, locate the scaling
+and filtering parameters (if exposed depending on the Kdenlive version)
+or use the project-wide scaling controls.</li>
+<li>In the project monitor preview settings, ensure <strong>Preview
+Scaling</strong> is set to <strong>1:1</strong> or disabled during
+fine-tuning so you can accurately observe sub-pixel movement.</li>
+<li>If using composition tracks (such as Composite and Transform),
+ensure the composition algorithm is set to <strong>Bicubic</strong> or
+<strong>Hyper/Lanczos</strong> rather than <strong>Nearest
+Neighbor</strong> or <strong>Bilinear</strong>.</li>
+</ol>
+<h3 id="4-optimize-render-profile-settings-for-final-output">4. Optimize
+Render Profile Settings for Final Output</h3>
+<p>Real-time playback in Kdenlive may drop sub-pixel accuracy to improve
+editing performance. The final sub-pixel rendering is calculated during
+the rendering phase.</p>
+<ol type="1">
+<li>Click the <strong>Render</strong> button in the main toolbar (or
+press <strong>Ctrl + Enter</strong>).</li>
+<li>Select your target format (e.g., MP4/H.264).</li>
+<li>Expand the <strong>More Options</strong> tab.</li>
+<li>Set the <strong>Rescale Filter</strong> or <strong>Interpolation
+Filter</strong> to <strong>Bicubic</strong> or <strong>Lanczos</strong>.
+These filters perform the high-order spatial convolution required to
+render fractional pixel shifts smoothly.</li>
+<li>Click <strong>Render to File</strong> to produce the final
+jitter-free video.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

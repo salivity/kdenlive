@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Create Animated Rounded PiP in Kdenlive - kdenlive</title>
+    <meta name="description" content="This guide outlines the process for building a smooth, animated picture-in-picture (PiP) effect with rounded corners in Kdenlive. By combining alpha masking tools to round the edges of your video with the Transform effect's keyframing capabilities, you c">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/how-to-create-animated-rounded-pip-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Create Animated Rounded PiP in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/how-to-create-animated-rounded-pip-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This guide outlines the process for building a smooth, animated picture-in-picture (PiP) effect with rounded corners in Kdenlive. By combining alpha masking tools to round the edges of your video with the Transform effect's keyframing capabilities, you c" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-create-animated-rounded-pip-in-kdenlive">How to Create
+Animated Rounded PiP in Kdenlive</h1>
+<p>This guide outlines the process for building a smooth, animated
+picture-in-picture (PiP) effect with rounded corners in Kdenlive. By
+combining alpha masking tools to round the edges of your video with the
+Transform effect's keyframing capabilities, you can create a
+professional, dynamic overlay for tutorials, reaction videos, and
+presentations.</p>
+<h3 id="step-1-arrange-the-timeline-tracks">Step 1: Arrange the Timeline
+Tracks</h3>
+<ol type="1">
+<li>Place your main background video onto the lower video track (e.g.,
+<strong>V1</strong>).</li>
+<li>Place the video or webcam footage intended for the
+picture-in-picture onto the track directly above it (e.g.,
+<strong>V2</strong>).</li>
+</ol>
+<h3 id="step-2-apply-the-rounded-corner-mask">Step 2: Apply the Rounded
+Corner Mask</h3>
+<p>To round the edges of the top video:</p>
+<ol type="1">
+<li>Select the clip on <strong>V2</strong>.</li>
+<li>Open the <strong>Effects</strong> tab and search for the
+<strong>Alpha Shapes</strong> (or <strong>Shape Alpha</strong>)
+effect.</li>
+<li>Drag and drop the effect onto your top clip.</li>
+<li>In the effect settings:
+<ul>
+<li>Set <strong>Shape</strong> to <strong>Rectangle</strong>.</li>
+<li>Adjust the <strong>Size X</strong> and <strong>Size Y</strong>
+sliders to crop the frame to your desired proportions.</li>
+<li>Adjust the <strong>Transition Width</strong> or
+<strong>Border</strong> settings if you want a soft edge, or keep it low
+for a crisp edge.</li>
+<li>Increase the <strong>Roundness</strong> / <strong>Corner
+Radius</strong> parameter to curve the rectangular corners.</li>
+</ul></li>
+</ol>
+<h3 id="step-3-position-and-scale-with-the-transform-effect">Step 3:
+Position and Scale with the Transform Effect</h3>
+<ol type="1">
+<li>Search for the <strong>Transform</strong> effect in the Effects
+panel.</li>
+<li>Drag and drop it onto the <strong>V2</strong> clip, placing it
+<em>below</em> or <em>above</em> the mask depending on your Kdenlive
+version (ensure the mask scales with the footage by keeping Transform
+active on the final composition).</li>
+<li>In the Transform controls, reduce the <strong>Scale</strong> (e.g.,
+to 30% or 40%).</li>
+<li>Adjust the <strong>X</strong> and <strong>Y</strong> coordinates to
+position the PiP window into a corner of the frame.</li>
+</ol>
+<h3 id="step-4-animate-the-picture-in-picture">Step 4: Animate the
+Picture-in-Picture</h3>
+<p>To make the PiP slide in, scale up, or move across the screen:</p>
+<ol type="1">
+<li>Move the timeline playhead to the beginning of the clip on
+<strong>V2</strong>.</li>
+<li>In the Transform effect panel, add a keyframe.</li>
+<li>Move the PiP off-screen (by adjusting the X/Y coordinates) or set
+the <strong>Scale</strong> to 0% for a pop-in effect.</li>
+<li>Move the playhead forward by 0.5 to 1 second (15 to 30 frames).</li>
+<li>Add a second keyframe and set the final position and 100% target
+scale.</li>
+<li>Right-click the keyframes and select <strong>Smooth</strong> or
+<strong>Cubic</strong> interpolation to make the animation accelerate
+and decelerate naturally.</li>
+</ol>
+<h3 id="step-5-preview-and-export">Step 5: Preview and Export</h3>
+<p>Play back the timeline to check the timing and smoothness of the
+entrance animation. You can duplicate the keyframes near the end of the
+clip and reverse them to make the rounded PiP animate off-screen when
+finished.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

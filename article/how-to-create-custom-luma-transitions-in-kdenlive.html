@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Create Custom Luma Transitions in Kdenlive - kdenlive</title>
+    <meta name="description" content="Custom luma transitions in Kdenlive allow video editors to create dynamic, personalized scene changes using grayscale map images. By using a black and white radial texture, you can produce smooth circular wipes, iris dissolves, and focused reveal effects">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/how-to-create-custom-luma-transitions-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Create Custom Luma Transitions in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/how-to-create-custom-luma-transitions-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Custom luma transitions in Kdenlive allow video editors to create dynamic, personalized scene changes using grayscale map images. By using a black and white radial texture, you can produce smooth circular wipes, iris dissolves, and focused reveal effects" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-create-custom-luma-transitions-in-kdenlive">How to Create
+Custom Luma Transitions in Kdenlive</h1>
+<p>Custom luma transitions in Kdenlive allow video editors to create
+dynamic, personalized scene changes using grayscale map images. By using
+a black and white radial texture, you can produce smooth circular wipes,
+iris dissolves, and focused reveal effects between overlapping video
+clips. This guide walks through creating a radial texture image,
+importing it into Kdenlive, and applying it properly within the
+timeline.</p>
+<h3 id="step-1-create-the-black-and-white-radial-texture">Step 1: Create
+the Black and White Radial Texture</h3>
+<p>A luma transition relies on luminance values, where pure black
+represents the start of the transition and pure white represents the end
+(or vice versa).</p>
+<ol type="1">
+<li>Open an image editor such as GIMP, Photoshop, or an online gradient
+generator.</li>
+<li>Create a new document matching your video project resolution (for
+example, 1920x1080 or 3840x2160).</li>
+<li>Select the <strong>Gradient Tool</strong> and set the shape to
+<strong>Radial</strong>.</li>
+<li>Set the foreground color to solid black (<code>#000000</code>) and
+the background color to solid white (<code>#FFFFFF</code>).</li>
+<li>Click the center of the canvas and drag outward to the edge to draw
+a smooth radial gradient.</li>
+<li>Export or save the image as a standard <strong>PNG</strong> or
+<strong>PGM</strong> file (for example,
+<code>radial_wipe.png</code>).</li>
+</ol>
+<h3 id="step-2-import-the-custom-texture-into-kdenlive">Step 2: Import
+the Custom Texture into Kdenlive</h3>
+<p>You can place your custom file directly into Kdenlive's user
+directory so it appears in the preset list:</p>
+<ul>
+<li><strong>Linux:</strong>
+<code>~/.local/share/kdenlive/lumas/</code></li>
+<li><strong>Windows:</strong>
+<code>%APPDATA%\kdenlive\lumas\</code></li>
+</ul>
+<p>Alternatively, you can load the custom image directly from your
+project folder through the composition properties panel during
+editing.</p>
+<h3 id="step-3-apply-the-transition-to-the-timeline">Step 3: Apply the
+Transition to the Timeline</h3>
+<ol type="1">
+<li>Place the outgoing clip on an upper video track (e.g., Track
+V2).</li>
+<li>Place the incoming clip on a lower video track (e.g., Track V1),
+overlapping the two clips for the intended duration of the
+transition.</li>
+<li>Right-click the overlap area on the upper clip, select <strong>Add
+Composition</strong>, and choose <strong>Wipe</strong>.</li>
+<li>With the Wipe composition selected, open the
+<strong>Properties</strong> panel.</li>
+<li>In the <strong>Image</strong> or <strong>Wipe Method</strong>
+dropdown, select your radial texture. If you did not place it in the
+system directory, click the folder icon to browse and select your saved
+image file.</li>
+</ol>
+<h3 id="step-4-adjust-transition-parameters">Step 4: Adjust Transition
+Parameters</h3>
+<ul>
+<li><strong>Softness:</strong> Increase the softness slider to create a
+smooth, feathered edge between the clips rather than a hard circular
+cut.</li>
+<li><strong>Invert:</strong> Check the invert option if you want the
+transition to expand from the center outward instead of shrinking from
+the edges inward.</li>
+<li><strong>Duration:</strong> Drag the edges of the composition block
+on the timeline to speed up or slow down the transition speed.</li>
+</ul></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

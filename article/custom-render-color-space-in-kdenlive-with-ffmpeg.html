@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Render Color Space in Kdenlive with FFmpeg - kdenlive</title>
+    <meta name="description" content="This article explains the step-by-step procedure for defining and applying custom render output color spaces in Kdenlive using FFmpeg parameters. By editing or creating custom render profiles, users can explicitly flag output color parameters—such as c">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/custom-render-color-space-in-kdenlive-with-ffmpeg">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Custom Render Color Space in Kdenlive with FFmpeg - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/custom-render-color-space-in-kdenlive-with-ffmpeg" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This article explains the step-by-step procedure for defining and applying custom render output color spaces in Kdenlive using FFmpeg parameters. By editing or creating custom render profiles, users can explicitly flag output color parameters—such as c" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="custom-render-color-space-in-kdenlive-with-ffmpeg">Custom Render
+Color Space in Kdenlive with FFmpeg</h1>
+<p>This article explains the step-by-step procedure for defining and
+applying custom render output color spaces in Kdenlive using FFmpeg
+parameters. By editing or creating custom render profiles, users can
+explicitly flag output color parameters—such as color primaries,
+transfer characteristics, color matrices, and dynamic range—ensuring
+accurate color reproduction across different media players, web
+platforms, and broadcast devices.</p>
+<h2 id="step-1-access-the-render-dialog">Step 1: Access the Render
+Dialog</h2>
+<ol type="1">
+<li>Open your project in Kdenlive.</li>
+<li>Click the <strong>Render</strong> button in the main toolbar or
+press <strong>Ctrl + Return</strong> to open the rendering
+interface.</li>
+</ol>
+<h2 id="step-2-create-a-custom-render-profile">Step 2: Create a Custom
+Render Profile</h2>
+<ol type="1">
+<li>In the <strong>Render</strong> dialog, select an existing preset
+that matches your target container and codec (such as <strong>Generic
+(MP4)</strong> or <strong>Ultra-High Definition (Apple
+ProRes)</strong>).</li>
+<li>Click the <strong>Create New Profile</strong> button (plus icon) in
+the top-right corner of the Presets panel, or click <strong>Edit
+Profile</strong> to modify a user preset.</li>
+<li>Assign a recognizable name to your new preset (e.g., <em>MP4 H.264
+Rec.709</em> or <em>ProRes Rec.2020 HLG</em>).</li>
+</ol>
+<h2 id="step-3-configure-ffmpeg-color-space-parameters">Step 3:
+Configure FFmpeg Color Space Parameters</h2>
+<p>Kdenlive processes render commands via MLT and FFmpeg. To override or
+explicitly set the output color metadata, append the required FFmpeg
+color arguments directly into the <strong>Parameters</strong> text
+box.</p>
+<h3 id="key-color-space-arguments">Key Color Space Arguments</h3>
+<ul>
+<li><strong><code>color_primaries</code></strong>: Defines the
+chromaticity coordinates of the source primaries.
+<ul>
+<li>Rec. 709 (HD): <code>color_primaries=bt709</code></li>
+<li>Rec. 2020 (UHD/HDR): <code>color_primaries=bt2020</code></li>
+<li>DCI-P3: <code>color_primaries=smpte432</code></li>
+</ul></li>
+<li><strong><code>color_trc</code></strong>: Specifies the Transfer
+Characteristics (gamma curve).
+<ul>
+<li>Standard Rec. 709: <code>color_trc=bt709</code></li>
+<li>sRGB: <code>color_trc=iec61966-2-1</code></li>
+<li>HDR10 (PQ): <code>color_trc=smpte2084</code></li>
+<li>HLG: <code>color_trc=arib-std-b67</code></li>
+</ul></li>
+<li><strong><code>colorspace</code></strong>: Specifies the matrix
+coefficients used for color transformation (YUV to RGB).
+<ul>
+<li>Rec. 709: <code>colorspace=bt709</code></li>
+<li>Rec. 2020 non-constant luminance:
+<code>colorspace=bt2020nc</code></li>
+<li>Rec. 601 (SD): <code>colorspace=smpte170m</code></li>
+</ul></li>
+<li><strong><code>color_range</code></strong>: Controls the luma/chroma
+quantization range.
+<ul>
+<li>Limited/TV range (Standard for broadcast and web video):
+<code>color_range=tv</code></li>
+<li>Full/PC range: <code>color_range=pc</code></li>
+</ul></li>
+</ul>
+<h2 id="step-4-add-parameters-to-the-profile">Step 4: Add Parameters to
+the Profile</h2>
+<p>Add your chosen parameters separated by spaces into the profile
+string.</p>
+<h3 id="example-standard-hd-rec709-limited-range">Example: Standard HD
+(Rec.709 Limited Range)</h3>
+<pre class="text"><code>properties=x264-medium f=mp4 vcodec=libx264 acodec=aac ab=192k crf=18 color_primaries=bt709 color_trc=bt709 colorspace=bt709 color_range=tv</code></pre>
+<h3 id="example-hdr10-rec2020-pq-10-bit">Example: HDR10 (Rec.2020 PQ
+10-bit)</h3>
+<pre class="text"><code>properties=x265-medium f=mp4 vcodec=libx265 acodec=aac ab=256k crf=18 pix_fmt=yuv420p10le color_primaries=bt2020 color_trc=smpte2084 colorspace=bt2020nc color_range=tv</code></pre>
+<h2 id="step-5-save-and-export">Step 5: Save and Export</h2>
+<ol type="1">
+<li>Click <strong>OK</strong> to save the custom profile.</li>
+<li>Select your newly created preset from the list.</li>
+<li>Specify your output destination file path.</li>
+<li>Click <strong>Render to File</strong> to generate the export with
+the embedded color space metadata.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

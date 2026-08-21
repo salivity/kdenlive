@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Target Timeline Tracks in Kdenlive - kdenlive</title>
+    <meta name="description" content="In Kdenlive, track target indicators determine exactly which video and audio tracks receive media when you paste clips or insert them from the project bin. By activating and directing these indicators within the timeline header, you can precisely route c">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/how-to-target-timeline-tracks-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Target Timeline Tracks in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/how-to-target-timeline-tracks-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="In Kdenlive, track target indicators determine exactly which video and audio tracks receive media when you paste clips or insert them from the project bin. By activating and directing these indicators within the timeline header, you can precisely route c" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-target-timeline-tracks-in-kdenlive">How to Target
+Timeline Tracks in Kdenlive</h1>
+<p>In Kdenlive, track target indicators determine exactly which video
+and audio tracks receive media when you paste clips or insert them from
+the project bin. By activating and directing these indicators within the
+timeline header, you can precisely route copied elements to specific
+tracks at the playhead's position without overwriting existing
+footage.</p>
+<h3 id="understanding-track-target-indicators">Understanding Track
+Target Indicators</h3>
+<p>Track target indicators are visual controls located in the timeline
+track headers on the far left side of the timeline interface. Each track
+header displays an indicator representing whether that specific track is
+currently targeted for incoming video or audio data. When an indicator
+is illuminated or highlighted, Kdenlive designates that track as an
+active destination for paste operations and keyboard insert
+commands.</p>
+<h3 id="how-to-configure-track-targets">How to Configure Track
+Targets</h3>
+<ol type="1">
+<li><strong>Locate the Track Headers:</strong> Navigate to the left edge
+of your timeline where your video tracks (e.g., V1, V2) and audio tracks
+(e.g., A1, A2) are listed.</li>
+<li><strong>Toggle the Target State:</strong> Click directly on the
+track name or the designated target box next to the track label.
+Clicking toggles the targeting state on or off.</li>
+<li><strong>Set the Video Target:</strong> Click the target area for
+your preferred video track. The visual highlight confirms it is now the
+active video recipient.</li>
+<li><strong>Set the Audio Target:</strong> Click the target area for
+your preferred audio track to ensure the audio stream of a copied clip
+routes to the correct audio lane.</li>
+</ol>
+<h3 id="pasting-clips-to-the-targeted-tracks">Pasting Clips to the
+Targeted Tracks</h3>
+<ol type="1">
+<li>Select and copy your desired clip from the timeline or project bin
+using <code>Ctrl + C</code> (or <code>Cmd + C</code> on macOS).</li>
+<li>Move the timeline playhead cursor to the exact timestamp where you
+want the clip to begin.</li>
+<li>Confirm that the target indicators on your desired video and audio
+tracks are active.</li>
+<li>Press <code>Ctrl + V</code> (or <code>Cmd + V</code>) to paste the
+clip. The video portion will land on the targeted video track, and the
+audio portion will land on the targeted audio track, aligned with the
+playhead position.</li>
+</ol>
+<h3 id="best-practices-for-track-targeting">Best Practices for Track
+Targeting</h3>
+<ul>
+<li><strong>Separate Audio and Video:</strong> You can target different
+track pairings (such as Video 2 and Audio 1) to split elements without
+breaking timeline synchronization.</li>
+<li><strong>Avoid Unintended Overwrites:</strong> If a targeted track
+already contains media at the playhead position, ensure the timeline
+editing mode is set appropriately (such as Overwrite Mode or Insert
+Mode) to prevent accidental deletions or unwanted timeline shifts.</li>
+<li><strong>Locked Tracks:</strong> A track that is locked cannot be
+targeted or pasted into until it is unlocked.</li>
+</ul></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

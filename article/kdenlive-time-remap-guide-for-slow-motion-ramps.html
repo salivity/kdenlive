@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kdenlive Time Remap Guide for Slow-Motion Ramps - kdenlive</title>
+    <meta name="description" content="The Time Remap keyframe editor in Kdenlive allows video editors to dynamically alter the playback speed of a clip across its duration using a visual graph. When producing extreme slow-motion speed ramps, this tool provides precise control over the accele">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/kdenlive-time-remap-guide-for-slow-motion-ramps">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kdenlive Time Remap Guide for Slow-Motion Ramps - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/kdenlive-time-remap-guide-for-slow-motion-ramps" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="The Time Remap keyframe editor in Kdenlive allows video editors to dynamically alter the playback speed of a clip across its duration using a visual graph. When producing extreme slow-motion speed ramps, this tool provides precise control over the accele" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="kdenlive-time-remap-guide-for-slow-motion-ramps">Kdenlive Time
+Remap Guide for Slow-Motion Ramps</h1>
+<p>The Time Remap keyframe editor in Kdenlive allows video editors to
+dynamically alter the playback speed of a clip across its duration using
+a visual graph. When producing extreme slow-motion speed ramps, this
+tool provides precise control over the acceleration and deceleration of
+footage without requiring cuts, enabling smooth transitions from
+real-time playback to ultra-slow motion and back.</p>
+<h3 id="the-mechanism-of-the-time-remap-graph">The Mechanism of the Time
+Remap Graph</h3>
+<p>The primary function of the Time Remap editor is to plot the
+relationship between the project timeline (the X-axis, representing
+output time) and the clip's original recorded frames (the Y-axis,
+representing source time). The slope of the line between keyframes
+dictates playback speed:</p>
+<ul>
+<li><strong>Shallow Slope:</strong> Represents slow motion. The flatter
+the curve, the slower the playback, as fewer source frames are displayed
+over a longer period of timeline time.</li>
+<li><strong>Horizontal Line:</strong> Represents a freeze frame (zero
+playback speed).</li>
+<li><strong>Steep Slope:</strong> Represents fast-forward motion.</li>
+<li><strong>Negative Slope:</strong> Plays footage in reverse.</li>
+</ul>
+<h3 id="keyframe-control-and-speed-ramping">Keyframe Control and Speed
+Ramping</h3>
+<p>To execute a speed ramp, you place keyframes at the exact moments
+where the speed transition should begin and end. The editor lets you
+define:</p>
+<ul>
+<li><strong>Source Time and Output Time:</strong> By moving a keyframe
+horizontally or vertically, you designate precisely which source frame
+appears at which moment on the timeline.</li>
+<li><strong>Interpolation Modes:</strong> You can toggle between linear
+transitions and smooth (Bézier/spline) curves. For extreme slow-motion
+ramps, smooth interpolation creates an ease-in and ease-out effect,
+preventing abrupt, jarring shifts in motion.</li>
+</ul>
+<h3 id="managing-extreme-slow-motion-playback">Managing Extreme
+Slow-Motion Playback</h3>
+<p>When stretching a small number of source frames over a long timeline
+duration (such as dropping speed to 1% to 10%), the Time Remap editor
+works alongside Kdenlive's frame-interpolation settings:</p>
+<ul>
+<li><strong>Frame Duplication/Blending:</strong> By default, extreme
+slow motion repeats frames, which can result in a choppy cadence if the
+original footage was not shot at a high frame rate (e.g., 60fps, 120fps,
+or higher).</li>
+<li><strong>Optical Flow / Motion Estimation:</strong> To smooth out
+extreme ramps on lower frame-rate footage, Kdenlive can generate
+intermediate synthetic frames to bridge the gap between keyframed points
+on the remap curve.</li>
+</ul>
+<h3 id="audio-handling-during-remapping">Audio Handling During
+Remapping</h3>
+<p>The Time Remap tool directly impacts audio synchronization. During an
+extreme slow-motion ramp, the editor either stretches the audio
+(lowering pitch or using time-stretching algorithms) or mutes it,
+allowing the visual ramp to remain the central focus while preserving
+the integrity of the project timeline.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

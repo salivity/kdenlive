@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Accelerated Proxy Clips in Kdenlive - kdenlive</title>
+    <meta name="description" content="Proxy clips allow you to edit high-resolution video smoothly by using lightweight, lower-resolution copies of your source files during the editing process. By default, Kdenlive uses CPU-based software encoding to generate these proxies, which can be slow">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/hardware-accelerated-proxy-clips-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Hardware Accelerated Proxy Clips in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/hardware-accelerated-proxy-clips-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Proxy clips allow you to edit high-resolution video smoothly by using lightweight, lower-resolution copies of your source files during the editing process. By default, Kdenlive uses CPU-based software encoding to generate these proxies, which can be slow" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="hardware-accelerated-proxy-clips-in-kdenlive">Hardware
+Accelerated Proxy Clips in Kdenlive</h1>
+<p>Proxy clips allow you to edit high-resolution video smoothly by using
+lightweight, lower-resolution copies of your source files during the
+editing process. By default, Kdenlive uses CPU-based software encoding
+to generate these proxies, which can be slow on large projects.
+Configuring Kdenlive to utilize your graphics card’s hardware encoder
+(such as NVIDIA NVENC, Intel QSV, or AMD/VAAPI) drastically cuts down
+the time required to create proxy files.</p>
+<h3 id="1-verify-hardware-acceleration-support">1. Verify Hardware
+Acceleration Support</h3>
+<p>Before changing proxy profiles, ensure Kdenlive detects your system's
+hardware encoding capabilities:</p>
+<ol type="1">
+<li>Open Kdenlive and navigate to <strong>Settings</strong> &gt;
+<strong>Configure Kdenlive</strong> (or <strong>Kdenlive</strong> &gt;
+<strong>Preferences</strong> on macOS).</li>
+<li>Select the <strong>Hardware Acceleration</strong> tab on the
+left.</li>
+<li>Check the box for <strong>Hardware Accelerated
+Decoding/Encoding</strong>.</li>
+<li>Review the detected encoders (e.g., <code>h264_nvenc</code>,
+<code>hevc_nvenc</code>, <code>h264_vaapi</code>,
+<code>h264_qsv</code>). Ensure your preferred GPU encoder is listed and
+functional.</li>
+</ol>
+<h3 id="2-access-proxy-clip-settings">2. Access Proxy Clip Settings</h3>
+<ol type="1">
+<li>In the same <strong>Configure Kdenlive</strong> window, select the
+<strong>Proxy Clips</strong> tab on the left.</li>
+<li>Check the box labeled <strong>Enable Proxy Clips</strong>.</li>
+<li>Set your desired automatic generation conditions, such as
+<strong>Generate for videos larger than</strong> (commonly set to
+<code>1000</code> or <code>1920</code> pixels).</li>
+</ol>
+<h3 id="3-select-or-create-a-hardware-accelerated-profile">3. Select or
+Create a Hardware-Accelerated Profile</h3>
+<p>Kdenlive uses FFmpeg encoding profiles to render proxies. To switch
+to a hardware encoder:</p>
+<ol type="1">
+<li>Under the <strong>Encoding Profile</strong> section in the Proxy
+Clips settings, open the dropdown menu.</li>
+<li>Look for pre-configured hardware profiles:
+<ul>
+<li><strong>NVIDIA:</strong> Look for profiles containing
+<code>NVENC</code> (e.g., <code>H264-NVENC</code> or
+<code>NVENC Fast</code>).</li>
+<li><strong>Intel / AMD (Linux):</strong> Look for <code>VAAPI</code>
+profiles (e.g., <code>H264-VAAPI</code>).</li>
+<li><strong>Intel (Windows):</strong> Look for <code>QSV</code>
+profiles.</li>
+</ul></li>
+<li>If no hardware profile exists in the list, click the <strong>Manage
+Profiles</strong> (wrench/edit) icon next to the dropdown to create a
+custom profile:
+<ul>
+<li>Click the <strong>Add new profile</strong> (+) button.</li>
+<li>Set a profile name (e.g., <code>Hardware NVENC Proxy</code>).</li>
+<li>Enter the appropriate parameters for your hardware:
+<ul>
+<li><strong>For NVIDIA:</strong>
+<code>-vf scale=-1:720 -c:v h264_nvenc -preset fast -b:v 2000k -c:a aac -b:a 128k</code></li>
+<li><strong>For VAAPI (Linux):</strong>
+<code>-vaapi_device /dev/dri/renderD128 -vf 'format=nv12,hwupload,scale_vaapi=w=-1:h=720' -c:v h264_vaapi -b:v 2000k -c:a aac -b:a 128k</code></li>
+</ul></li>
+</ul></li>
+<li>Click <strong>OK</strong> to save the custom profile and select it
+as your active proxy encoding profile.</li>
+</ol>
+<h3 id="4-apply-settings-and-verify">4. Apply Settings and Verify</h3>
+<ol type="1">
+<li>Click <strong>Apply</strong> and then <strong>OK</strong> to exit
+the configuration menu.</li>
+<li>Import a large video file into the <strong>Project
+Bin</strong>.</li>
+<li>Right-click the clip and select <strong>Proxy Clip</strong> (if not
+generated automatically).</li>
+<li>Open your system's task manager or GPU monitoring tool to confirm
+that GPU video engine usage spikes during the generation process,
+confirming hardware encoding is active.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

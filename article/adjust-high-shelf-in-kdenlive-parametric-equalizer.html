@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjust High Shelf in Kdenlive Parametric Equalizer - kdenlive</title>
+    <meta name="description" content="This guide explains how to configure the high-frequency shelf using the Parametric Equalizer audio effect in Kdenlive. Adjusting the high-shelf filter allows you to boost high-end clarity and brightness or reduce harshness, hiss, and sibilance from your">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/adjust-high-shelf-in-kdenlive-parametric-equalizer">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Adjust High Shelf in Kdenlive Parametric Equalizer - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/adjust-high-shelf-in-kdenlive-parametric-equalizer" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This guide explains how to configure the high-frequency shelf using the Parametric Equalizer audio effect in Kdenlive. Adjusting the high-shelf filter allows you to boost high-end clarity and brightness or reduce harshness, hiss, and sibilance from your" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="adjust-high-shelf-in-kdenlive-parametric-equalizer">Adjust High
+Shelf in Kdenlive Parametric Equalizer</h1>
+<p>This guide explains how to configure the high-frequency shelf using
+the Parametric Equalizer audio effect in Kdenlive. Adjusting the
+high-shelf filter allows you to boost high-end clarity and brightness or
+reduce harshness, hiss, and sibilance from your audio tracks, giving
+your final video a polished, professional sound.</p>
+<h3 id="step-1-apply-the-parametric-equalizer-effect">Step 1: Apply the
+Parametric Equalizer Effect</h3>
+<ol type="1">
+<li>Open your project in Kdenlive and select the audio clip on the
+timeline (or select an entire track).</li>
+<li>Go to the <strong>Effects</strong> tab.</li>
+<li>Search for <strong>Parametric Equalizer</strong> in the search
+bar.</li>
+<li>Drag and drop the effect onto your target audio clip or track.</li>
+</ol>
+<h3 id="step-2-open-the-effect-properties">Step 2: Open the Effect
+Properties</h3>
+<ol type="1">
+<li>Make sure the clip or track is selected so that the
+<strong>Properties</strong> panel displays the effect settings.</li>
+<li>Inside the <strong>Parametric Equalizer</strong> window, locate the
+equalization bands. The high-shelf filter is typically assigned to the
+highest band (Band 4 or the High band, depending on the equalizer
+version).</li>
+</ol>
+<h3 id="step-3-configure-the-high-shelf-parameters">Step 3: Configure
+the High-Shelf Parameters</h3>
+<p>To adjust how the high-frequency shelf affects your audio, modify the
+following parameters for the high band:</p>
+<ul>
+<li><strong>Filter Type:</strong> Ensure the filter type for the high
+band is set to <strong>High Shelf</strong> (or
+<strong>Shelving</strong>).</li>
+<li><strong>Frequency (Hz):</strong> Set the corner frequency where the
+shelf begins to take effect. For brightening vocals or adding air,
+values between <strong>8,000 Hz (8 kHz)</strong> and <strong>12,000 Hz
+(12 kHz)</strong> are commonly used. To tame harsh high frequencies, set
+the threshold closer to <strong>5,000 Hz (5 kHz)</strong> to
+<strong>7,000 Hz (7 kHz)</strong>.</li>
+<li><strong>Gain (dB):</strong> Adjust the slider or input box to
+increase or decrease the volume of all frequencies above the selected
+cutoff point:
+<ul>
+<li><strong>Positive Gain (+dB):</strong> Adds presence, sparkle, and
+top-end clarity.</li>
+<li><strong>Negative Gain (-dB):</strong> Reduces harshness, background
+hiss, and sharp "s" sounds.</li>
+</ul></li>
+<li><strong>Q / Slope (if available):</strong> Adjust the Q factor to
+control the steepness of the shelf transition. A lower value creates a
+gentle, natural transition, while a higher value creates a steeper
+slope.</li>
+</ul>
+<h3 id="step-4-preview-and-fine-tune">Step 4: Preview and Fine-Tune</h3>
+<p>Play the timeline to listen to your audio adjustments in real time.
+Toggle the effect on and off using the enable/disable checkbox in the
+properties pane to compare the processed audio against the original
+track, adjusting the <strong>Gain</strong> and
+<strong>Frequency</strong> until you achieve a balanced mix.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

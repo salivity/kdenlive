@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kdenlive Audio Spectrogram for Frequency Disturbances - kdenlive</title>
+    <meta name="description" content="The Audio Spectrogram monitor in Kdenlive is an essential diagnostic tool that translates complex audio waveforms into a visual, time-frequency heat map. This article explains how the Audio Spectrogram functions, how it visualizes acoustic artifacts, and">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/kdenlive-audio-spectrogram-for-frequency-disturbances">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kdenlive Audio Spectrogram for Frequency Disturbances - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/kdenlive-audio-spectrogram-for-frequency-disturbances" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="The Audio Spectrogram monitor in Kdenlive is an essential diagnostic tool that translates complex audio waveforms into a visual, time-frequency heat map. This article explains how the Audio Spectrogram functions, how it visualizes acoustic artifacts, and" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="kdenlive-audio-spectrogram-for-frequency-disturbances">Kdenlive
+Audio Spectrogram for Frequency Disturbances</h1>
+<p>The Audio Spectrogram monitor in Kdenlive is an essential diagnostic
+tool that translates complex audio waveforms into a visual,
+time-frequency heat map. This article explains how the Audio Spectrogram
+functions, how it visualizes acoustic artifacts, and how video editors
+can leverage it to identify and isolate specific frequency
+disturbances—such as electrical hums, mic pops, and persistent
+background hisses—for precise audio cleanup.</p>
+<h3 id="understanding-the-spectrogram-display">Understanding the
+Spectrogram Display</h3>
+<p>Unlike standard audio meters that only measure overall volume over
+time, the Audio Spectrogram adds a frequency dimension to the visual
+feedback. In Kdenlive, the spectrogram plots:</p>
+<ul>
+<li><strong>Horizontal Axis (X-axis):</strong> Time progression across
+the clip.</li>
+<li><strong>Vertical Axis (Y-axis):</strong> Frequency spectrum,
+typically ranging from low sub-bass (20 Hz) at the bottom to high treble
+(20 kHz) at the top.</li>
+<li><strong>Color Intensity/Brightness:</strong> Amplitude (volume) at
+any given frequency and time. Brighter or warmer colors represent higher
+energy levels.</li>
+</ul>
+<p>By converting sound into a visual topology, the monitor allows
+editors to "see" audio defects that might be difficult to isolate by ear
+alone.</p>
+<h3 id="identifying-common-audio-disturbances">Identifying Common Audio
+Disturbances</h3>
+<p>Different types of audio anomalies generate distinct visual patterns
+in the Kdenlive spectrogram:</p>
+<h4 id="1-constant-electrical-hum-and-whine">1. Constant Electrical Hum
+and Whine</h4>
+<ul>
+<li><strong>Visual Pattern:</strong> Continuous, sharp, straight
+horizontal lines running across the timeline at specific frequency
+levels.</li>
+<li><strong>Diagnosis:</strong> A persistent horizontal line around 50
+Hz or 60 Hz typically indicates AC ground loop hum. Higher continuous
+horizontal lines indicate electronic whine from sources like lighting
+ballasts, computer fans, or coil noise.</li>
+</ul>
+<h4 id="2-broadband-hiss-and-white-noise">2. Broadband Hiss and White
+Noise</h4>
+<ul>
+<li><strong>Visual Pattern:</strong> A consistent, grainy, or cloud-like
+haze spread across the upper portion of the vertical axis.</li>
+<li><strong>Diagnosis:</strong> Preamp self-noise, air conditioning
+units, or ambient room hiss manifest as uniform, diffuse energy rather
+than concentrated lines.</li>
+</ul>
+<h4 id="3-transient-clicks-pops-and-plosives">3. Transient Clicks, Pops,
+and Plosives</h4>
+<ul>
+<li><strong>Visual Pattern:</strong> Sudden, sharp vertical streaks
+spanning wide frequency ranges in an instant.</li>
+<li><strong>Diagnosis:</strong> Microphone bumps, mouth clicks, or harsh
+"P" and "B" plosive bursts release bursts of energy across multiple
+frequencies simultaneously, appearing as bright vertical bars.</li>
+</ul>
+<h4 id="4-resonant-frequencies-and-feedback">4. Resonant Frequencies and
+Feedback</h4>
+<ul>
+<li><strong>Visual Pattern:</strong> Isolated bright bands or pockets of
+intense color that swell during spoken dialogue or music notes.</li>
+<li><strong>Diagnosis:</strong> Room acoustics or poorly calibrated
+microphones often amplify narrow frequency ranges, causing harsh ringing
+or boomy resonances.</li>
+</ul>
+<h3 id="workflow-for-correcting-identified-disturbances">Workflow for
+Correcting Identified Disturbances</h3>
+<p>Once a frequency disturbance is located using the spectrogram,
+editors can take targeted corrective actions directly in Kdenlive:</p>
+<ol type="1">
+<li><strong>Read the Frequency Value:</strong> Hover or align the
+playback head over the visual anomaly to identify its exact vertical
+position (Hz/kHz).</li>
+<li><strong>Apply Targeted Audio Effects:</strong>
+<ul>
+<li>For narrow horizontal lines (hums), apply a <strong>Notch
+Filter</strong> set precisely to the problematic frequency.</li>
+<li>For low-end rumble or high-end hiss, apply <strong>High-Pass (Low
+Cut)</strong> or <strong>Low-Pass (High Cut)</strong> filters.</li>
+<li>For broader tonal imbalances, use a <strong>Parametric
+Equalizer</strong> to pull down the specific frequency band.</li>
+</ul></li>
+<li><strong>Verify in Real Time:</strong> Play back the audio with the
+filter enabled and observe the spectrogram. A properly configured filter
+will visibly reduce or erase the bright artifacts on the monitor,
+confirming that the disturbance has been mitigated without unnecessarily
+damaging surrounding audio frequencies.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

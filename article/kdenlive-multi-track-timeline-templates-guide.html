@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kdenlive Multi-Track Timeline Templates Guide - kdenlive</title>
+    <meta name="description" content="Creating custom multi-track timeline templates in Kdenlive streamlines episodic video production by standardizing audio routing, track layouts, recurring graphics, and project settings across every release. By building a master project file configured sp">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/kdenlive-multi-track-timeline-templates-guide">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kdenlive Multi-Track Timeline Templates Guide - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/kdenlive-multi-track-timeline-templates-guide" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Creating custom multi-track timeline templates in Kdenlive streamlines episodic video production by standardizing audio routing, track layouts, recurring graphics, and project settings across every release. By building a master project file configured sp" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="kdenlive-multi-track-timeline-templates-guide">Kdenlive
+Multi-Track Timeline Templates Guide</h1>
+<p>Creating custom multi-track timeline templates in Kdenlive
+streamlines episodic video production by standardizing audio routing,
+track layouts, recurring graphics, and project settings across every
+release. By building a master project file configured specifically for
+your show's format, you eliminate repetitive setup tasks, prevent mixing
+errors, and maintain visual and acoustic consistency throughout a
+series.</p>
+<h3 id="step-1-configure-project-settings-and-video-profiles">Step 1:
+Configure Project Settings and Video Profiles</h3>
+<ol type="1">
+<li>Launch Kdenlive and navigate to <strong>Project &gt; Project
+Settings</strong>.</li>
+<li>Select or create a custom profile that matches your episodic
+delivery specifications (e.g., 1080p at 29.97 fps or 4K at 24 fps).</li>
+<li>Under the <strong>Project Settings</strong> tabs, define your
+default working color space, proxy clip generation thresholds, and
+scratch disk directories to ensure performance remains uniform across
+all project instances.</li>
+</ol>
+<h3 id="step-2-establish-the-multi-track-structure">Step 2: Establish
+the Multi-Track Structure</h3>
+<p>Build a structured layout of video and audio tracks dedicated to
+specific asset types rather than generic layering.</p>
+<ul>
+<li><strong>Video Tracks:</strong>
+<ul>
+<li><strong>V4 (Overlays/Text):</strong> Dedicated to lower-thirds,
+callouts, and episodic title cards.</li>
+<li><strong>V3 (Graphics/B-Roll):</strong> Cutaways, screen recordings,
+and supporting imagery.</li>
+<li><strong>V2 (Primary A-Roll):</strong> Host camera or main visual
+focus.</li>
+<li><strong>V1 (Background):</strong> Static background plates or color
+clips.</li>
+</ul></li>
+<li><strong>Audio Tracks:</strong>
+<ul>
+<li><strong>A1 (Host/Dialogue):</strong> Primary voice track set to high
+priority.</li>
+<li><strong>A2 (Guest/Secondary Dialogue):</strong> Secondary voice
+inputs.</li>
+<li><strong>A3 (Sound Effects):</strong> Stings, transitions, and audio
+cues.</li>
+<li><strong>A4 (Music Bed):</strong> Background ambient tracks and theme
+scores.</li>
+</ul></li>
+</ul>
+<p>Right-click each track header, select <strong>Rename Track</strong>,
+and label them clearly to guide the editing process.</p>
+<h3 id="step-3-apply-track-level-effects-and-audio-routing">Step 3:
+Apply Track-Level Effects and Audio Routing</h3>
+<p>Applying effects at the track level ensures that any asset dropped
+onto that track inherits standard processing automatically.</p>
+<ol type="1">
+<li>Open the <strong>Mixer</strong> panel (<strong>View &gt; Audio
+Mixer</strong>).</li>
+<li>Add necessary audio filters to designated track headers:
+<ul>
+<li>Apply an <strong>Expander/Noise Gate</strong>, <strong>Dynamic
+Compressor</strong>, and <strong>Equalizer</strong> to Dialogue tracks
+(A1/A2).</li>
+<li>Apply a <strong>Limiter</strong> or <strong>Volume
+(Keyframeable)</strong> effect to the Music track (A3) to facilitate
+ducking.</li>
+</ul></li>
+<li>Apply standard track-wide video filters if required, such as a
+uniform <strong>Position and Zoom</strong> or default
+<strong>Transform</strong> preset on overlay tracks.</li>
+</ol>
+<h3 id="step-4-organize-project-bins-and-recurring-assets">Step 4:
+Organize Project Bins and Recurring Assets</h3>
+<ol type="1">
+<li>In the <strong>Project Bin</strong>, create a standardized folder
+hierarchy:
+<ul>
+<li><code>01_Footage</code></li>
+<li><code>02_Audio</code> (Music, SFX, Voiceover)</li>
+<li><code>03_Graphics</code> (Lower thirds, intros, watermarks)</li>
+<li><code>04_Sequences</code></li>
+</ul></li>
+<li>Import all static, reusable episodic assets directly into these bins
+(e.g., standard intro bumpers, stingers, transition sound effects, and
+outro sequence files).</li>
+<li>Place permanent components—such as the show intro, outro card, and
+copyright watermark—directly onto their respective timeline tracks at
+the required timestamps.</li>
+</ol>
+<h3 id="step-5-save-and-utilize-the-template">Step 5: Save and Utilize
+the Template</h3>
+<ol type="1">
+<li>Once the sequence, bins, effects, and assets are arranged, go to
+<strong>File &gt; Save As</strong>.</li>
+<li>Name the file clearly (e.g.,
+<code>EPISODIC_TEMPLATE_V1.kdenlive</code>) and save it in a dedicated
+templates folder on your storage drive.</li>
+<li>Set the template file to <strong>Read-Only</strong> in your
+operating system's file properties to prevent accidental
+overwrites.</li>
+<li>For each new episode, open this template file and immediately use
+<strong>File &gt; Save As</strong> to create the new episode's distinct
+project file (e.g., <code>EPISODE_101.kdenlive</code>) before importing
+new media.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

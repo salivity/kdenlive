@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Create a Directional Zoom in Kdenlive - kdenlive</title>
+    <meta name="description" content="A directional zoom transition creates a dynamic whip-like effect between two video clips by combining scaling with directional movement. In Kdenlive, this effect is achieved by applying the Transform effect to the transition zone of both clips, keyframin">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/how-to-create-a-directional-zoom-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Create a Directional Zoom in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/how-to-create-a-directional-zoom-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="A directional zoom transition creates a dynamic whip-like effect between two video clips by combining scaling with directional movement. In Kdenlive, this effect is achieved by applying the Transform effect to the transition zone of both clips, keyframin" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-create-a-directional-zoom-in-kdenlive">How to Create a
+Directional Zoom in Kdenlive</h1>
+<p>A directional zoom transition creates a dynamic whip-like effect
+between two video clips by combining scaling with directional movement.
+In Kdenlive, this effect is achieved by applying the Transform effect to
+the transition zone of both clips, keyframing their position and size
+parameters, adjusting interpolation for smooth velocity, and adding
+motion blur to enhance realism.</p>
+<h3 id="step-1-arrange-the-clips-on-the-timeline">Step 1: Arrange the
+Clips on the Timeline</h3>
+<ol type="1">
+<li>Place your first clip (outgoing) and second clip (incoming)
+side-by-side on the same video track, or on two separate overlapping
+tracks (Video 1 and Video 2).</li>
+<li>Determine the duration of the transition (typically 10 to 20 frames
+is ideal for a fast, punchy zoom).</li>
+<li>Using the <strong>Razor Tool</strong> (<code>X</code>), cut the last
+10–15 frames of the outgoing clip and the first 10–15 frames of the
+incoming clip to isolate the transition section.</li>
+</ol>
+<h3 id="step-2-animate-the-outgoing-clip">Step 2: Animate the Outgoing
+Clip</h3>
+<ol type="1">
+<li>Select the cut section at the end of the first clip.</li>
+<li>Go to the <strong>Effects</strong> panel, search for
+<strong>Transform</strong>, and apply it to the clip.</li>
+<li>In the effect properties, create two keyframes: one at the very
+first frame of the cut section and one at the very last frame.</li>
+<li>Set the parameters:
+<ul>
+<li><strong>Start Keyframe:</strong> Keep <strong>Size</strong> at
+<code>100%</code> and <strong>Position (X, Y)</strong> at default center
+coordinates (<code>0, 0</code>).</li>
+<li><strong>End Keyframe:</strong> Increase the <strong>Size</strong>
+(e.g., <code>200%</code> to <code>300%</code>) to zoom in, and adjust
+the <strong>X</strong> or <strong>Y Position</strong> in the direction
+you want the camera to move (e.g., shift X to the left to zoom and pan
+left).</li>
+</ul></li>
+</ol>
+<h3 id="step-3-animate-the-incoming-clip">Step 3: Animate the Incoming
+Clip</h3>
+<ol type="1">
+<li>Select the cut section at the start of the second clip.</li>
+<li>Add the <strong>Transform</strong> effect to this clip.</li>
+<li>Create two keyframes: one at the very first frame and one at the
+final frame of the transition section.</li>
+<li>Set the parameters to match the incoming motion:
+<ul>
+<li><strong>Start Keyframe:</strong> Set <strong>Size</strong> to match
+the outgoing clip's final zoom level (e.g., <code>200%</code> to
+<code>300%</code>) and offset the <strong>X</strong> or <strong>Y
+Position</strong> to the opposite side of the outgoing clip’s exit point
+so the motion continues seamlessly.</li>
+<li><strong>End Keyframe:</strong> Reset the <strong>Size</strong> back
+to <code>100%</code> and the <strong>Position (X, Y)</strong> to default
+center coordinates (<code>0, 0</code>).</li>
+</ul></li>
+</ol>
+<h3 id="step-4-adjust-keyframe-interpolation">Step 4: Adjust Keyframe
+Interpolation</h3>
+<ol type="1">
+<li>Right-click on the keyframes within the Transform effect settings
+for both clips.</li>
+<li>Set the interpolation mode:
+<ul>
+<li>For the outgoing clip, change the end keyframe interpolation to
+<strong>Smooth</strong> or <strong>Exponential</strong> (Ease In) to
+accelerate into the zoom.</li>
+<li>For the incoming clip, set the start keyframe interpolation to
+<strong>Smooth</strong> (Ease Out) so the movement decelerates naturally
+back to the normal view.</li>
+</ul></li>
+</ol>
+<h3 id="step-5-add-directional-motion-blur">Step 5: Add Directional
+Motion Blur</h3>
+<ol type="1">
+<li>Search for <strong>Directional Blur</strong> or <strong>Motion
+Blur</strong> in the <strong>Effects</strong> tab.</li>
+<li>Apply the blur effect to both transition sections.</li>
+<li>Match the blur angle to the axis of your zoom movement (e.g., 0° or
+180° for horizontal movement, 90° for vertical movement).</li>
+<li>Keyframe the blur intensity so it peaks at the cut point where the
+two clips meet, then fades back to zero.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

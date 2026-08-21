@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Smoothly Zoom in Kdenlive with Transform - kdenlive</title>
+    <meta name="description" content="This guide explains how to use Kdenlive’s Transform effect to create a clean, professional slow zoom on an interview subject. By utilizing keyframes, adjusting interpolation curves for natural acceleration, and adhering to resolution best practices, yo">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/how-to-smoothly-zoom-in-kdenlive-with-transform">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Smoothly Zoom in Kdenlive with Transform - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/how-to-smoothly-zoom-in-kdenlive-with-transform" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This guide explains how to use Kdenlive’s Transform effect to create a clean, professional slow zoom on an interview subject. By utilizing keyframes, adjusting interpolation curves for natural acceleration, and adhering to resolution best practices, yo" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-smoothly-zoom-in-kdenlive-with-transform">How to Smoothly
+Zoom in Kdenlive with Transform</h1>
+<p>This guide explains how to use Kdenlive’s Transform effect to create
+a clean, professional slow zoom on an interview subject. By utilizing
+keyframes, adjusting interpolation curves for natural acceleration, and
+adhering to resolution best practices, you can dynamically reframe your
+shots without introducing blurriness or pixelation.</p>
+<h3 id="1-ensure-resolution-headroom-to-avoid-quality-loss">1. Ensure
+Resolution Headroom to Avoid Quality Loss</h3>
+<p>Scaling up any digital video beyond its native resolution can cause
+softening and pixelation. To maintain 100% visual sharpness:</p>
+<ul>
+<li><strong>Best Practice:</strong> Use footage recorded at a higher
+resolution than your project profile (for example, placing 4K footage in
+a 1080p timeline). This allows you to zoom up to 200% with zero quality
+degradation.</li>
+<li><strong>Native Resolution:</strong> If your footage matches your
+project resolution (such as 1080p footage in a 1080p project), limit the
+zoom factor to no more than 110%–115% to keep the image crisp.</li>
+</ul>
+<h3 id="2-apply-the-transform-effect">2. Apply the Transform Effect</h3>
+<ol type="1">
+<li>Drag your interview clip onto the timeline.</li>
+<li>Open the <strong>Effects</strong> panel (usually in the bottom-left
+or tabbed alongside the Project Bin).</li>
+<li>Search for <strong>Transform</strong> under the <em>Transform,
+Distort and Perspective</em> category.</li>
+<li>Drag and drop the <strong>Transform</strong> effect directly onto
+your timeline clip.</li>
+</ol>
+<h3 id="3-set-the-starting-keyframe">3. Set the Starting Keyframe</h3>
+<ol type="1">
+<li>Select the clip in the timeline to open its effect parameters in the
+<strong>Properties</strong> panel.</li>
+<li>Move the timeline playhead to the exact point where you want the
+zoom-in to begin.</li>
+<li>In the Transform parameters, add a keyframe (or use the existing
+default first keyframe).</li>
+<li>Ensure the <strong>Size</strong> (or Scale) is set to
+<code>100%</code> and the <strong>X</strong> and <strong>Y</strong>
+offsets are centered (<code>0, 0</code>).</li>
+</ol>
+<h3 id="4-set-the-target-zoom-keyframe">4. Set the Target Zoom
+Keyframe</h3>
+<ol type="1">
+<li>Advance the playhead forward to where the zoom movement should
+finish (typically 1.5 to 3 seconds for a subtle, natural interview
+push-in).</li>
+<li>Click the <strong>Add keyframe</strong> icon (+) in the Transform
+effect timeline.</li>
+<li>Adjust the <strong>Size</strong> parameter upward (e.g.,
+<code>115%</code> to <code>130%</code>).</li>
+<li>Adjust the <strong>X</strong> and <strong>Y</strong> position values
+to re-center the subject's face, ensuring proper rule-of-thirds
+composition and headroom.</li>
+</ol>
+<h3 id="5-apply-smooth-keyframe-interpolation">5. Apply Smooth Keyframe
+Interpolation</h3>
+<p>By default, keyframes use linear interpolation, which creates
+jarring, robotic starts and stops.</p>
+<ol type="1">
+<li>In the Transform keyframe ruler, right-click the starting keyframe
+and select <strong>Smooth</strong> (or set Keyframe Type to
+<strong>Smooth</strong>).</li>
+<li>Right-click the ending keyframe and also set it to
+<strong>Smooth</strong>.</li>
+<li>This creates an ease-in and ease-out motion curve, allowing the
+camera move to start gently, reach steady motion, and decelerate
+naturally.</li>
+</ol>
+<h3 id="6-preview-and-fine-tune">6. Preview and Fine-Tune</h3>
+<p>Play back the segment in the Project Monitor. If the movement feels
+too rapid, drag the ending keyframe further to the right to extend the
+duration. If the framing drifts off-center, adjust the X and Y
+coordinates on the final keyframe while monitoring the preview.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

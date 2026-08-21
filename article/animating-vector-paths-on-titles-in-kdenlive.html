@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animating Vector Paths on Titles in Kdenlive - kdenlive</title>
+    <meta name="description" content="Animating vector paths on titles in Kdenlive allows video editors to create dynamic motion graphics, path-following text, and progressive line-reveal effects without losing graphic quality. This guide explains the direct methods to animate vector paths o">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/animating-vector-paths-on-titles-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Animating Vector Paths on Titles in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/animating-vector-paths-on-titles-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Animating vector paths on titles in Kdenlive allows video editors to create dynamic motion graphics, path-following text, and progressive line-reveal effects without losing graphic quality. This guide explains the direct methods to animate vector paths o" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="animating-vector-paths-on-titles-in-kdenlive">Animating Vector
+Paths on Titles in Kdenlive</h1>
+<p>Animating vector paths on titles in Kdenlive allows video editors to
+create dynamic motion graphics, path-following text, and progressive
+line-reveal effects without losing graphic quality. This guide explains
+the direct methods to animate vector paths on titles using Kdenlive’s
+native tools, the integrated Glaxnimate vector animation suite, and
+keyframed video effects.</p>
+<h2
+id="method-1-using-glaxnimate-for-native-vector-path-animation">Method
+1: Using Glaxnimate for Native Vector Path Animation</h2>
+<p>Kdenlive is tightly integrated with Glaxnimate, an open-source vector
+animation tool designed for keyframing shapes, paths, and text along
+curves.</p>
+<ol type="1">
+<li><strong>Create an Animation Clip:</strong> In the Kdenlive Project
+Bin, right-click and select <strong>Add Animation...</strong> (or go to
+<strong>Project &gt; Add Animation</strong>). Choose a file name and
+location to save the <code>.rawr</code> or <code>.json</code> animation
+file.</li>
+<li><strong>Open Glaxnimate:</strong> Kdenlive will automatically open
+the animation file in Glaxnimate.</li>
+<li><strong>Draw and Configure the Path:</strong> Use the <strong>Pen
+Tool (P)</strong> or <strong>Path Tool</strong> to draw your custom
+vector path or title shape.</li>
+<li><strong>Animate Along the Path:</strong>
+<ul>
+<li><strong>Path Movement:</strong> Attach a shape or text layer to the
+path, then enable the record/keyframing mode (the red record button on
+the timeline).</li>
+<li><strong>Trim Path / Write-on Effect:</strong> Add a <strong>Trim
+Path</strong> modifier to your stroke layer. Keyframe the
+<strong>End</strong> or <strong>Start</strong> percentage from 0% to
+100% across the timeline to create a drawing or tracing effect along the
+vector line.</li>
+</ul></li>
+<li><strong>Save and Update:</strong> Save the project in Glaxnimate
+(<code>Ctrl + S</code>). The vector animation will automatically render
+and update on your Kdenlive timeline.</li>
+</ol>
+<h2
+id="method-2-animating-imported-svg-titles-with-the-transform-effect">Method
+2: Animating Imported SVG Titles with the Transform Effect</h2>
+<p>If you import a static vector title (such as an <code>.svg</code>
+file from Inkscape or Kdenlive's built-in Title Editor), you can animate
+its position along a custom path using keyframes.</p>
+<ol type="1">
+<li><strong>Import the Vector Title:</strong> Drag your
+<code>.svg</code> vector file into the Kdenlive Project Bin and place it
+onto a video track above your background footage.</li>
+<li><strong>Apply the Transform Effect:</strong> Open the
+<strong>Effects</strong> tab, search for <strong>Transform</strong>, and
+drag it onto your vector title clip.</li>
+<li><strong>Set Keyframes:</strong> In the Effect Stack panel, move the
+playhead to the starting position and adjust the X/Y coordinates. Click
+the <strong>Add Keyframe</strong> button.</li>
+<li><strong>Define the Path:</strong> Move the playhead forward on the
+timeline and adjust the position, size, or rotation of the title.
+Kdenlive automatically generates an interpolation path between these
+keyframes.</li>
+<li><strong>Adjust Interpolation:</strong> Change the keyframe
+interpolation type (e.g., <em>Smooth</em> or <em>B-Spline</em>) by
+right-clicking keyframe points to turn rigid angular movements into
+curved, fluid paths.</li>
+</ol>
+<h2 id="method-3-revealing-static-vector-paths-using-rotoscoping">Method
+3: Revealing Static Vector Paths Using Rotoscoping</h2>
+<p>To reveal a static vector path or stroke gradually within Kdenlive
+without external software:</p>
+<ol type="1">
+<li>Place your vector title clip on the timeline.</li>
+<li>Search for the <strong>Rotoscoping</strong> effect in the Effects
+panel and apply it to the clip.</li>
+<li>In the project monitor, draw a mask following the vector path by
+clicking to place control points.</li>
+<li>Set the <strong>Mode</strong> to <em>Alpha</em> and enable
+keyframing in the effect parameters.</li>
+<li>Move through the timeline, adjusting the mask nodes step-by-step to
+progressively reveal the vector graphic along its intended path.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

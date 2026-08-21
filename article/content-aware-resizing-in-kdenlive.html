@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content-Aware Resizing in Kdenlive - kdenlive</title>
+    <meta name="description" content="This article provides a comprehensive guide on how to achieve content-aware resizing and seam carving effects within the open-source video editor Kdenlive. Because Kdenlive does not feature a native, automated seam-carving filter, editors must rely on a">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/content-aware-resizing-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Content-Aware Resizing in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/content-aware-resizing-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This article provides a comprehensive guide on how to achieve content-aware resizing and seam carving effects within the open-source video editor Kdenlive. Because Kdenlive does not feature a native, automated seam-carving filter, editors must rely on a" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="content-aware-resizing-in-kdenlive">Content-Aware Resizing in
+Kdenlive</h1>
+<p>This article provides a comprehensive guide on how to achieve
+content-aware resizing and seam carving effects within the open-source
+video editor Kdenlive. Because Kdenlive does not feature a native,
+automated seam-carving filter, editors must rely on a combination of
+built-in scaling effects to preserve focal points, or utilize an
+external batch-processing workflow with image manipulation software to
+achieve true liquid resizing.</p>
+<h2
+id="understanding-kdenlives-limitations-with-seam-carving">Understanding
+Kdenlive's Limitations with Seam Carving</h2>
+<p>Seam carving, also known as liquid rescaling, is an algorithm that
+changes the aspect ratio of an image or video by removing pixels from
+areas with low detail (such as skies or blank walls) while preserving
+the proportions of important subjects. Because this process is highly
+resource-intensive when applied to video, Kdenlive does not offer a
+native "Content-Aware Resize" filter. Instead, users can employ two
+primary workarounds: manual smart cropping and scaling, or external
+image-sequence processing.</p>
+<h2
+id="method-1-simulating-content-aware-resizing-with-native-tools">Method
+1: Simulating Content-Aware Resizing with Native Tools</h2>
+<p>If you need to change your video's aspect ratio (for example,
+converting widescreen 16:9 to vertical 9:16) without distorting your
+main subject, you can use Kdenlive's native transform and keyframing
+tools to simulate a content-aware reframing.</p>
+<ol type="1">
+<li><strong>Set the Project Profile:</strong> Go to <strong>Project &gt;
+Project Settings</strong> and select your target aspect ratio (such as
+Vertical HD).</li>
+<li><strong>Import and Apply Transform:</strong> Drag your footage onto
+the timeline. Go to the <strong>Effects</strong> tab, search for the
+<strong>Transform</strong> effect, and drag it onto your video
+clip.</li>
+<li><strong>Scale and Position:</strong> In the Effect Properties panel,
+adjust the <strong>Size</strong> of the video so it fills the new
+frame.</li>
+<li><strong>Keyframe the Position:</strong> If the subject moves out of
+the frame, double-click the keyframe timeline in the Transform effect
+options to add keyframes. Manually adjust the <strong>X</strong>
+(horizontal) or <strong>Y</strong> (vertical) position at different
+points in the video to keep the subject centered. This achieves a
+"smart-crop" effect similar to commercial auto-reframe tools.</li>
+</ol>
+<h2 id="method-2-true-seam-carving-via-external-image-sequences">Method
+2: True Seam Carving via External Image Sequences</h2>
+<p>For actual pixel-level seam carving, you must temporarily convert
+your video into an image sequence, process it using a tool like GIMP
+(which supports the Liquid Rescale plugin) or ImageMagick, and then
+re-import it into Kdenlive.</p>
+<ol type="1">
+<li><strong>Export the Image Sequence:</strong> In Kdenlive, select the
+portion of the video you want to resize. Go to <strong>Project &gt;
+Render</strong>. Under the render presets, select <strong>Image
+Sequence</strong> (PNG or JPEG format) and render the clip to a
+dedicated empty folder.</li>
+<li><strong>Batch Process the Images:</strong> Open your external image
+editor or command-line tool. If using GIMP, install the <strong>Liquid
+Rescale</strong> plugin. Use a batch-processing tool to apply the seam
+carving algorithm to the entire folder of exported images, resizing them
+to your target dimensions.</li>
+<li><strong>Re-import to Kdenlive:</strong> Once processed, return to
+Kdenlive. Click <strong>Add Clip or Folder</strong>, check the
+<strong>Import Image Sequence</strong> box, select the first image of
+your processed sequence, and click <strong>OK</strong>.</li>
+<li><strong>Align on Timeline:</strong> Drag the newly imported image
+sequence onto your timeline. It will play back as a continuous, natively
+seam-carved video clip.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Map a Shuttle Dial in Kdenlive for Jog Editing - kdenlive</title>
+    <meta name="description" content="Mapping a hardware jog and shuttle dial in Kdenlive allows video editors to achieve fluid timeline navigation, variable-speed scrubbing, and precise frame-by-frame cuts. This guide covers how to enable native jog/shuttle controller support within Kdenliv">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/how-to-map-a-shuttle-dial-in-kdenlive-for-jog-editing">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Map a Shuttle Dial in Kdenlive for Jog Editing - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/how-to-map-a-shuttle-dial-in-kdenlive-for-jog-editing" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Mapping a hardware jog and shuttle dial in Kdenlive allows video editors to achieve fluid timeline navigation, variable-speed scrubbing, and precise frame-by-frame cuts. This guide covers how to enable native jog/shuttle controller support within Kdenliv" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-map-a-shuttle-dial-in-kdenlive-for-jog-editing">How to
+Map a Shuttle Dial in Kdenlive for Jog Editing</h1>
+<p>Mapping a hardware jog and shuttle dial in Kdenlive allows video
+editors to achieve fluid timeline navigation, variable-speed scrubbing,
+and precise frame-by-frame cuts. This guide covers how to enable native
+jog/shuttle controller support within Kdenlive's settings, configure the
+inner jog wheel and outer shuttle ring, and set up fallback key mapping
+for unsupported or generic USB/MIDI control surfaces.</p>
+<h3 id="1-connect-and-verify-your-controller">1. Connect and Verify Your
+Controller</h3>
+<p>Before configuring Kdenlive, ensure your operating system detects the
+hardware device:</p>
+<ul>
+<li><strong>Linux:</strong> Controllers like the Contour ShuttlePRO
+require read access to <code>/dev/input/</code> or appropriate
+<code>udev</code> rules. Ensure your user account belongs to the
+<code>input</code> group.</li>
+<li><strong>Windows &amp; macOS:</strong> Install the official device
+drivers. If using proprietary software (e.g., Contour Shuttle Driver),
+decide whether to use native Kdenlive integration or driver-level
+keystroke emulation.</li>
+</ul>
+<h3 id="2-enable-jogshuttle-in-kdenlive">2. Enable Jog/Shuttle in
+Kdenlive</h3>
+<p>Kdenlive includes built-in support for standard hardware devices such
+as the Contour ShuttlePRO and ShuttleXpress:</p>
+<ol type="1">
+<li>Launch Kdenlive.</li>
+<li>Navigate to <strong>Settings &gt; Configure Kdenlive</strong> (or
+<strong>Kdenlive &gt; Preferences</strong> on macOS).</li>
+<li>In the sidebar, select the <strong>JogShuttle</strong> tab.</li>
+<li>Check the box labeled <strong>Enable Jog Shuttle
+device</strong>.</li>
+<li>Choose your connected device from the <strong>Device</strong>
+drop-down menu. If your device does not appear automatically, enter the
+device path manually (e.g., <code>/dev/input/by-id/...</code> on
+Linux).</li>
+</ol>
+<h3 id="3-configure-the-jog-wheel-and-shuttle-ring">3. Configure the Jog
+Wheel and Shuttle Ring</h3>
+<p>Once the device is detected, assign the rotational controls:</p>
+<ul>
+<li><strong>Inner Jog Wheel (Frame-by-Frame):</strong> Assign the inner
+wheel to step forward and backward. When rotated clockwise, it moves the
+playhead forward by one frame; counter-clockwise moves it backward by
+one frame.</li>
+<li><strong>Outer Shuttle Ring (Variable Playback):</strong> The
+spring-loaded outer ring controls variable-speed scanning. Map the
+progressive deflection zones to variable speed intervals (e.g., -8x,
+-4x, -2x, -1x, 1x, 2x, 4x, 8x).</li>
+<li><strong>Buttons:</strong> Assign the hardware buttons to
+high-frequency editing actions, such as:
+<ul>
+<li><strong>Set In Point</strong> (<code>I</code>)</li>
+<li><strong>Set Out Point</strong> (<code>O</code>)</li>
+<li><strong>Cut Clip</strong> (<code>Shift + R</code>)</li>
+<li><strong>Play/Pause</strong> (<code>Space</code> or
+<code>K</code>)</li>
+</ul></li>
+</ul>
+<p>Click <strong>Apply</strong> and then <strong>OK</strong> to save the
+settings.</p>
+<h3 id="4-alternative-method-keystroke-emulation-generic-hardware">4.
+Alternative Method: Keystroke Emulation (Generic Hardware)</h3>
+<p>If you are using a generic USB knob, macro pad, or MIDI controller
+that is not natively recognized by Kdenlive's JogShuttle module,
+configure it using key remapping software (such as the device’s
+proprietary utility, AntiMicroX, or AutoHotkey):</p>
+<ol type="1">
+<li><strong>Jog Right (Clockwise):</strong> Map to
+<code>Right Arrow</code> (Move 1 frame right).</li>
+<li><strong>Jog Left (Counter-Clockwise):</strong> Map to
+<code>Left Arrow</code> (Move 1 frame left).</li>
+<li><strong>Fast Scrubbing:</strong> Map rotation with a modifier key to
+<code>Shift + Right Arrow</code> / <code>Shift + Left Arrow</code> (Move
+1 second/10 frames).</li>
+<li><strong>Shuttle Forward:</strong> Map to <code>L</code> (Playback /
+Increase Speed).</li>
+<li><strong>Shuttle Backward:</strong> Map to <code>J</code> (Reverse
+Playback / Increase Reverse Speed).</li>
+<li><strong>Stop/Pause:</strong> Map the center button/press to
+<code>K</code> or <code>Space</code>.</li>
+</ol>
+<h3 id="5-testing-and-fine-tuning">5. Testing and Fine-Tuning</h3>
+<p>Open a project with footage loaded into the timeline to test the
+setup. Verify that:</p>
+<ul>
+<li>Slow movements on the inner wheel consistently advance the playhead
+by single-frame increments without skipping.</li>
+<li>Releasing the spring-loaded shuttle ring immediately stops or
+returns the timeline to normal playback without command latency.</li>
+<li>Timeline zoom levels do not interfere with frame-stepping
+accuracy.</li>
+</ul></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configure ProRes Proxy Profiles in Kdenlive - kdenlive</title>
+    <meta name="description" content="This guide provides a straightforward walkthrough for configuring custom external proxy transcoding profiles in Kdenlive using the Apple ProRes Proxy codec. By leveraging FFmpeg’s ProRes encoder directly within Kdenlive's proxy settings, you can signif">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/configure-prores-proxy-profiles-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Configure ProRes Proxy Profiles in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/configure-prores-proxy-profiles-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This guide provides a straightforward walkthrough for configuring custom external proxy transcoding profiles in Kdenlive using the Apple ProRes Proxy codec. By leveraging FFmpeg’s ProRes encoder directly within Kdenlive's proxy settings, you can signif" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="configure-prores-proxy-profiles-in-kdenlive">Configure ProRes
+Proxy Profiles in Kdenlive</h1>
+<p>This guide provides a straightforward walkthrough for configuring
+custom external proxy transcoding profiles in Kdenlive using the Apple
+ProRes Proxy codec. By leveraging FFmpeg’s ProRes encoder directly
+within Kdenlive's proxy settings, you can significantly reduce timeline
+lag, speed up scrubbing, and ensure seamless playback when working with
+high-resolution or heavily compressed source footage.</p>
+<h2 id="why-use-prores-proxy-in-kdenlive">Why Use ProRes Proxy in
+Kdenlive?</h2>
+<p>While H.264/H.265 proxies create small file sizes, they are
+inter-frame codecs that place a heavy decompression load on your CPU
+during timeline navigation. Apple ProRes Proxy is an intra-frame format
+(every frame is compressed independently), making decoding effortless
+for your system and providing an exceptionally responsive editing
+experience.</p>
+<h2 id="steps-to-configure-the-prores-proxy-profile">Steps to Configure
+the ProRes Proxy Profile</h2>
+<h3 id="step-1-open-the-proxy-profile-manager">Step 1: Open the Proxy
+Profile Manager</h3>
+<ol type="1">
+<li>Launch Kdenlive.</li>
+<li>Navigate to the top menu and select <strong>Settings</strong> &gt;
+<strong>Configure Kdenlive...</strong> (on macOS,
+<strong>Kdenlive</strong> &gt; <strong>Preferences...</strong>).</li>
+<li>In the left-hand sidebar, click on <strong>Proxy
+Clips</strong>.</li>
+<li>In the <strong>Encoding profile</strong> section, click the
+<strong>Manage Proxy Profiles</strong> button (the wrench or edit icon
+next to the profile dropdown).</li>
+</ol>
+<h3 id="step-2-create-a-new-profile">Step 2: Create a New Profile</h3>
+<ol type="1">
+<li>In the profile management window, click the <strong>Add new
+profile</strong> icon (the plus sign <code>+</code>).</li>
+<li>Set the <strong>Profile Name</strong> to:
+<code>Apple ProRes Proxy</code>.</li>
+<li>Set the <strong>File Extension</strong> to: <code>mov</code>.</li>
+</ol>
+<h3 id="step-3-insert-the-ffmpeg-transcoding-parameters">Step 3: Insert
+the FFmpeg Transcoding Parameters</h3>
+<p>In the <strong>Parameters</strong> text field, enter the FFmpeg
+command string for ProRes Proxy encoding.</p>
+<p>For full-resolution ProRes Proxy:</p>
+<pre class="text"><code>-vcodec prores_ks -profile:v 0 -acodec pcm_s16le</code></pre>
+<p>For half-resolution ProRes Proxy (recommended for 4K/8K media to
+maximize playback speed):</p>
+<pre class="text"><code>-vf scale=iw/2:ih/2 -vcodec prores_ks -profile:v 0 -acodec pcm_s16le</code></pre>
+<h4 id="parameter-breakdown">Parameter Breakdown:</h4>
+<ul>
+<li><code>-vcodec prores_ks</code>: Selects the standard FFmpeg ProRes
+encoder.</li>
+<li><code>-profile:v 0</code>: Sets the ProRes profile to
+<strong>Proxy</strong> (<code>0</code> = Proxy, <code>1</code> = LT,
+<code>2</code> = Standard, <code>3</code> = HQ).</li>
+<li><code>-acodec pcm_s16le</code>: Encodes uncompressed 16-bit PCM
+audio to minimize audio processing overhead.</li>
+<li><code>-vf scale=iw/2:ih/2</code>: Scales the video width and height
+to 50% of the original source resolution.</li>
+</ul>
+<h3 id="step-4-save-and-set-as-default">Step 4: Save and Set as
+Default</h3>
+<ol type="1">
+<li>Click <strong>Save</strong> (or <strong>OK</strong>) to store the
+profile.</li>
+<li>Back in the <strong>Proxy Clips</strong> settings window, set
+<strong>Encoding profile</strong> to your newly created
+<code>Apple ProRes Proxy</code>.</li>
+<li>Check the box labeled <strong>Enable proxy clips</strong> to ensure
+newly imported clips automatically generate proxies if they exceed your
+designated resolution threshold (e.g., 1000px or 2000px).</li>
+<li>Click <strong>Apply</strong>, then <strong>OK</strong>.</li>
+</ol>
+<h2 id="applying-the-profile-to-an-existing-project">Applying the
+Profile to an Existing Project</h2>
+<p>If you are already inside an active project:</p>
+<ol type="1">
+<li>Go to <strong>Project</strong> &gt; <strong>Project
+Settings...</strong></li>
+<li>Select the <strong>Proxy</strong> tab.</li>
+<li>Check <strong>Enable Proxy Clips</strong>.</li>
+<li>Set the <strong>Encoding profile</strong> dropdown to <strong>Apple
+ProRes Proxy</strong>.</li>
+<li>Click <strong>OK</strong>.</li>
+</ol>
+<p>Kdenlive will automatically begin rendering the ProRes proxy files in
+your project's background job queue.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

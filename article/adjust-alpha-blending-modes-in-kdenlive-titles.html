@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjust Alpha Blending Modes in Kdenlive Titles - kdenlive</title>
+    <meta name="description" content="Adjusting the alpha blending modes of overlapping title cards in Kdenlive allows you to control how text, shapes, and transparency interact between multiple layers. By placing title clips on separate tracks and applying composition effects or timeline tr">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/adjust-alpha-blending-modes-in-kdenlive-titles">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Adjust Alpha Blending Modes in Kdenlive Titles - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/adjust-alpha-blending-modes-in-kdenlive-titles" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Adjusting the alpha blending modes of overlapping title cards in Kdenlive allows you to control how text, shapes, and transparency interact between multiple layers. By placing title clips on separate tracks and applying composition effects or timeline tr" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="adjust-alpha-blending-modes-in-kdenlive-titles">Adjust Alpha
+Blending Modes in Kdenlive Titles</h1>
+<p>Adjusting the alpha blending modes of overlapping title cards in
+Kdenlive allows you to control how text, shapes, and transparency
+interact between multiple layers. By placing title clips on separate
+tracks and applying composition effects or timeline transitions, you can
+achieve complex visual styles such as screen, multiply, overlay, and
+custom alpha operations. This guide walks you through the precise steps
+to configure these blend modes on your timeline.</p>
+<h3 id="step-1-place-title-cards-on-separate-tracks">Step 1: Place Title
+Cards on Separate Tracks</h3>
+<ol type="1">
+<li>Open your project in Kdenlive and locate your title clips in the
+<strong>Project Bin</strong>.</li>
+<li>Drag the base title card onto an upper video track (for example,
+<strong>V2</strong>).</li>
+<li>Drag the overlapping title card onto the track directly above it
+(for example, <strong>V3</strong>).</li>
+<li>Align the clips on the timeline so they overlap for the desired
+duration.</li>
+</ol>
+<h3 id="step-2-add-a-composition-or-transform-effect">Step 2: Add a
+Composition or Transform Effect</h3>
+<p>To blend the upper title card with the lower one, you must apply a
+compositing tool:</p>
+<ul>
+<li><strong>Method A (Track Transition):</strong> Hover near the bottom
+edge of the top clip on the timeline until the composition pointer
+appears, then click to add a <strong>Composite and Transform</strong>
+composition between the two tracks.</li>
+<li><strong>Method B (Effects Stack):</strong> Select the upper title
+clip, open the <strong>Effects</strong> panel, search for
+<strong>Composite and Transform</strong> (or
+<strong>Transform</strong>), and drag it onto the clip.</li>
+</ul>
+<h3 id="step-3-change-the-blend-mode">Step 3: Change the Blend Mode</h3>
+<ol type="1">
+<li>Click on the applied composition or select the clip to open its
+settings in the <strong>Effect/Composition Stack</strong> panel.</li>
+<li>Locate the <strong>Composition</strong> or <strong>Blend
+Mode</strong> drop-down menu.</li>
+<li>Choose the appropriate blending mode based on your visual needs:
+<ul>
+<li><strong>Screen / Add:</strong> Brightens the overlap, ideal for
+light text effects over darker elements.</li>
+<li><strong>Multiply:</strong> Darkens the overlap, effectively removing
+light areas.</li>
+<li><strong>Overlay / Soft Light:</strong> Combines multiply and screen
+effects to create higher contrast integration.</li>
+<li><strong>Destination In / Destination Out:</strong> Masks or cuts out
+the shape of the top title from the underlying title using the alpha
+channel.</li>
+</ul></li>
+<li>Adjust the <strong>Opacity</strong> slider to fine-tune the strength
+of the blend.</li>
+</ol>
+<h3 id="step-4-utilize-track-compositing-alternative-method">Step 4:
+Utilize Track Compositing (Alternative Method)</h3>
+<p>If you prefer global blending without individual clip
+transitions:</p>
+<ol type="1">
+<li>Click the <strong>Track Header</strong> for the top video track
+(e.g., V3).</li>
+<li>Right-click the track header and ensure <strong>Track
+Compositing</strong> is set to <strong>High Quality</strong> or
+<strong>Composite and Transform</strong>.</li>
+<li>Apply blending directly through track-level effects if working with
+full-track title templates.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

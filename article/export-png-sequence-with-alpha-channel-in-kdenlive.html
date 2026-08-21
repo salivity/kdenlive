@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export PNG Sequence with Alpha Channel in Kdenlive - kdenlive</title>
+    <meta name="description" content="Exporting a high-resolution PNG image sequence with preserved transparency from Kdenlive is essential for visual effects, motion graphics, and cross-platform video compositing. This guide provides a straightforward procedure for setting up your project r">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/export-png-sequence-with-alpha-channel-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Export PNG Sequence with Alpha Channel in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/export-png-sequence-with-alpha-channel-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Exporting a high-resolution PNG image sequence with preserved transparency from Kdenlive is essential for visual effects, motion graphics, and cross-platform video compositing. This guide provides a straightforward procedure for setting up your project r" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="export-png-sequence-with-alpha-channel-in-kdenlive">Export PNG
+Sequence with Alpha Channel in Kdenlive</h1>
+<p>Exporting a high-resolution PNG image sequence with preserved
+transparency from Kdenlive is essential for visual effects, motion
+graphics, and cross-platform video compositing. This guide provides a
+straightforward procedure for setting up your project resolution,
+configuring the render profile with an alpha channel (RGBA), and
+properly outputting every individual frame as a lossless, transparent
+PNG file.</p>
+<h3 id="step-1-configure-project-settings">Step 1: Configure Project
+Settings</h3>
+<p>Before rendering, ensure that your timeline matches the target
+resolution:</p>
+<ol type="1">
+<li>Open Kdenlive and go to <strong>Project &gt; Project
+Settings</strong>.</li>
+<li>Select your desired high-resolution profile (such as
+<strong>1080p</strong>, <strong>4K UHD</strong>, or a custom resolution
+matching your assets).</li>
+<li>Confirm that the frame rate matches your intended output and click
+<strong>OK</strong>.</li>
+</ol>
+<h3 id="step-2-prepare-the-timeline-with-alpha-transparency">Step 2:
+Prepare the Timeline with Alpha Transparency</h3>
+<p>To ensure transparency is exported:</p>
+<ol type="1">
+<li>Arrange your clips on the timeline and verify there is no solid
+color clip or background footage on lower tracks.</li>
+<li>The empty areas of the timeline naturally represent full
+transparency (alpha = 0).</li>
+<li>If using transitions or compositing effects, ensure they are set to
+blend properly without generating an opaque background.</li>
+</ol>
+<h3 id="step-3-open-the-render-window">Step 3: Open the Render
+Window</h3>
+<ol type="1">
+<li>Click the <strong>Render</strong> button in the main toolbar, or
+press <strong>Ctrl + Enter</strong> (or <strong>Cmd + Return</strong> on
+macOS).</li>
+<li>Ensure <strong>Full Project</strong> or <strong>Selected
+Zone</strong> is chosen depending on the portion of the timeline you
+wish to export.</li>
+</ol>
+<h3 id="step-4-select-and-edit-the-png-image-sequence-preset">Step 4:
+Select and Edit the PNG Image Sequence Preset</h3>
+<ol type="1">
+<li>In the <strong>Presets</strong> panel, expand the <strong>Images
+sequence</strong> category.</li>
+<li>Select <strong>PNG</strong>.</li>
+<li>Click the <strong>Edit Profile</strong> button (wrench/pencil icon)
+or create a new profile based on the PNG preset.</li>
+<li>Verify the rendering parameters contain the following flags to
+ensure lossless compression and alpha channel preservation:
+<ul>
+<li><code>vcodec=png</code></li>
+<li><code>pix_fmt=rgba</code></li>
+</ul></li>
+<li>Ensure that the pixel format is explicitly set to <code>rgba</code>
+(or <code>rgba64be</code> for 16-bit depth). Standard formats like
+<code>rgb24</code> or <code>yuv420p</code> will discard the transparency
+data.</li>
+<li>Click <strong>OK</strong> or <strong>Save</strong> to apply the
+preset.</li>
+</ol>
+<h3 id="step-5-specify-output-destination-and-file-naming">Step 5:
+Specify Output Destination and File Naming</h3>
+<ol type="1">
+<li>Click the file browser icon next to the <strong>Output file</strong>
+field.</li>
+<li>Create and select a <strong>new, empty folder</strong>, as image
+sequences generate an individual file for every frame.</li>
+<li>Name your file using sequential numbering syntax, such as
+<code>frame_%05d.png</code> (this formats frame numbers as
+<code>frame_00001.png</code>, <code>frame_00002.png</code>, etc.).</li>
+</ol>
+<h3 id="step-6-render-the-sequence">Step 6: Render the Sequence</h3>
+<ol type="1">
+<li>Double-check that <strong>Rescale</strong> is unchecked if you want
+to export at full project resolution.</li>
+<li>Click <strong>Render to File</strong>.</li>
+<li>Once the render job completes, open the output directory to verify
+that the PNG sequence files contain clean edges and a transparent
+background when imported into your compositing or animation
+software.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organize Kdenlive Clips with Tags and Search Filters - kdenlive</title>
+    <meta name="description" content="Managing extensive video libraries in Kdenlive requires an efficient asset organization workflow. By using tag metadata, color categories, and dynamic search filters in the Project Bin, editors can instantly locate B-roll, dialogue, graphics, and audio a">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/organize-kdenlive-clips-with-tags-and-search-filters">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Organize Kdenlive Clips with Tags and Search Filters - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/organize-kdenlive-clips-with-tags-and-search-filters" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Managing extensive video libraries in Kdenlive requires an efficient asset organization workflow. By using tag metadata, color categories, and dynamic search filters in the Project Bin, editors can instantly locate B-roll, dialogue, graphics, and audio a" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="organize-kdenlive-clips-with-tags-and-search-filters">Organize
+Kdenlive Clips with Tags and Search Filters</h1>
+<p>Managing extensive video libraries in Kdenlive requires an efficient
+asset organization workflow. By using tag metadata, color categories,
+and dynamic search filters in the Project Bin, editors can instantly
+locate B-roll, dialogue, graphics, and audio assets without digging
+through raw file directories. This guide explains how to tag clips,
+apply metadata, and use Kdenlive's built-in search filters to streamline
+your editing process.</p>
+<h2 id="applying-tags-and-color-categories">Applying Tags and Color
+Categories</h2>
+<p>Kdenlive allows you to categorize clips visually and textually so
+they can be grouped and filtered later.</p>
+<ol type="1">
+<li><p><strong>Assign Color Tags:</strong></p>
+<ul>
+<li>Right-click any clip (or a selection of clips) in the
+<strong>Project Bin</strong>.</li>
+<li>Hover over <strong>Color Tag</strong> in the context menu.</li>
+<li>Choose a color (e.g., Red for raw interviews, Blue for B-roll,
+Yellow for audio). The clip thumbnail and icon in the bin will reflect
+this color immediately.</li>
+</ul></li>
+<li><p><strong>Add Custom Metadata and Tags:</strong></p>
+<ul>
+<li>Select a clip in the Project Bin and open the <strong>Clip
+Properties</strong> panel (if hidden, enable it via <strong>View &gt;
+Clip Properties</strong>).</li>
+<li>Navigate to the <strong>Metadata</strong> or
+<strong>Description</strong> tab.</li>
+<li>Enter relevant keywords, scene numbers, or descriptions into the
+fields. Kdenlive indexes these fields for the search engine.</li>
+</ul></li>
+</ol>
+<h2 id="using-search-filters-in-the-project-bin">Using Search Filters in
+the Project Bin</h2>
+<p>The Project Bin search bar operates as a dynamic filter, updating the
+displayed clips in real time based on your criteria.</p>
+<ol type="1">
+<li><p><strong>Filter by Name or Metadata:</strong></p>
+<ul>
+<li>Click inside the search bar at the top of the <strong>Project
+Bin</strong>.</li>
+<li>Type any keyword, file name, or custom metadata value assigned in
+the Clip Properties. Only matching assets will remain visible in the bin
+hierarchy.</li>
+</ul></li>
+<li><p><strong>Filter by Clip Type:</strong></p>
+<ul>
+<li>Next to the search bar, click the filter icon to isolate specific
+media types, such as Video, Audio, Images, or Sequences.</li>
+</ul></li>
+<li><p><strong>Filter by Color Tag:</strong></p>
+<ul>
+<li>Use the color tag filter dropdown adjacent to the search field to
+display only clips assigned to a specific color label. Combining a text
+search with a color filter narrows down large projects to specific takes
+or asset types instantly.</li>
+</ul></li>
+</ol>
+<h2 id="maintaining-an-efficient-project-bin">Maintaining an Efficient
+Project Bin</h2>
+<ul>
+<li><strong>Tag on Import:</strong> Assign color tags immediately after
+importing assets to avoid sorting through mixed media later.</li>
+<li><strong>Combine Folders with Tags:</strong> Use traditional Project
+Bin folders for high-level structure (e.g., Audio, Footage, VFX) while
+relying on metadata and color tags for granular clip identification
+across all folders.</li>
+<li><strong>Clear Filters:</strong> Remember to clear the search bar and
+reset tag filters when you need to view the full project tree
+again.</li>
+</ul></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

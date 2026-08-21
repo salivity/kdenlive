@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export Kdenlive Project Bin as a Text Asset List - kdenlive</title>
+    <meta name="description" content="This article provides a step-by-step guide on how to export the contents of your Kdenlive Project Bin as a text-based asset list. While Kdenlive does not feature a direct "Export Bin to TXT" button in its user interface, you can quickly generate a clean,">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/export-kdenlive-project-bin-as-a-text-asset-list">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Export Kdenlive Project Bin as a Text Asset List - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/export-kdenlive-project-bin-as-a-text-asset-list" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This article provides a step-by-step guide on how to export the contents of your Kdenlive Project Bin as a text-based asset list. While Kdenlive does not feature a direct "Export Bin to TXT" button in its user interface, you can quickly generate a clean," />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="export-kdenlive-project-bin-as-a-text-asset-list">Export
+Kdenlive Project Bin as a Text Asset List</h1>
+<p>This article provides a step-by-step guide on how to export the
+contents of your Kdenlive Project Bin as a text-based asset list. While
+Kdenlive does not feature a direct "Export Bin to TXT" button in its
+user interface, you can quickly generate a clean, readable list of all
+your media assets by accessing the project's XML file or using the
+Project Archive tool.</p>
+<h2 id="method-1-extracting-assets-via-the-kdenlive-project-file">Method
+1: Extracting Assets via the Kdenlive Project File</h2>
+<p>Because Kdenlive saves projects in a plain-text XML format
+(<code>.kdenlive</code>), you can easily extract the file paths of all
+imported assets using any text editor.</p>
+<ol type="1">
+<li><strong>Save and Close your Kdenlive Project:</strong> Ensure your
+latest changes are saved, then close the application.</li>
+<li><strong>Open the Project File in a Text Editor:</strong> Locate your
+<code>.kdenlive</code> project file, right-click it, and open it with a
+text editor like Notepad (Windows), TextEdit (macOS), or VS
+Code/Notepad++.</li>
+<li><strong>Locate the Asset Paths:</strong>
+<ul>
+<li>Search for the term <code>resource=</code> using the editor's find
+tool (<code>Ctrl + F</code> or <code>Cmd + F</code>).</li>
+<li>Each asset in your Project Bin is defined inside a
+<code>&lt;producer&gt;</code> XML tag, with the file path listed in the
+<code>resource="..."</code> attribute.</li>
+</ul></li>
+<li><strong>Copy the Paths:</strong> Copy these lines into a new text
+document to create your asset list.</li>
+</ol>
+<hr />
+<h2 id="method-2-using-command-line-tools-fastest-method">Method 2:
+Using Command-Line Tools (Fastest Method)</h2>
+<p>If you are comfortable with the command line, you can instantly
+extract a clean list of all file paths from your Kdenlive project
+file.</p>
+<h3 id="for-linux-and-macos-terminal">For Linux and macOS
+(Terminal):</h3>
+<p>Open your terminal and run the following command (replace
+<code>project.kdenlive</code> with your actual file name):</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-o</span> <span class="st">&#39;resource=&quot;[^&quot;]*&quot;&#39;</span> project.kdenlive <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&#39;s/resource=&quot;//;s/&quot;//&#39;</span> <span class="op">&gt;</span> asset_list.txt</span></code></pre></div>
+<p>This filters out the XML markup and saves a clean list of all asset
+paths directly into a new text file named
+<code>asset_list.txt</code>.</p>
+<h3 id="for-windows-powershell">For Windows (PowerShell):</h3>
+<p>Open PowerShell and run the following command:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Select-String</span> <span class="op">-</span>Path <span class="op">.</span>\project<span class="op">.</span><span class="fu">kdenlive</span> <span class="op">-</span>Pattern <span class="st">&#39;resource=&quot;([^&quot;]+)&quot;&#39;</span> <span class="op">|</span> <span class="fu">ForEach-Object</span> <span class="op">{</span> <span class="va">$_</span><span class="op">.</span><span class="fu">Matches</span><span class="op">.</span><span class="fu">Groups</span><span class="op">[</span><span class="dv">1</span><span class="op">].</span><span class="fu">Value</span> <span class="op">}</span> <span class="op">&gt;</span> asset_list<span class="op">.</span><span class="fu">txt</span></span></code></pre></div>
+<hr />
+<h2 id="method-3-using-the-project-archive-tool">Method 3: Using the
+Project Archive Tool</h2>
+<p>If you want to see a visual list of all assets and their file sizes
+without opening code, you can use Kdenlive's built-in archiving
+feature.</p>
+<ol type="1">
+<li>Open your project in Kdenlive.</li>
+<li>Go to the top menu and select <strong>Project</strong> &gt;
+<strong>Archive Project</strong>.</li>
+<li>A window will open displaying a list of all project files, their
+file paths, and their sizes.</li>
+<li>While you cannot directly export this view as a text file from this
+window, you can take a screenshot of this list or use an OCR (Optical
+Character Recognition) tool to quickly grab the text if your project
+contains a small number of assets.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

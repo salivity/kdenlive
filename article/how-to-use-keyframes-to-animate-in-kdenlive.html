@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use Keyframes to Animate in Kdenlive - kdenlive</title>
+    <meta name="description" content="Keyframes are essential tools in video editing that allow you to change the parameters of an effect over time. This guide provides a straightforward, step-by-step walkthrough on how to apply effects to your clips in Kdenlive and use keyframes to animate">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/how-to-use-keyframes-to-animate-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Use Keyframes to Animate in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/how-to-use-keyframes-to-animate-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Keyframes are essential tools in video editing that allow you to change the parameters of an effect over time. This guide provides a straightforward, step-by-step walkthrough on how to apply effects to your clips in Kdenlive and use keyframes to animate" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-use-keyframes-to-animate-in-kdenlive">How to Use
+Keyframes to Animate in Kdenlive</h1>
+<p>Keyframes are essential tools in video editing that allow you to
+change the parameters of an effect over time. This guide provides a
+straightforward, step-by-step walkthrough on how to apply effects to
+your clips in Kdenlive and use keyframes to animate properties like
+position, size, opacity, and color.</p>
+<h2 id="step-1-apply-an-effect-to-your-clip">Step 1: Apply an Effect to
+Your Clip</h2>
+<p>Select a video clip on your timeline. Open the
+<strong>Effects</strong> panel and search for an effect that supports
+keyframing, such as <strong>Transform</strong> or
+<strong>Brightness</strong>. Drag and drop the chosen effect directly
+onto your timeline clip.</p>
+<h2 id="step-2-enable-keyframing">Step 2: Enable Keyframing</h2>
+<p>With the clip selected, look at the <strong>Effect/Composition
+Stack</strong> panel (usually located in the top-middle or top-left area
+of the interface). Here, you will see the parameters of the applied
+effect. To enable keyframing, click the <strong>Show/Hide
+Keyframes</strong> icon (which looks like a small clock or stopwatch)
+next to the effect parameters. This action will reveal the keyframe
+ruler directly beneath the effect settings.</p>
+<h2 id="step-3-add-and-adjust-keyframes">Step 3: Add and Adjust
+Keyframes</h2>
+<p>The keyframe ruler represents the exact duration of your selected
+clip. To animate the effect:</p>
+<ol type="1">
+<li><strong>Set the start point:</strong> Move the playhead on the
+keyframe ruler to the time where you want the animation to begin.
+Double-click on the ruler, or click the <strong>Add keyframe</strong>
+(plus sign) button. Adjust the parameter values (such as changing the
+size to 50%).</li>
+<li><strong>Set the end point:</strong> Move the playhead further down
+the keyframe ruler to where you want the animation to stop. Create a
+second keyframe and change the parameter values again (such as
+increasing the size to 100%).</li>
+</ol>
+<p>Kdenlive will automatically calculate the transition and animate the
+values between these two points.</p>
+<h2 id="step-4-fine-tune-keyframe-interpolation">Step 4: Fine-Tune
+Keyframe Interpolation</h2>
+<p>You can control how smoothly the animation transitions from one
+keyframe to the next. Right-click on any keyframe in the ruler to change
+its interpolation mode:</p>
+<ul>
+<li><strong>Linear:</strong> Creates a constant, steady speed of
+change.</li>
+<li><strong>Discrete:</strong> Causes the value to jump instantly to the
+next setting without a smooth transition.</li>
+<li><strong>Smooth:</strong> Automatically eases the animation in and
+out for a more natural, professional look.</li>
+</ul>
+<p>You can drag your keyframes left or right along the ruler at any time
+to adjust the timing and speed of your animation.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

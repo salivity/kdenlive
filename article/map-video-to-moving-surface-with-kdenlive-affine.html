@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Video to Moving Surface with Kdenlive Affine - kdenlive</title>
+    <meta name="description" content="This guide explains how to use the Affine transition in Kdenlive to map a video clip onto a moving rectangular surface, such as a smartphone screen, television, or billboard, within a background video. By leveraging Kdenlive’s track hierarchy and keyfr">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/map-video-to-moving-surface-with-kdenlive-affine">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Map Video to Moving Surface with Kdenlive Affine - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/map-video-to-moving-surface-with-kdenlive-affine" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This guide explains how to use the Affine transition in Kdenlive to map a video clip onto a moving rectangular surface, such as a smartphone screen, television, or billboard, within a background video. By leveraging Kdenlive’s track hierarchy and keyfr" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="map-video-to-moving-surface-with-kdenlive-affine">Map Video to
+Moving Surface with Kdenlive Affine</h1>
+<p>This guide explains how to use the Affine transition in Kdenlive to
+map a video clip onto a moving rectangular surface, such as a smartphone
+screen, television, or billboard, within a background video. By
+leveraging Kdenlive’s track hierarchy and keyframe animation system, you
+can scale, rotate, skew, and track the motion of your target surface to
+create a seamless picture-in-picture effect.</p>
+<h3 id="step-1-set-up-your-timeline-tracks">Step 1: Set Up Your Timeline
+Tracks</h3>
+<p>To begin, you must arrange your clips on the timeline so that the
+target background video is positioned below the video you want to
+insert.</p>
+<ol type="1">
+<li>Import both video clips into your Kdenlive project bin.</li>
+<li>Drag the background video (the one containing the moving rectangular
+surface) onto a lower track (for example, <strong>V1</strong>).</li>
+<li>Drag the video you want to map onto the track directly above it (for
+example, <strong>V2</strong>).</li>
+<li>Trim and align both clips so their durations match the sequence
+where the mapping occurs.</li>
+</ol>
+<h3 id="step-2-apply-the-affine-transition">Step 2: Apply the Affine
+Transition</h3>
+<p>While Kdenlive offers several effects, the Affine tool is best
+applied as a transition (composition) between the two tracks.</p>
+<ol type="1">
+<li>Right-click the clip on <strong>V2</strong> (the top video).</li>
+<li>Hover over <strong>Insert an Effect</strong> or <strong>Add
+Composition</strong> and select <strong>Affine</strong> from the
+list.</li>
+<li>A yellow transition block will appear beneath your top clip,
+connecting it to the bottom track. Expand this transition block so it
+spans the entire length of the overlapping clips.</li>
+</ol>
+<h3 id="step-3-align-the-video-to-the-target-surface">Step 3: Align the
+Video to the Target Surface</h3>
+<p>Now you must resize and orient the top video to match the position,
+scale, and angle of the rectangular surface at the start of your
+shot.</p>
+<ol type="1">
+<li>Select the <strong>Affine</strong> transition block on your timeline
+to open its settings in the <strong>Properties</strong> panel.</li>
+<li>Ensure your playhead is at the very first frame of the
+transition.</li>
+<li>In the Properties panel, locate the adjustment parameters:
+<strong>X</strong>, <strong>Y</strong> (for positioning),
+<strong>Width</strong>, <strong>Height</strong> (for scaling),
+<strong>Rotate</strong> (for orientation), and <strong>Shear</strong>
+(to skew the perspective to match angled surfaces).</li>
+<li>Adjust these sliders, or use the on-screen red selection box in the
+Project Monitor, to drag and warp the video until it perfectly aligns
+with the corners of the moving rectangular surface.</li>
+</ol>
+<h3 id="step-4-track-the-motion-with-keyframes">Step 4: Track the Motion
+with Keyframes</h3>
+<p>Because the target surface is moving, you must animate the Affine
+transition parameters using keyframes to track the motion.</p>
+<ol type="1">
+<li>In the Affine properties timeline, click the <strong>Add
+Keyframe</strong> (plus icon) button to lock in your starting
+position.</li>
+<li>Move the timeline playhead forward a few frames to a point where the
+background surface has visibly moved.</li>
+<li>Adjust the Affine settings (position, scale, rotation, and shear) in
+the Properties panel to realign the insert video with the new position
+of the background surface. Kdenlive will automatically generate a new
+keyframe at this position.</li>
+<li>Repeat this process throughout the clip. For fast or complex
+movement, add keyframes closer together. For slow, linear movement, you
+may only need a few keyframes at key intervals.</li>
+</ol>
+<h3 id="step-5-fine-tune-and-render">Step 5: Fine-Tune and Render</h3>
+<p>Once the rough tracking is complete, preview your timeline to ensure
+the mapped video does not drift from the target boundaries.</p>
+<ol type="1">
+<li>Play back the sequence in the Project Monitor.</li>
+<li>If you notice drifting between two keyframes, stop the playhead at
+the drift point, adjust the coordinates, and a corrective keyframe will
+be added.</li>
+<li>If the movement of the background surface is smooth, right-click
+your keyframes in the Affine timeline and change the interpolation type
+from <strong>Linear</strong> to <strong>Smooth</strong> for more natural
+tracking.</li>
+<li>Once satisfied, render your project to lock in the final composited
+video.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

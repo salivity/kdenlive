@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Create Burned In Captions in Kdenlive - kdenlive</title>
+    <meta name="description" content="This guide provides a straightforward, step-by-step workflow for creating open captions and permanently burning them into your video using Kdenlive. You will learn how to enable the subtitle track, add and style your text, and configure the final render">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/how-to-create-burned-in-captions-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Create Burned In Captions in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/how-to-create-burned-in-captions-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This guide provides a straightforward, step-by-step workflow for creating open captions and permanently burning them into your video using Kdenlive. You will learn how to enable the subtitle track, add and style your text, and configure the final render" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-create-burned-in-captions-in-kdenlive">How to Create
+Burned In Captions in Kdenlive</h1>
+<p>This guide provides a straightforward, step-by-step workflow for
+creating open captions and permanently burning them into your video
+using Kdenlive. You will learn how to enable the subtitle track, add and
+style your text, and configure the final render settings to hardcode the
+captions directly into the video frames so they are visible on any media
+player without requiring external subtitle files.</p>
+<h2 id="step-1-enable-the-subtitle-track">Step 1: Enable the Subtitle
+Track</h2>
+<p>Kdenlive features a dedicated subtitle track designed specifically
+for creating and timing captions.</p>
+<ol type="1">
+<li>Open your project and look at the top of the timeline
+interface.</li>
+<li>Click the <strong>Show/Hide Subtitle Track</strong> icon (which
+looks like a speech bubble) located in the timeline toolbar.
+Alternatively, go to the top menu and select <strong>Project &gt;
+Subtitles &gt; Add Subtitle</strong>.</li>
+<li>A new, specialized subtitle track will appear at the very top of
+your timeline.</li>
+</ol>
+<h2 id="step-2-add-and-edit-your-captions">Step 2: Add and Edit Your
+Captions</h2>
+<p>Once the subtitle track is active, you can begin adding text blocks
+to match your video's audio.</p>
+<ol type="1">
+<li>Move the playhead to the timestamp where the dialogue begins.</li>
+<li>Double-click inside the subtitle track, or press <strong>Shift +
+S</strong>, to insert a new subtitle block.</li>
+<li>Select the newly created subtitle block. In the
+<strong>Subtitle</strong> edit panel (usually appearing in the top-right
+or top-left of the interface), type your caption text.</li>
+<li>Adjust the duration of the subtitle block by dragging its left or
+right edges on the timeline to align perfectly with the audio.</li>
+<li>Repeat this process for the remainder of your video.</li>
+</ol>
+<h2 id="step-3-style-the-captions-for-maximum-readability">Step 3: Style
+the Captions for Maximum Readability</h2>
+<p>Because open captions are burned permanently into the video, they
+must be highly readable against any background.</p>
+<ol type="1">
+<li>Click on any subtitle block in your timeline.</li>
+<li>In the Subtitle edit panel, click the <strong>Style</strong> icon
+(represented by a brush or gear icon).</li>
+<li>In the styling window, customize the look of your captions. For
+optimal readability, it is recommended to:
+<ul>
+<li>Select a clean sans-serif font (like Arial, Roboto, or DejaVu
+Sans).</li>
+<li>Choose a highly visible font color (usually white or yellow).</li>
+<li>Add a solid black <strong>Background</strong> block or a thick
+<strong>Outline</strong> (shadow) to separate the text from the
+background video.</li>
+</ul></li>
+<li>Click <strong>Apply</strong> or <strong>OK</strong>. Kdenlive
+applies these style changes globally to all captions on the track.</li>
+</ol>
+<h2 id="step-4-render-the-video-with-burned-in-captions">Step 4: Render
+the Video with Burned-In Captions</h2>
+<p>To ensure the captions are permanently "burned" (hardcoded) into the
+video file rather than exported as a toggleable sidecar file, you must
+configure the render settings.</p>
+<ol type="1">
+<li>Click the <strong>Render</strong> button in the main toolbar, or
+press <strong>Ctrl + Enter</strong> (Cmd + Enter on macOS).</li>
+<li>In the Render dialog window, select your desired output format (such
+as MP4 H.264/AAC).</li>
+<li>Look for the <strong>Subtitles</strong> section in the render
+options. If you do not see it, click on the <strong>More
+Options</strong> or <strong>Scripting and Subtitles</strong> tab at the
+bottom of the render window.</li>
+<li>Check the box labeled <strong>Burn subtitles</strong> (in some
+versions, this is labeled as "Check to burn-in subtitles").</li>
+<li>Choose your output file destination, then click <strong>Render to
+File</strong>.</li>
+</ol>
+<p>Kdenlive will render your video file with the subtitles permanently
+written into the video frames, making them un-editable and visible on
+all platforms and video players.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

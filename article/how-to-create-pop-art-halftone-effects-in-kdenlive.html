@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Create Pop Art Halftone Effects in Kdenlive - kdenlive</title>
+    <meta name="description" content="This guide details how to transform standard video footage into a bold, retro pop-art poster aesthetic using Kdenlive. By combining high-contrast color adjustments, posterization, and the native Halftone filter, you can easily replicate the classic scree">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/how-to-create-pop-art-halftone-effects-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Create Pop Art Halftone Effects in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/how-to-create-pop-art-halftone-effects-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This guide details how to transform standard video footage into a bold, retro pop-art poster aesthetic using Kdenlive. By combining high-contrast color adjustments, posterization, and the native Halftone filter, you can easily replicate the classic scree" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-create-pop-art-halftone-effects-in-kdenlive">How to
+Create Pop Art Halftone Effects in Kdenlive</h1>
+<p>This guide details how to transform standard video footage into a
+bold, retro pop-art poster aesthetic using Kdenlive. By combining
+high-contrast color adjustments, posterization, and the native Halftone
+filter, you can easily replicate the classic screen-printed comic book
+and pop-art visuals popularized in 20th-century print media.</p>
+<h3 id="step-1-prepare-your-footage">Step 1: Prepare Your Footage</h3>
+<ol type="1">
+<li>Open Kdenlive and import your video clip into the Project Bin.</li>
+<li>Drag the clip onto an active video track on the timeline.</li>
+<li>Select the clip on the timeline to open the <strong>Effect
+Stack</strong> panel.</li>
+</ol>
+<h3 id="step-2-boost-contrast-and-flatten-colors">Step 2: Boost Contrast
+and Flatten Colors</h3>
+<p>To emulate the graphic look of screen prints, the source footage
+needs high contrast and reduced color gradation before applying the dot
+matrix.</p>
+<ol type="1">
+<li>Go to the <strong>Effects</strong> tab and search for <strong>Color
+Curves</strong> or <strong>Levels</strong>.</li>
+<li>Apply the effect to your clip and create an "S-curve" to darken
+shadows and brighten highlights significantly.</li>
+<li>Search for and apply the <strong>Posterize</strong> effect.</li>
+<li>Set the <strong>Levels</strong> parameter between <strong>4 and
+8</strong> to reduce smooth gradients into distinct, flat bands of
+color.</li>
+</ol>
+<h3 id="step-3-apply-and-configure-the-halftone-effect">Step 3: Apply
+and Configure the Halftone Effect</h3>
+<ol type="1">
+<li>In the <strong>Effects</strong> panel, search for
+<strong>Halftone</strong>.</li>
+<li>Drag and drop the <strong>Halftone</strong> effect onto your clip
+beneath the color effects in the stack.</li>
+<li>Configure the following parameters in the Effect Stack:
+<ul>
+<li><strong>Pattern / Cell Size:</strong> Adjust the dot size (cell
+size) to scale the halftone screen. Larger values create an exaggerated
+pop-art look, while smaller values create subtle textures.</li>
+<li><strong>Angle:</strong> Adjust the screen angles to rotate the dot
+grid, preventing visual moiré patterns.</li>
+<li><strong>Threshold / Intensity:</strong> Fine-tune how the highlights
+and midtones translate into dots to preserve facial features or critical
+subject details.</li>
+</ul></li>
+</ol>
+<h3 id="step-4-apply-vibrant-pop-art-color-tints">Step 4: Apply Vibrant
+Pop-Art Color Tints</h3>
+<p>Pop-art aesthetics rely heavily on saturated, non-realistic color
+palettes such as vibrant cyan, magenta, and yellow.</p>
+<ol type="1">
+<li>Search for the <strong>Colorize</strong> or <strong>Tint</strong>
+effect and add it to the bottom of the effect stack.</li>
+<li>Choose a bold primary or neon tint color for highlights and a
+contrasting dark color for shadows.</li>
+<li>Alternatively, apply the <strong>RGB Adjustment</strong> effect to
+push specific color channels to their extremes.</li>
+</ol>
+<h3 id="step-5-optional-overlay-an-outline-for-graphic-definition">Step
+5: (Optional) Overlay an Outline for Graphic Definition</h3>
+<ol type="1">
+<li>Duplicate your source clip directly to a video track above your
+current clip (e.g., from V1 to V2).</li>
+<li>On the upper clip (V2), remove all effects and add the <strong>Edge
+Detect</strong> (or <strong>Sobel</strong>) effect followed by a
+<strong>Threshold</strong> effect to isolate black outlines.</li>
+<li>Set the upper track's <strong>Composition</strong> mode to
+<strong>Multiply</strong> or <strong>Screen</strong> to overlay sharp,
+ink-like borders over your halftone-patterned background.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

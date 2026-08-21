@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Dual Ultrawide Resolutions in Kdenlive - kdenlive</title>
+    <meta name="description" content="This guide outlines the step-by-step process for configuring custom project profiles in Kdenlive to edit content for dual-screen ultrawide video walls. You will learn how to calculate the combined pixel dimensions, create and save a custom project profil">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/custom-dual-ultrawide-resolutions-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Custom Dual Ultrawide Resolutions in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/custom-dual-ultrawide-resolutions-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This guide outlines the step-by-step process for configuring custom project profiles in Kdenlive to edit content for dual-screen ultrawide video walls. You will learn how to calculate the combined pixel dimensions, create and save a custom project profil" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="custom-dual-ultrawide-resolutions-in-kdenlive">Custom Dual
+Ultrawide Resolutions in Kdenlive</h1>
+<p>This guide outlines the step-by-step process for configuring custom
+project profiles in Kdenlive to edit content for dual-screen ultrawide
+video walls. You will learn how to calculate the combined pixel
+dimensions, create and save a custom project profile, adjust composition
+settings, and export your video at the exact resolution needed for
+multi-monitor playback.</p>
+<h3 id="1-calculate-the-total-canvas-dimensions">1. Calculate the Total
+Canvas Dimensions</h3>
+<p>Before opening Kdenlive, determine the combined resolution of your
+two ultrawide displays.</p>
+<ul>
+<li><strong>Side-by-Side (Horizontal Array):</strong> Double the width
+of one display while keeping the vertical height the same.
+<ul>
+<li><em>Example (Dual 3440 x 1440 displays):</em> <span
+class="math inline">\(3440 \times 2 = 6880\)</span>. Target resolution:
+<strong>6880 x 1440</strong>.</li>
+<li><em>Example (Dual 2560 x 1080 displays):</em> <span
+class="math inline">\(2560 \times 2 = 5120\)</span>. Target resolution:
+<strong>5120 x 1080</strong>.</li>
+</ul></li>
+<li><strong>Stacked (Vertical Array):</strong> Double the height while
+keeping the horizontal width identical.
+<ul>
+<li><em>Example (Dual 3440 x 1440 stacked):</em> Target resolution:
+<strong>3440 x 2880</strong>.</li>
+</ul></li>
+</ul>
+<h3 id="2-create-a-custom-project-profile-in-kdenlive">2. Create a
+Custom Project Profile in Kdenlive</h3>
+<p>Kdenlive does not include dual ultrawide presets by default, so you
+must define a custom profile.</p>
+<ol type="1">
+<li>Open Kdenlive and go to <strong>Settings</strong> &gt;
+<strong>Configure Kdenlive</strong> (or <strong>Kdenlive</strong> &gt;
+<strong>Preferences</strong> on macOS).</li>
+<li>Select the <strong>Profiles</strong> tab from the left sidebar.</li>
+<li>Click the <strong>Add new profile</strong> icon (the green plus
+sign) located above the profile list.</li>
+<li>Configure the following profile settings:
+<ul>
+<li><strong>Profile Name:</strong> Enter a descriptive name (e.g.,
+<code>Dual Ultrawide 6880x1440 60fps</code>).</li>
+<li><strong>Frame Size:</strong> Input your calculated total dimensions
+(e.g., <code>6880</code> in <strong>Width</strong> and <code>1440</code>
+in <strong>Height</strong>).</li>
+<li><strong>Pixel Aspect Ratio:</strong> Set to <code>1:1</code> (square
+pixels).</li>
+<li><strong>Display Aspect Ratio:</strong> Kdenlive calculates this
+automatically based on your dimensions (e.g., <code>43:9</code> for dual
+21:9).</li>
+<li><strong>Frame Rate:</strong> Set the numerator and denominator to
+match your playback hardware (e.g., <code>60/1</code> for 60 fps or
+<code>30/1</code> for 30 fps).</li>
+<li><strong>Scanning:</strong> Select <code>Progressive</code>.</li>
+<li><strong>Color Space:</strong> Set to <code>ITU-R BT.709</code>
+(standard for digital displays).</li>
+</ul></li>
+<li>Click <strong>Save</strong> and then click <strong>OK</strong> to
+close the configuration menu.</li>
+</ol>
+<h3 id="3-apply-the-profile-to-a-new-project">3. Apply the Profile to a
+New Project</h3>
+<ol type="1">
+<li>Go to <strong>File</strong> &gt; <strong>New</strong>.</li>
+<li>Under the <strong>Project Profile</strong> section, scroll through
+the list or search for your newly created custom profile.</li>
+<li>Select the custom profile and choose your preferred audio and track
+settings.</li>
+<li>Click <strong>OK</strong>.</li>
+</ol>
+<p><em>Note: If you receive a prompt indicating that imported clips do
+not match the project profile, select <strong>Keep</strong> to prevent
+Kdenlive from automatically switching back to a standard
+resolution.</em></p>
+<h3 id="4-arrange-content-on-the-canvas">4. Arrange Content on the
+Canvas</h3>
+<ol type="1">
+<li>Drag your media onto the timeline.</li>
+<li>Apply the <strong>Transform</strong> effect to position, scale, or
+split assets across the combined displays.</li>
+<li>To align content strictly to the left or right monitor, use the
+coordinate offsets in the Transform effect (e.g., positioning an element
+at <span class="math inline">\(X = 0\)</span> for the left screen or
+<span class="math inline">\(X = 3440\)</span> for the right screen on a
+6880x1440 canvas).</li>
+</ol>
+<h3 id="5-export-the-final-video-wall-file">5. Export the Final Video
+Wall File</h3>
+<ol type="1">
+<li>Click <strong>Project</strong> &gt; <strong>Render</strong> (or
+press <code>Ctrl + Return</code>).</li>
+<li>Select your preferred output format (such as <strong>Generic (MP4 -
+H.264/AAC)</strong> or <strong>ProRes</strong> for higher bitrate
+playback).</li>
+<li>Ensure that the <strong>Rescale</strong> option is unchecked so the
+project exports at its full native resolution.</li>
+<li>Confirm that the export parameters display your custom width and
+height.</li>
+<li>Click <strong>Render to File</strong>.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

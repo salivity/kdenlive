@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Multiple Audio Clips to One Video in Kdenlive - kdenlive</title>
+    <meta name="description" content="This article provides a straightforward guide on how to link and sync multiple separate audio clips to a single video track in Kdenlive. By using Kdenlive's grouping features, you can lock multiple audio sources—such as external mic recordings, sound e">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/link-multiple-audio-clips-to-one-video-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Link Multiple Audio Clips to One Video in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/link-multiple-audio-clips-to-one-video-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This article provides a straightforward guide on how to link and sync multiple separate audio clips to a single video track in Kdenlive. By using Kdenlive's grouping features, you can lock multiple audio sources—such as external mic recordings, sound e" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="link-multiple-audio-clips-to-one-video-in-kdenlive">Link
+Multiple Audio Clips to One Video in Kdenlive</h1>
+<p>This article provides a straightforward guide on how to link and sync
+multiple separate audio clips to a single video track in Kdenlive. By
+using Kdenlive's grouping features, you can lock multiple audio
+sources—such as external mic recordings, sound effects, or music—to your
+video clip so they move and cut together during editing.</p>
+<h3 id="step-1-align-your-clips-on-the-timeline">Step 1: Align Your
+Clips on the Timeline</h3>
+<p>Before linking your clips, you must position them exactly where they
+need to be in relation to the video.</p>
+<ol type="1">
+<li>Drag your video clip onto a video track.</li>
+<li>Drag your separate audio clips onto different audio tracks below the
+video.</li>
+<li>Align the audio clips with the video. You can do this visually by
+matching the audio waveforms, or automatically by right-clicking the
+clips and using Kdenlive's <strong>Align Audio</strong> feature if they
+share a reference audio track.</li>
+</ol>
+<h3 id="step-2-select-all-clips">Step 2: Select All Clips</h3>
+<p>To link the clips, you must select them simultaneously:</p>
+<ol type="1">
+<li>Hold down the <strong>Shift</strong> key on your keyboard.</li>
+<li>Click on the video clip and each of the audio clips you want to
+link.</li>
+<li>Alternatively, click and drag a selection box over all the clips in
+the timeline.</li>
+</ol>
+<h3 id="step-3-group-the-clips-together">Step 3: Group the Clips
+Together</h3>
+<p>Grouping binds the selected clips so Kdenlive treats them as a single
+unit.</p>
+<ol type="1">
+<li>Right-click on any of the highlighted clips.</li>
+<li>Select <strong>Group Clips</strong> from the context menu.</li>
+<li>Alternatively, press the keyboard shortcut <strong>Ctrl + G</strong>
+(or <strong>Cmd + G</strong> on Mac).</li>
+</ol>
+<p>Once grouped, clicking on any of the linked clips will automatically
+select all of them. Moving, trimming, or cutting one clip will apply the
+same action to the others, keeping your audio and video perfectly
+synchronized.</p>
+<h3 id="how-to-temporarily-edit-or-unlink-the-clips">How to Temporarily
+Edit or Unlink the Clips</h3>
+<p>If you need to adjust an individual audio clip after grouping, you
+have two options:</p>
+<ul>
+<li><strong>Temporarily disable grouping:</strong> Click the
+<strong>Ignore Grouping</strong> icon on the timeline toolbar (or press
+<strong>Ctrl + Shift + G</strong>). This allows you to move individual
+clips without breaking the group permanently. Click it again to
+re-enable the link.</li>
+<li><strong>Permanently unlink:</strong> Select the grouped clips,
+right-click, and choose <strong>Ungroup Clips</strong> (shortcut:
+<strong>Ctrl + Shift + G</strong>).</li>
+</ul></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

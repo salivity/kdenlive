@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Repair Corrupted Kdenlive XML Project Files - kdenlive</title>
+    <meta name="description" content="Kdenlive projects are saved as XML files, which can occasionally become corrupted due to sudden crashes, power outages, or software bugs, rendering the timeline unreadable. This guide provides a straightforward, step-by-step method for opening a damaged">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/how-to-repair-corrupted-kdenlive-xml-project-files">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Repair Corrupted Kdenlive XML Project Files - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/how-to-repair-corrupted-kdenlive-xml-project-files" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Kdenlive projects are saved as XML files, which can occasionally become corrupted due to sudden crashes, power outages, or software bugs, rendering the timeline unreadable. This guide provides a straightforward, step-by-step method for opening a damaged" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-repair-corrupted-kdenlive-xml-project-files">How to
+Repair Corrupted Kdenlive XML Project Files</h1>
+<p>Kdenlive projects are saved as XML files, which can occasionally
+become corrupted due to sudden crashes, power outages, or software bugs,
+rendering the timeline unreadable. This guide provides a
+straightforward, step-by-step method for opening a damaged
+<code>.kdenlive</code> file in a text editor, identifying the root
+causes of the corruption—such as broken XML syntax or mismatched track
+IDs—and manually editing the code to successfully recover your video
+project.</p>
+<h2 id="step-1-create-a-backup-of-the-project-file">Step 1: Create a
+Backup of the Project File</h2>
+<p>Before editing the project file, create a duplicate copy of your
+corrupted <code>.kdenlive</code> file. Manual XML editing carries the
+risk of introducing further syntax errors, so keeping an untouched
+original backup is essential.</p>
+<h2 id="step-2-open-the-file-in-a-text-editor">Step 2: Open the File in
+a Text Editor</h2>
+<p>Because Kdenlive files are written in standard XML format, they can
+be opened with any raw text editor.</p>
+<ul>
+<li><strong>Windows:</strong> Use Notepad++ or Visual Studio Code.</li>
+<li><strong>macOS:</strong> Use TextEdit (in plain text mode) or VS
+Code.</li>
+<li><strong>Linux:</strong> Use Gedit, Kate, or VS Code.</li>
+</ul>
+<p>Right-click your <code>.kdenlive</code> file, select <strong>Open
+With</strong>, and choose your text editor.</p>
+<h2 id="step-3-check-for-xml-syntax-errors">Step 3: Check for XML Syntax
+Errors</h2>
+<p>A common cause of corruption is an incomplete file write, which
+leaves XML tags unclosed at the end of the file.</p>
+<ol type="1">
+<li>Scroll to the very bottom of the document.</li>
+<li>Ensure the file ends with the closing MLT tags:
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">tractor</span>&gt;</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">mlt</span>&gt;</span></code></pre></div></li>
+<li>If the file ends abruptly mid-sentence or is missing these closing
+tags, the save process was interrupted. You must manually add
+<code>&lt;/tractor&gt;</code> and <code>&lt;/mlt&gt;</code> to close the
+open blocks.</li>
+</ol>
+<p>Using a text editor with XML syntax highlighting (like VS Code or
+Notepad++) will automatically flag unclosed tags or syntax errors in
+red.</p>
+<h2 id="step-4-fix-mismatched-tracks-in-the-tractor-section">Step 4: Fix
+Mismatched Tracks in the Tractor Section</h2>
+<p>The timeline in Kdenlive is defined inside a
+<code>&lt;tractor&gt;</code> element, which references various
+<code>&lt;playlist&gt;</code> elements (your video and audio tracks). If
+a track is deleted or corrupted, Kdenlive might look for a playlist ID
+that no longer exists.</p>
+<ol type="1">
+<li>Search the document for the tag
+<code>&lt;tractor id="main_bin"</code>.</li>
+<li>Look at the track definitions inside the tractor, which look like
+this:
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode xml"><code class="sourceCode xml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">track</span>   <span class="ot">producer=</span><span class="st">&quot;playlist0&quot;</span>/&gt;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">track</span>   <span class="ot">producer=</span><span class="st">&quot;playlist1&quot;</span>/&gt;</span></code></pre></div></li>
+<li>Search the document for the corresponding playlist IDs (e.g.,
+<code>&lt;playlist id="playlist0"&gt;</code>).</li>
+<li>If the tractor references a track (e.g., <code>playlist2</code>)
+that does not exist anywhere else in the document, delete the
+corresponding <code>&lt;track producer="playlist2"/&gt;</code> line from
+the tractor section.</li>
+</ol>
+<h2 id="step-5-remove-corrupted-effects-and-filters">Step 5: Remove
+Corrupted Effects and Filters</h2>
+<p>Sometimes, a specific video effect or transition causes Kdenlive to
+crash upon loading the project. You can strip out problematic effects
+directly from the XML.</p>
+<ol type="1">
+<li>Search the file for the <code>&lt;filter&gt;</code> tag.</li>
+<li>Locate the filter causing the issue (you can identify it by its
+<code>kdenlive_id</code> or <code>mlt_service</code> property, such as
+<code>glsl.manager</code> or <code>frei0r.glitch</code>).</li>
+<li>Delete the entire block from the opening <code>&lt;filter&gt;</code>
+tag to the closing <code>&lt;/filter&gt;</code> tag.</li>
+<li>Save the file and attempt to reopen the project.</li>
+</ol>
+<h2 id="step-6-validate-and-save">Step 6: Validate and Save</h2>
+<p>Once you have made the manual corrections:</p>
+<ol type="1">
+<li>Run the code through an online XML validator to ensure there are no
+formatting errors.</li>
+<li>Save the file in your text editor. Ensure the file extension remains
+<code>.kdenlive</code> and is not saved as
+<code>.kdenlive.txt</code>.</li>
+<li>Open Kdenlive and load the newly repaired file.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

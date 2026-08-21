@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharpen Video in Kdenlive Without Noise Artifacts - kdenlive</title>
+    <meta name="description" content="Applying a sharpen filter in Kdenlive can significantly improve the clarity of your footage, but overdoing it often introduces unwanted digital noise and pixelation. This guide explains how to use Kdenlive's sharpening tools effectively, adjust key param">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/sharpen-video-in-kdenlive-without-noise-artifacts">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sharpen Video in Kdenlive Without Noise Artifacts - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/sharpen-video-in-kdenlive-without-noise-artifacts" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Applying a sharpen filter in Kdenlive can significantly improve the clarity of your footage, but overdoing it often introduces unwanted digital noise and pixelation. This guide explains how to use Kdenlive's sharpening tools effectively, adjust key param" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="sharpen-video-in-kdenlive-without-noise-artifacts">Sharpen Video
+in Kdenlive Without Noise Artifacts</h1>
+<p>Applying a sharpen filter in Kdenlive can significantly improve the
+clarity of your footage, but overdoing it often introduces unwanted
+digital noise and pixelation. This guide explains how to use Kdenlive's
+sharpening tools effectively, adjust key parameters to isolate edges,
+and use pre-filtering techniques to achieve a crisp, clean look without
+degrading your video quality.</p>
+<p>The most common mistake when sharpening video is using a basic
+"Sharpen" filter that treats every pixel equally. Instead, use the
+<strong>Unsharp Mask</strong> effect in Kdenlive. This filter offers
+precise control over how and where the sharpening is applied, allowing
+you to target edges while leaving flat areas—where noise is most
+visible—untouched.</p>
+<p>To apply the effect, search for "Unsharp Mask" in the Effects panel
+and drag it onto your clip. You will see three main sliders: Amount,
+Radius, and Threshold. Controlling these parameters is the key to
+preventing noise artifacts.</p>
+<h3 id="adjust-the-threshold-to-protect-flat-areas">Adjust the Threshold
+to Protect Flat Areas</h3>
+<p>The <strong>Threshold</strong> slider is your primary defense against
+digital noise. It determines how different a pixel's contrast must be
+from its neighbors before the sharpening is applied. By increasing the
+threshold, you tell Kdenlive to ignore low-contrast areas—such as skies,
+walls, and shadows where sensor noise thrives—and only sharpen
+high-contrast edges like text, eyes, or outlines. Start with a low
+threshold and gradually increase it until the noise in the flat areas of
+your image disappears.</p>
+<h3 id="control-the-radius-and-amount">Control the Radius and
+Amount</h3>
+<p>The <strong>Radius</strong> controls the width of the sharpening halo
+around edges. For natural-looking video, keep the radius low (usually
+between 0.5 and 1.5). A radius that is too high will create artificial
+glowing borders. The <strong>Amount</strong> slider controls the
+strength of the effect. Keep this value moderate; subtle sharpening
+looks much more professional than a harsh, over-processed image.</p>
+<h3 id="apply-a-denoise-filter-first">Apply a Denoise Filter First</h3>
+<p>If your source footage is already grainy, sharpening it will
+inevitably amplify that grain. To fix this, apply a noise reduction
+filter, such as <strong>Denoise (hqdn3d)</strong>, <em>before</em> the
+Unsharp Mask in your effect stack. In Kdenlive, effects are processed
+from top to bottom. By placing the denoiser above the Unsharp Mask, you
+clean up the flat areas of the image first, leaving fewer noise
+artifacts for the sharpening filter to accidentally enhance.</p>
+<h3 id="isolate-sharpening-with-masking">Isolate Sharpening with
+Masking</h3>
+<p>If you only need to sharpen a specific subject, such as a person's
+face, use the <strong>Rotoscoping</strong> effect. Create a mask around
+your subject, apply the Unsharp Mask only within that mask, and feather
+the edges. This keeps the rest of the frame completely free from any
+sharpening-induced noise.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

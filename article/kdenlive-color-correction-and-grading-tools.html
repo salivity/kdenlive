@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kdenlive Color Correction and Grading Tools - kdenlive</title>
+    <meta name="description" content="Kdenlive, a powerful open-source video editing software, offers a comprehensive set of tools designed for professional color correction and color grading. This article provides a direct overview of Kdenlive's essential color tools, including its real-tim">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/kdenlive-color-correction-and-grading-tools">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kdenlive Color Correction and Grading Tools - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/kdenlive-color-correction-and-grading-tools" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Kdenlive, a powerful open-source video editing software, offers a comprehensive set of tools designed for professional color correction and color grading. This article provides a direct overview of Kdenlive's essential color tools, including its real-tim" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="kdenlive-color-correction-and-grading-tools">Kdenlive Color
+Correction and Grading Tools</h1>
+<p>Kdenlive, a powerful open-source video editing software, offers a
+comprehensive set of tools designed for professional color correction
+and color grading. This article provides a direct overview of Kdenlive's
+essential color tools, including its real-time monitoring scopes,
+primary color wheels, curve adjustments, and Look-Up Table (LUT)
+support, enabling editors to achieve precise visual control over their
+footage.</p>
+<h2 id="real-time-color-scopes">Real-Time Color Scopes</h2>
+<p>Before making visual adjustments, editors must accurately measure
+color and exposure. Kdenlive includes several hardware-emulating scopes
+located in the "Color Tools" tab:</p>
+<ul>
+<li><strong>Histogram:</strong> Displays the distribution of pixels
+across different brightness levels, helping to identify clipped
+highlights or crushed shadows.</li>
+<li><strong>Waveform:</strong> Shows the luminance levels of the video
+from left to right, making it easy to balance exposure and
+contrast.</li>
+<li><strong>Vectorscope:</strong> Measures the hue and saturation of the
+video. It includes a skin-tone indicator line to ensure natural-looking
+skin tones.</li>
+<li><strong>RGB Parade:</strong> Splits the video signal into red,
+green, and blue channels, which is essential for identifying and
+correcting color casts.</li>
+</ul>
+<h2 id="primary-color-correction-tools">Primary Color Correction
+Tools</h2>
+<p>Kdenlive offers dedicated effects to correct exposure, contrast, and
+white balance:</p>
+<ul>
+<li><strong>Lift, Gamma, Gain (Color Wheels):</strong> This
+industry-standard tool allows independent adjustment of shadows (Lift),
+midtones (Gamma), and highlights (Gain). Each wheel has a color picker
+and slider to adjust both color tint and luminance levels.</li>
+<li><strong>White Balance:</strong> A straightforward effect that
+corrects temperature (blue/amber) and tint (green/magenta) using a
+manual slider or a one-click neutral gray eyedropper tool.</li>
+<li><strong>Bezier Curves:</strong> Provides precise control over
+contrast and color channels. Users can manipulate individual Red, Green,
+Blue, and Master curves to create custom contrast S-curves or target
+specific color ranges.</li>
+</ul>
+<h2 id="advanced-color-grading-and-stylization">Advanced Color Grading
+and Stylization</h2>
+<p>For creative color grading, Kdenlive provides tools to apply
+stylistic looks and match shots:</p>
+<ul>
+<li><strong>Apply LUT (3D LUT):</strong> This effect allows users to
+load industry-standard <code>.cube</code> files. It is essential for
+converting Log footage from professional cameras into standard color
+spaces (Rec. 709) or applying creative color grades.</li>
+<li><strong>Color Match:</strong> An automated tool that helps match the
+color profile of one clip to another reference clip, ensuring visual
+consistency across different cameras or lighting setups.</li>
+<li><strong>HSV Adjustments / Saturation:</strong> Offers fine-grained
+control over Hue, Saturation, and Value to boost specific colors or
+desaturate unwanted tones.</li>
+</ul></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

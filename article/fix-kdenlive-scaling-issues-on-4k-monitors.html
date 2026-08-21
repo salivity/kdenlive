@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix Kdenlive Scaling Issues on 4K Monitors - kdenlive</title>
+    <meta name="description" content="Kdenlive can sometimes appear incredibly small, blurry, or improperly proportioned on high-DPI and 4K monitors. This issue occurs due to scaling mismatches between the operating system's display settings and Qt, the development framework used to build Kd">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/fix-kdenlive-scaling-issues-on-4k-monitors">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Fix Kdenlive Scaling Issues on 4K Monitors - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/fix-kdenlive-scaling-issues-on-4k-monitors" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Kdenlive can sometimes appear incredibly small, blurry, or improperly proportioned on high-DPI and 4K monitors. This issue occurs due to scaling mismatches between the operating system's display settings and Qt, the development framework used to build Kd" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="fix-kdenlive-scaling-issues-on-4k-monitors">Fix Kdenlive Scaling
+Issues on 4K Monitors</h1>
+<p>Kdenlive can sometimes appear incredibly small, blurry, or improperly
+proportioned on high-DPI and 4K monitors. This issue occurs due to
+scaling mismatches between the operating system's display settings and
+Qt, the development framework used to build Kdenlive. This article
+provides straightforward, step-by-step methods to correct Kdenlive's
+interface scaling on both Windows and Linux operating systems.</p>
+<h2 id="fix-kdenlive-scaling-on-windows">Fix Kdenlive Scaling on
+Windows</h2>
+<p>Windows users can resolve scaling issues by overriding the
+application's High DPI settings directly through the executable
+properties.</p>
+<ol type="1">
+<li><strong>Locate the Kdenlive Shortcut:</strong> Right-click on the
+Kdenlive shortcut on your desktop or in the Start menu, and select
+<strong>Properties</strong>. If you are using the portable version,
+right-click the <code>kdenlive.exe</code> file in the installation
+folder.</li>
+<li><strong>Access Compatibility Settings:</strong> Navigate to the
+<strong>Compatibility</strong> tab.</li>
+<li><strong>Open DPI Settings:</strong> Click on the <strong>Change high
+DPI settings</strong> button at the bottom of the window.</li>
+<li><strong>Override High DPI Scaling:</strong>
+<ul>
+<li>Check the box that says <strong>Override high DPI scaling
+behavior</strong>.</li>
+<li>In the drop-down menu under "Scaling performed by:", select
+<strong>System (Enhanced)</strong> or <strong>System</strong>. (If one
+does not work well, try the other).</li>
+</ul></li>
+<li><strong>Apply Changes:</strong> Click <strong>OK</strong>, then
+click <strong>Apply</strong> on the main properties window. Restart
+Kdenlive to see the changes.</li>
+</ol>
+<h2 id="fix-kdenlive-scaling-on-linux">Fix Kdenlive Scaling on
+Linux</h2>
+<p>On Linux, Kdenlive scaling issues are typically resolved by passing
+specific environment variables to the Qt framework before launching the
+application.</p>
+<h3 id="method-1-launch-via-terminal-with-environment-variables">Method
+1: Launch via Terminal with Environment Variables</h3>
+<p>You can force Kdenlive to auto-scale by launching it from the
+terminal with the following command:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">QT_AUTO_SCREEN_SCALE_FACTOR</span><span class="op">=</span>1 <span class="ex">kdenlive</span></span></code></pre></div>
+<p>If the interface is still too small, you can manually set a specific
+scale factor (e.g., <code>1.5</code> for 150% scaling, or <code>2</code>
+for 200% scaling) using this command:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">QT_SCALE_FACTOR</span><span class="op">=</span>1.5 <span class="ex">kdenlive</span></span></code></pre></div>
+<h3 id="method-2-permanent-fix-via-the-desktop-file">Method 2: Permanent
+Fix via the .desktop File</h3>
+<p>To avoid using the terminal every time, you can permanently apply
+these settings to your application launcher.</p>
+<ol type="1">
+<li>Copy the Kdenlive shortcut to your local applications directory:
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> /usr/share/applications/org.kde.kdenlive.desktop ~/.local/share/applications/</span></code></pre></div></li>
+<li>Open the copied file in a text editor:
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> ~/.local/share/applications/org.kde.kdenlive.desktop</span></code></pre></div></li>
+<li>Find the line starting with <code>Exec=</code> and modify it to
+include the scaling variable. For example:
+<pre class="text"><code>Exec=env QT_AUTO_SCREEN_SCALE_FACTOR=1 kdenlive %U</code></pre></li>
+<li>Save and close the file. Kdenlive will now scale correctly whenever
+you launch it from your application menu.</li>
+</ol>
+<h2 id="adjusting-icon-sizes-inside-kdenlive">Adjusting Icon Sizes
+Inside Kdenlive</h2>
+<p>If the interface text scales correctly but the icons remain too
+small, you can adjust the icon sizes directly within the Kdenlive
+settings.</p>
+<ol type="1">
+<li>Open Kdenlive.</li>
+<li>Go to <strong>Settings</strong> &gt; <strong>Configure
+Kdenlive</strong>.</li>
+<li>In the <strong>Header</strong> or <strong>Interface</strong> section
+(depending on your Kdenlive version), look for <strong>Icon
+Size</strong>.</li>
+<li>Increase the default pixel size (e.g., from 16px to 24px or 32px) to
+match your screen resolution.</li>
+<li>Click <strong>Apply</strong> and restart the software.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

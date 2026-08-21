@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjust Opacity Transitions in Kdenlive - kdenlive</title>
+    <meta name="description" content="This guide provides a step-by-step walkthrough on how to adjust opacity transitions between overlapping video tracks using the Composite composition tool in Kdenlive. By placing clips on separate tracks and keyframing the opacity values within the Compos">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/adjust-opacity-transitions-in-kdenlive">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Adjust Opacity Transitions in Kdenlive - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/adjust-opacity-transitions-in-kdenlive" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This guide provides a step-by-step walkthrough on how to adjust opacity transitions between overlapping video tracks using the Composite composition tool in Kdenlive. By placing clips on separate tracks and keyframing the opacity values within the Compos" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="adjust-opacity-transitions-in-kdenlive">Adjust Opacity
+Transitions in Kdenlive</h1>
+<p>This guide provides a step-by-step walkthrough on how to adjust
+opacity transitions between overlapping video tracks using the Composite
+composition tool in Kdenlive. By placing clips on separate tracks and
+keyframing the opacity values within the Composite settings, you can
+achieve smooth crossfades, fade-ins, and fade-outs between multiple
+video layers.</p>
+<h3 id="1-arrange-your-video-tracks">1. Arrange Your Video Tracks</h3>
+<ol type="1">
+<li>Place the base video clip on a lower video track (e.g., Track
+V1).</li>
+<li>Place the secondary video clip on an upper video track (e.g., Track
+V2).</li>
+<li>Align the upper clip so that it overlaps the lower clip in the
+timeline where you want the transition to occur.</li>
+</ol>
+<h3 id="2-apply-the-composite-composition">2. Apply the Composite
+Composition</h3>
+<ol type="1">
+<li>Hover your cursor near the bottom corner of the upper clip (Track
+V2) where the overlap begins until a circular indicator appears, then
+click to automatically add a composition. Alternatively, right-click the
+upper clip, select <strong>Add Composition</strong>, and choose
+<strong>Composite</strong>.</li>
+<li>Resize the Composite block in the timeline by dragging its edges so
+that its duration matches the exact length of the overlapping area.</li>
+</ol>
+<h3 id="3-open-composition-settings">3. Open Composition Settings</h3>
+<ol type="1">
+<li>Click directly on the yellow Composite block on your timeline to
+select it.</li>
+<li>Navigate to the <strong>Properties</strong> panel (usually located
+on the right or top dock of the workspace).</li>
+</ol>
+<h3 id="4-keyframe-the-opacity-transition">4. Keyframe the Opacity
+Transition</h3>
+<ol type="1">
+<li>In the Properties panel, locate the <strong>Opacity</strong> slider
+and the keyframe timeline.</li>
+<li><strong>Set the start point:</strong> Move the playhead to the
+beginning of the transition block. Click the <strong>Add
+Keyframe</strong> button (plus icon) and set the
+<strong>Opacity</strong> slider to <code>0%</code> (transparent) for a
+fade-in, or <code>100%</code> (opaque) for a fade-out.</li>
+<li><strong>Set the end point:</strong> Move the playhead to the end of
+the transition block. Add another keyframe and adjust the
+<strong>Opacity</strong> slider to the target value (e.g.,
+<code>100%</code> for a fade-in, or <code>0%</code> for a
+fade-out).</li>
+</ol>
+<h3 id="5-fine-tune-the-transition">5. Fine-Tune the Transition</h3>
+<ol type="1">
+<li>Adjust the position of the keyframes along the mini-timeline to
+control the speed and pacing of the blend.</li>
+<li>Change the interpolation mode between keyframes (e.g., Linear,
+Smooth) by right-clicking a keyframe marker if you prefer a non-linear
+acceleration during the fade.</li>
+<li>Play back the timeline in the Project Monitor to preview the result
+and adjust the timeline duration of the Composite block as needed.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

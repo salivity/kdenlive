@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configure Kdenlive Proxy Aspect Ratio Settings - kdenlive</title>
+    <meta name="description" content="When working with diverse video footage in Kdenlive, mismatched aspect ratios between source files and project profiles can result in distorted, stretched, or incorrectly cropped proxy files. This guide details how to adjust Kdenlive's proxy encoding pro">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/configure-kdenlive-proxy-aspect-ratio-settings">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Configure Kdenlive Proxy Aspect Ratio Settings - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/configure-kdenlive-proxy-aspect-ratio-settings" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="When working with diverse video footage in Kdenlive, mismatched aspect ratios between source files and project profiles can result in distorted, stretched, or incorrectly cropped proxy files. This guide details how to adjust Kdenlive's proxy encoding pro" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="configure-kdenlive-proxy-aspect-ratio-settings">Configure
+Kdenlive Proxy Aspect Ratio Settings</h1>
+<p>When working with diverse video footage in Kdenlive, mismatched
+aspect ratios between source files and project profiles can result in
+distorted, stretched, or incorrectly cropped proxy files. This guide
+details how to adjust Kdenlive's proxy encoding profiles and project
+settings to ensure generated proxy clips automatically conform to the
+correct source aspect ratios without visual distortion.</p>
+<h2 id="accessing-proxy-configuration-in-kdenlive">Accessing Proxy
+Configuration in Kdenlive</h2>
+<p>Proxy settings can be configured globally for all future projects or
+specifically for the current project.</p>
+<ol type="1">
+<li>Open Kdenlive.</li>
+<li>For global settings, navigate to <strong>Settings &gt; Configure
+Kdenlive</strong> from the top menu, then select the <strong>Proxy
+Clips</strong> tab on the left.</li>
+<li>For project-specific settings, go to <strong>Project &gt; Project
+Settings</strong> and select the <strong>Proxy</strong> tab.</li>
+</ol>
+<h2 id="enabling-and-conforming-proxy-profiles">Enabling and Conforming
+Proxy Profiles</h2>
+<p>To ensure proxy clips scale dynamically without enforcing rigid
+dimensions that distort non-standard aspect ratios (such as vertical
+9:16 or anamorphic video):</p>
+<ol type="1">
+<li>Check the box labeled <strong>Enable proxy clips</strong>.</li>
+<li>Locate the <strong>Proxy profile</strong> dropdown menu.</li>
+<li>Click the <strong>Manage proxy profiles</strong> (wrench/edit icon)
+button next to the profile dropdown to view the underlying FFmpeg
+commands used for proxy generation.</li>
+</ol>
+<h2 id="editing-ffmpeg-parameters-for-dynamic-aspect-ratios">Editing
+FFmpeg Parameters for Dynamic Aspect Ratios</h2>
+<p>Standard proxy profiles often use fixed scaling parameters (e.g.,
+<code>-vf scale=640:-1</code> or fixed width/height values) that can
+conflict with certain pixel aspect ratios (PAR) or display aspect ratios
+(DAR).</p>
+<p>To automatically conform mismatched aspect ratios, create or edit a
+custom profile:</p>
+<ol type="1">
+<li>Click the <strong>Add new profile</strong> button.</li>
+<li>Name the profile (e.g., <em>Dynamic Conforming Proxy</em>).</li>
+<li>In the <strong>Parameters</strong> field, modify the video filter
+(<code>-vf</code>) argument to dynamically calculate dimensions while
+preserving the original aspect ratio. Use:
+<pre class="text"><code>-vf scale=&#39;min(1280,iw)&#39;:&#39;-2&#39; -c:v libx264 -preset ultrafast -crf 23 -c:a aac</code></pre>
+<ul>
+<li>The <code>min(1280,iw)</code> formula scales the width down to a
+maximum of 1280 pixels only if the source is larger, maintaining native
+width for smaller clips.</li>
+<li>The <code>'-2'</code> flag ensures the height is automatically
+calculated to preserve the source aspect ratio while remaining divisible
+by 2 (a requirement for most video codecs).</li>
+</ul></li>
+<li>For strictly vertical or mixed-orientation footage, use FFmpeg's
+<code>force_original_aspect_ratio</code> parameter:
+<pre class="text"><code>-vf scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2 -c:v libx264 -preset ultrafast -crf 23 -c:a aac</code></pre></li>
+<li>Click <strong>OK</strong> to save the custom profile and set it as
+the active profile.</li>
+</ol>
+<h2 id="correcting-existing-proxy-clips">Correcting Existing Proxy
+Clips</h2>
+<p>If existing project clips display mismatched aspect ratios:</p>
+<ol type="1">
+<li>Right-click the affected clip in the <strong>Project
+Bin</strong>.</li>
+<li>Select <strong>Clip Properties</strong>.</li>
+<li>Under the <strong>Video Properties</strong> tab, verify that the
+<strong>Aspect Ratio</strong> matches the source file's native ratio.
+Adjust if set incorrectly.</li>
+<li>Navigate to the <strong>Proxy</strong> section in Clip Properties,
+uncheck <strong>Proxy Clip</strong> to delete the old proxy, and then
+re-check <strong>Proxy Clip</strong> to regenerate it using the updated
+configuration.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

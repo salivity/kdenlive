@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Kdenlive Handles Variable Frame Rate Video - kdenlive</title>
+    <meta name="description" content="Editing video files with variable frame rates (VFR)—commonly produced by smartphones, screen recorders, and OBS Studio—frequently causes audio desynchronization and playback lag in professional video editors. This article explains how Kdenlive detect">
+    <link rel="canonical" href="https://salivity.github.io/kdenlive/article/how-kdenlive-handles-variable-frame-rate-video">
+    <link rel="icon" href="/kdenlive/favicon.ico">
+    <link rel="stylesheet" href="/kdenlive/css/style.css">
+    <link media="print" rel="stylesheet" href="/kdenlive/css/print.css">
+    <script src="/kdenlive/js/fuse.min.js"></script>
+    <script src="/kdenlive/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How Kdenlive Handles Variable Frame Rate Video - kdenlive" />
+    <meta property="og:url" content="https://salivity.github.io/kdenlive/article/how-kdenlive-handles-variable-frame-rate-video" />
+    <meta property="og:image:url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/kdenlive/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Editing video files with variable frame rates (VFR)—commonly produced by smartphones, screen recorders, and OBS Studio—frequently causes audio desynchronization and playback lag in professional video editors. This article explains how Kdenlive detect" />
+    <link rel="manifest" href="/kdenlive/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/kdenlive/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>kdenlive</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/kdenlive/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-kdenlive-handles-variable-frame-rate-video">How Kdenlive
+Handles Variable Frame Rate Video</h1>
+<p>Editing video files with variable frame rates (VFR)—commonly produced
+by smartphones, screen recorders, and OBS Studio—frequently causes audio
+desynchronization and playback lag in professional video editors. This
+article explains how Kdenlive detects, manages, and resolves issues
+associated with VFR clips, ensuring a smooth and perfectly synced
+editing workflow through its built-in transcoding tools.</p>
+<h2 id="the-challenge-of-variable-frame-rate-in-kdenlive">The Challenge
+of Variable Frame Rate in Kdenlive</h2>
+<p>Non-linear video editors (NLEs) like Kdenlive are designed to work
+with Constant Frame Rate (CFR) video, where frames are delivered at a
+perfectly consistent interval (e.g., exactly 24, 30, or 60 frames per
+second).</p>
+<p>VFR footage dynamically changes the frame rate based on the
+complexity of the action or lighting conditions to save file space. When
+imported into Kdenlive, this fluctuation causes the audio track and
+video track to drift apart over time, resulting in noticeable sync
+issues during preview and final render.</p>
+<h2 id="automatic-detection-and-warning">Automatic Detection and
+Warning</h2>
+<p>Kdenlive includes a built-in analysis tool that scans files upon
+import. If you drag and drop a VFR clip into your Kdenlive project bin,
+the software will automatically flag it.</p>
+<p>A warning dialog box will appear, notifying you that the clip has a
+variable frame rate. Kdenlive explicitly warns that editing VFR footage
+can lead to audio sync issues and rendering errors.</p>
+<h2 id="the-solution-built-in-transcoding">The Solution: Built-In
+Transcoding</h2>
+<p>To resolve the VFR issue, Kdenlive offers a direct, one-click
+solution within the warning dialog box:
+<strong>Transcoding</strong>.</p>
+<p>When you accept the transcode option, Kdenlive uses its integrated
+FFmpeg backend to convert the VFR file into a CFR file. Here is how
+Kdenlive handles this process:</p>
+<ol type="1">
+<li><strong>Frame Interpolation:</strong> Kdenlive standardizes the
+frame rate by duplicating or dropping frames where necessary to match a
+chosen target constant frame rate (usually matching the average frame
+rate of the original clip).</li>
+<li><strong>Format Selection:</strong> Kdenlive offers several
+edit-friendly formats for the transcoded file. You can choose
+high-quality, mathematically lossless formats like DNxHR or Apple ProRes
+(ideal for editing performance) or standard H.264 MP4 files (ideal for
+saving disk space).</li>
+<li><strong>Seamless Replacement:</strong> Once the transcoding process
+is complete, Kdenlive automatically replaces the original VFR clip in
+your Project Bin with the newly generated CFR clip. Your editing
+timeline remains unaffected, and the audio-to-video synchronization is
+permanently fixed.</li>
+</ol>
+<h2 id="proxy-clips-vs-transcoding">Proxy Clips vs. Transcoding</h2>
+<p>It is important to distinguish between Kdenlive’s "Proxy Clips"
+feature and "Transcoding."</p>
+<ul>
+<li><strong>Proxy Clips</strong> create low-resolution copies of your
+video to improve timeline playback performance on slower computers.
+However, if the source file is VFR, the proxy clip may still suffer from
+audio sync issues.</li>
+<li><strong>Transcoding</strong> changes the underlying structure of the
+video from variable to constant frame rate, permanently fixing the
+synchronization bugs.</li>
+</ul>
+<p>For the best editing experience with VFR footage in Kdenlive, always
+transcode the footage to CFR first, and then enable proxy clips if you
+need additional playback performance.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/kdenlive'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/kdenlive/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/kdenlive/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>
